@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Descubra seu Dosha em Desequilíbrio — Mariah Caroline</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #1D6B52;
+    --green-light: #2D9A76;
+    --green-pale: #E8F5EE;
+    --gold: #B8935A;
+    --gold-light: #D4B483;
+    --vata: #7F77DD;
+    --vata-pale: #EEEDFE;
+    --pitta: #D85A30;
+    --pitta-pale: #FAECE7;
+    --kapha: #185FA5;
+    --kapha-pale: #E6F1FB;
+    --bg: #FAFAF7;
+    --surface: #FFFFFF;
+    --text: #1A1A18;
+    --muted: #6B6B65;
+    --border: rgba(0,0,0,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* Background texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 20% 10%, rgba(29,107,82,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 85% 80%, rgba(184,147,90,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2.5rem 1.5rem 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .header h1 em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .header p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* Decorative line */
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .ornament::before, .ornament::after {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: var(--gold-light);
+  }
+  .ornament span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--gold);
+  }
+
+  /* Quiz card */
+  .quiz-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem 2rem 1.75rem;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+
+  /* Progress */
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .step-label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .step-fraction {
+    font-size: 12px;
+    color: var(--green-light);
+    font-weight: 500;
+  }
+  .progress-track {
+    height: 2px;
+    background: rgba(0,0,0,0.06);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green) 0%, var(--green-light) 100%);
+    border-radius: 2px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Question */
+  .question-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 1.75rem;
+  }
+
+  /* Options */
+  .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+
+  .option-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .option-btn::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--green-light);
+    transform: scaleY(0);
+    transition: transform 0.2s ease;
+    border-radius: 0 2px 2px 0;
+  }
+  .option-btn:hover {
+    border-color: rgba(29,107,82,0.25);
+    color: var(--text);
+    background: var(--green-pale);
+  }
+  .option-btn.selected {
+    border-color: var(--green);
+    color: var(--green);
+    background: var(--green-pale);
+    font-weight: 500;
+  }
+  .option-btn.selected::before { transform: scaleY(1); }
+
+  /* Nav */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-back {
+    background: transparent;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 10px 0;
+    transition: color 0.2s;
+  }
+  .btn-back:hover { color: var(--text); }
+
+  .btn-next {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 13px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: auto;
+  }
+  .btn-next:hover { background: var(--green-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(29,107,82,0.25); }
+  .btn-next:active { transform: translateY(0); }
+  .btn-next:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; transform: none; }
+
+  /* Result */
+  .result-screen { animation: fadeUp 0.6s ease both; }
+
+  .dosha-badge {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+  }
+
+  .result-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .result-subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+
+  .scores-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.75rem;
+  }
+  .score-card {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+  }
+  .score-name { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .score-val { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2rem;
+  }
+  .tag {
+    font-size: 12px;
+    padding: 5px 13px;
+    border-radius: 50px;
+    font-weight: 400;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.5rem 0;
+  }
+
+  .cta-label {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .btn-cta {
+    display: block;
+    width: 100%;
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+  }
+  .btn-cta:hover { background: var(--green-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(29,107,82,0.25); }
+  .btn-cta:active { transform: translateY(0); }
+
+  .restart-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 13px;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: color 0.2s;
+  }
+  .restart-btn:hover { color: var(--text); }
+
+  /* Footer */
+  .footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    animation: fadeUp 0.6s ease 0.4s both;
+  }
+  .footer a { color: var(--gold); text-decoration: none; }
+
+  /* Animations */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .question-enter {
+    animation: fadeUp 0.35s ease both;
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 1.5rem 1rem 3rem; }
+    .quiz-card { padding: 1.5rem 1.25rem 1.5rem; border-radius: 16px; }
+    .scores-row { gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <p class="brand">Mariah Caroline · Ayurveda</p>
+    <h1>Qual dosha está<br><em>fora de equilíbrio</em> em você?</h1>
+    <div class="ornament"><span>✦</span></div>
+    <p>10 perguntas baseadas nos sinais do seu corpo agora — não no que você sempre foi, mas no que está sentindo hoje.</p>
+  </header>
+
+  <div class="quiz-card" id="quiz-card">
+
+    <!-- Quiz screen -->
+    <div id="quiz-screen">
+      <div class="progress-header">
+        <span class="step-label" id="step-label">Pergunta 1 de 10</span>
+        <span class="step-fraction" id="step-fraction">1 / 10</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width: 10%"></div>
+      </div>
+      <p class="question-text" id="question-text"></p>
+      <div class="options" id="options-container"></div>
+      <div class="nav">
+        <button class="btn-back" id="btn-back" style="visibility:hidden" onclick="goBack()">← Voltar</button>
+        <button class="btn-next" id="btn-next" disabled onclick="goNext()">Próxima →</button>
+      </div>
+    </div>
+
+    <!-- Result screen -->
+    <div id="result-screen" style="display:none" class="result-screen">
+      <div class="dosha-badge" id="dosha-badge"></div>
+      <h2 class="result-title" id="result-title"></h2>
+      <p class="result-subtitle" id="result-subtitle"></p>
+      <div class="scores-row" id="scores-row"></div>
+      <div class="tags" id="result-tags"></div>
+      <hr class="divider">
+      <p class="cta-label">Quer entender o que está por trás desse desequilíbrio e o que a Ayurveda indica para reequilibrar?</p>
+      <a class="btn-cta" id="cta-link" href="https://mariahcaroline.com" target="_blank">Quero reequilibrar meu dosha →</a>
+      <button class="restart-btn" onclick="restart()">Refazer o quiz</button>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>© Mariah Caroline · <a href="https://mariahcaroline.com">mariahcaroline.com</a></p>
+  </footer>
+
+</div>
+
+<script>
+const questions = [
+  {
+    text: "Como está seu sono atualmente?",
+    options: [
+      { label: "Irregular — dificuldade para dormir ou acordo no meio da noite", dosha: "V" },
+      { label: "Leve — acordo facilmente, às vezes com calor ou agitação", dosha: "P" },
+      { label: "Pesado demais — durmo muito mas acordo sem disposição", dosha: "K" },
+    ]
+  },
+  {
+    text: "Como está sua digestão ultimamente?",
+    options: [
+      { label: "Irregular — gases, distensão, intestino preso ou solto sem padrão", dosha: "V" },
+      { label: "Ácida — queimação, refluxo, ou fico irritado quando estou com fome", dosha: "P" },
+      { label: "Lenta — sensação de peso após comer, digestão arrastada", dosha: "K" },
+    ]
+  },
+  {
+    text: "Como está sua energia ao longo do dia?",
+    options: [
+      { label: "Oscilante — às vezes hiperativa e outras completamente esgotada", dosha: "V" },
+      { label: "Alta e intensa — fico frustrada quando não consigo realizar tudo", dosha: "P" },
+      { label: "Baixa e constante — difícil de me motivar para começar", dosha: "K" },
+    ]
+  },
+  {
+    text: "Como está sua pele atualmente?",
+    options: [
+      { label: "Seca, áspera, fina ou com ressecamento excessivo", dosha: "V" },
+      { label: "Com tendência a vermelhidão, acne ou inflamação", dosha: "P" },
+      { label: "Oleosa, pálida ou com tendência à retenção", dosha: "K" },
+    ]
+  },
+  {
+    text: "Qual estado emocional aparece mais em você?",
+    options: [
+      { label: "Ansiedade, medo, insegurança ou pensamentos acelerados", dosha: "V" },
+      { label: "Irritação, impaciência, perfeccionismo ou raiva fácil", dosha: "P" },
+      { label: "Tristeza, letargia, apego ou dificuldade de soltar", dosha: "K" },
+    ]
+  },
+  {
+    text: "Como está seu peso corporal?",
+    options: [
+      { label: "Tendência a emagrecer ou dificuldade de manter o peso", dosha: "V" },
+      { label: "Peso moderado com tendência a inflamação ou ganho localizado", dosha: "P" },
+      { label: "Ganho de peso com facilidade e dificuldade para emagrecer", dosha: "K" },
+    ]
+  },
+  {
+    text: "Como você reage ao frio e ao calor?",
+    options: [
+      { label: "Sinto muito frio, extremidades geladas, não tolero vento frio", dosha: "V" },
+      { label: "Sinto calor com facilidade, transpiro bastante", dosha: "P" },
+      { label: "Sinto frio e umidade, prefiro calor mas fico pesada", dosha: "K" },
+    ]
+  },
+  {
+    text: "Como está sua mente e concentração?",
+    options: [
+      { label: "Dispersa — difícil de focar, muitos projetos ao mesmo tempo", dosha: "V" },
+      { label: "Focada mas rígida — dificuldade de lidar com erros ou imprevistos", dosha: "P" },
+      { label: "Lenta para começar, mas constante quando engaja", dosha: "K" },
+    ]
+  },
+  {
+    text: "Como estão suas articulações e corpo?",
+    options: [
+      { label: "Estalos, rigidez, dores migrantes ou sensação de secura", dosha: "V" },
+      { label: "Inflamação, sensação de calor ou sensibilidade nas articulações", dosha: "P" },
+      { label: "Pesadas, com retenção de líquido ou sensação de inchaço", dosha: "K" },
+    ]
+  },
+  {
+    text: "Como está seu ciclo menstrual ou equilíbrio hormonal?",
+    options: [
+      { label: "Irregular, fluxo escasso, cólicas com dor em espasmo ou fisgada", dosha: "V" },
+      { label: "Intenso, cólicas ardentes, TPM com irritabilidade forte", dosha: "P" },
+      { label: "Fluxo abundante, duração longa, sensação de peso ou retenção", dosha: "K" },
+    ]
+  },
+];
+
+const doshaData = {
+  V: {
+    name: "Vata em desequilíbrio",
+    badge: "Dosha predominante: Vata",
+    badgeBg: "#EEEDFE",
+    badgeColor: "#3C3489",
+    scoreColor: "#7F77DD",
+    subtitle: "Seu corpo está pedindo raízes, calor e constância. O excesso de Vata se manifesta como dispersão, secura, irregularidade e ansiedade — sinais de que o sistema nervoso precisa ser nutrido e ancorado.",
+    tags: ["Ansiedade e mente acelerada", "Digestão irregular", "Insônia ou sono leve", "Pele seca", "Articulações com estalos"],
+    tagBg: "#EEEDFE",
+    tagColor: "#3C3489",
+    ctaUrl: "https://mariahcaroline.com/detox-ayurvedico.html",
+  },
+  P: {
+    name: "Pitta em desequilíbrio",
+    badge: "Dosha predominante: Pitta",
+    badgeBg: "#FAECE7",
+    badgeColor: "#712B13",
+    scoreColor: "#D85A30",
+    subtitle: "Seu corpo está em modo de intensidade. O excesso de Pitta se manifesta como inflamação, irritabilidade, calor e perfeccionismo — sinais de que o fogo interno precisa ser resfriado e suavizado.",
+    tags: ["Irritabilidade e impaciência", "Refluxo ou acidez", "Pele inflamada", "Calor excessivo", "Ciclo menstrual intenso"],
+    tagBg: "#FAECE7",
+    tagColor: "#712B13",
+    ctaUrl: "https://mariahcaroline.com/detox-ayurvedico.html",
+  },
+  K: {
+    name: "Kapha em desequilíbrio",
+    badge: "Dosha predominante: Kapha",
+    badgeBg: "#E6F1FB",
+    badgeColor: "#0C447C",
+    scoreColor: "#185FA5",
+    subtitle: "Seu corpo está em modo de acúmulo. O excesso de Kapha se manifesta como lentidão, retenção, peso emocional e resistência à mudança — sinais de que o organismo precisa de estímulo e leveza.",
+    tags: ["Cansaço e letargia", "Digestão lenta", "Ganho de peso fácil", "Retenção de líquido", "Tristeza ou apego emocional"],
+    tagBg: "#E6F1FB",
+    tagColor: "#0C447C",
+    ctaUrl: "https://mariahcaroline.com/detox-ayurvedico.html",
+  },
+};
+
+let current = 0;
+let answers = [];
+let selected = null;
+
+function render(animate) {
+  const q = questions[current];
+  const stepEl = document.getElementById("step-label");
+  const fracEl = document.getElementById("step-fraction");
+  const qEl = document.getElementById("question-text");
+  const container = document.getElementById("options-container");
+
+  stepEl.textContent = `Pergunta ${current + 1} de ${questions.length}`;
+  fracEl.textContent = `${current + 1} / ${questions.length}`;
+  document.getElementById("progress-fill").style.width = `${((current + 1) / questions.length) * 100}%`;
+
+  if (animate !== false) {
+    qEl.classList.remove("question-enter");
+    void qEl.offsetWidth;
+    qEl.classList.add("question-enter");
+  }
+
+  qEl.textContent = q.text;
+  container.innerHTML = "";
+
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.className = "option-btn" + (answers[current] === i ? " selected" : "");
+    btn.textContent = opt.label;
+    btn.onclick = () => selectOption(i);
+    container.appendChild(btn);
+  });
+
+  selected = answers[current] !== undefined ? answers[current] : null;
+  document.getElementById("btn-next").disabled = selected === null;
+  document.getElementById("btn-next").textContent = current === questions.length - 1 ? "Ver meu resultado →" : "Próxima →";
+  document.getElementById("btn-back").style.visibility = current > 0 ? "visible" : "hidden";
+}
+
+function selectOption(i) {
+  selected = i;
+  answers[current] = i;
+  document.querySelectorAll(".option-btn").forEach((b, idx) => {
+    b.classList.toggle("selected", idx === i);
+  });
+  document.getElementById("btn-next").disabled = false;
+}
+
+function goNext() {
+  if (selected === null) return;
+  if (current < questions.length - 1) {
+    current++;
+    selected = answers[current] !== undefined ? answers[current] : null;
+    render();
+  } else {
+    showResult();
+  }
+}
+
+function goBack() {
+  if (current > 0) { current--; render(); }
+}
+
+function showResult() {
+  const scores = { V: 0, P: 0, K: 0 };
+  questions.forEach((q, i) => {
+    if (answers[i] !== undefined) scores[q.options[answers[i]].dosha]++;
+  });
+
+  const winner = Object.keys(scores).reduce((a, b) => scores[a] >= scores[b] ? a : b);
+  const d = doshaData[winner];
+
+  document.getElementById("quiz-screen").style.display = "none";
+  document.getElementById("result-screen").style.display = "block";
+
+  const badge = document.getElementById("dosha-badge");
+  badge.textContent = d.badge;
+  badge.style.background = d.badgeBg;
+  badge.style.color = d.badgeColor;
+
+  document.getElementById("result-title").textContent = d.name;
+  document.getElementById("result-subtitle").textContent = d.subtitle;
+  document.getElementById("cta-link").href = d.ctaUrl;
+
+  const labels = { V: "Vata", P: "Pitta", K: "Kapha" };
+  document.getElementById("scores-row").innerHTML = Object.keys(scores).map(k => `
+    <div class="score-card">
+      <div class="score-name">${labels[k]}</div>
+      <div class="score-val" style="color:${doshaData[k].scoreColor}">${scores[k]}</div>
+    </div>
+  `).join("");
+
+  document.getElementById("result-tags").innerHTML = d.tags.map(t =>
+    `<span class="tag" style="background:${d.tagBg};color:${d.tagColor}">${t}</span>`
+  ).join("");
+
+  document.getElementById("quiz-card").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function restart() {
+  current = 0;
+  answers = [];
+  selected = null;
+  document.getElementById("result-screen").style.display = "none";
+  document.getElementById("quiz-screen").style.display = "block";
+  render(false);
+}
+
+render(false);
+</script>
+
+</body>
+</html>
