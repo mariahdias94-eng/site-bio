@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detox Ayurvédico 7 Dias — Mariah Caroline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --verde:   #0e2a1c;
+      --ouro:    #c9a84c;
+      --ouro-lt: #a8813a;
+      --creme:   #faf7f1;
+      --texto:   #1a1a1a;
+      --texto2:  #4a4a4a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--creme);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    /* ── HEADLINE ── */
+    .headline-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 52px 24px 28px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ouro-lt);
+      margin-bottom: 18px;
+    }
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 6vw, 46px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--verde);
+      margin-bottom: 16px;
+    }
+    .headline em { font-style: italic; color: var(--ouro-lt); }
+    .subheadline {
+      font-size: 16px;
+      color: var(--texto2);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .subheadline strong { color: var(--texto); font-weight: 600; }
+
+    /* ── GANCHOS PRÉ-VÍDEO ── */
+    .ganchos {
+      max-width: 400px;
+      margin: 0 auto 20px;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .gancho-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--texto2);
+      line-height: 1.5;
+    }
+    .gancho-item .dot {
+      width: 6px; height: 6px;
+      background: var(--ouro);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ── PLAYER VERTICAL ── */
+    .player-wrap {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .player-outer {
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+    .player-ratio {
+      position: relative;
+      padding-top: 177.78%;
+    }
+    .player-ratio iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ── PROGRESSO ── */
+    .progress-bar-wrap {
+      max-width: 400px;
+      margin: 12px auto 0;
+      padding: 0 16px;
+    }
+    .progress-track {
+      height: 3px;
+      background: rgba(0,0,0,.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--ouro), var(--ouro-lt));
+      border-radius: 2px;
+      transition: width 1s linear;
+    }
+    .progress-hint {
+      margin-top: 9px;
+      font-size: 12px;
+      color: rgba(0,0,0,.35);
+      text-align: center;
+      letter-spacing: .4px;
+    }
+    .progress-hint span { color: var(--ouro-lt); font-weight: 600; }
+
+    /* ── BLOCO CTA — aparece junto com o botão ── */
+    .cta-section {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 32px 20px 16px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
+      pointer-events: none;
+    }
+    .cta-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Título do CTA */
+    .cta-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--verde);
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .cta-titulo em { font-style: italic; color: var(--ouro-lt); }
+    .cta-subtitulo {
+      font-size: 14px;
+      color: var(--texto2);
+      text-align: center;
+      font-weight: 300;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* Benefícios rápidos */
+    .beneficios {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.07);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .beneficio-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--texto2);
+      line-height: 1.5;
+    }
+    .beneficio-item .check {
+      color: #2d6b42;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Botão */
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 20px 28px;
+      background: linear-gradient(135deg, #c9a84c, #a8813a);
+      border-radius: 50px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: .3px;
+      box-shadow: 0 8px 28px rgba(168,129,58,.35);
+      animation: pulse-btn 2.5s infinite;
+      transition: transform .2s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      animation: none;
+      box-shadow: 0 16px 40px rgba(168,129,58,.5);
+    }
+    @keyframes pulse-btn {
+      0%   { box-shadow: 0 0 0 0 rgba(201,168,76,.45), 0 8px 28px rgba(168,129,58,.35); }
+      70%  { box-shadow: 0 0 0 14px rgba(201,168,76,0), 0 8px 28px rgba(168,129,58,.35); }
+      100% { box-shadow: 0 0 0 0 rgba(201,168,76,0),   0 8px 28px rgba(168,129,58,.35); }
+    }
+
+    /* Garantia */
+    .garantia {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: rgba(45,107,66,.06);
+      border-radius: 10px;
+      border: 1px solid rgba(45,107,66,.12);
+    }
+    .garantia-icon { font-size: 22px; flex-shrink: 0; }
+    .garantia-text { font-size: 12px; color: var(--texto2); line-height: 1.5; }
+    .garantia-text strong { color: var(--verde); font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 48px;
+      border-top: 1px solid rgba(0,0,0,.07);
+      padding: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(0,0,0,.3);
+    }
+
+    @media(max-width:440px) {
+      .player-wrap { padding: 0; }
+      .cta-section { padding: 28px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADLINE ── -->
+<div class="headline-wrap">
+  <span class="eyebrow">Mariah Caroline · Naturóloga</span>
+  <h1 class="headline">
+    Seu corpo não está<br/>
+    com preguiça.<br/>
+    <em>Ele está intoxicado.</em>
+  </h1>
+  <p class="subheadline">
+    Assista até o final — <strong>no momento em que tudo faz sentido</strong>, você vai entender por que já tentou tantas coisas e nenhuma durou de verdade.
+  </p>
+</div>
+
+<!-- ── GANCHOS ── -->
+<div class="ganchos">
+  <div class="gancho-item">
+    <span class="dot"></span>
+    Por que você se sente cansada mesmo fazendo tudo "certo"
+  </div>
+  <div class="gancho-item">
+    <span class="dot"></span>
+    O que o Ayurveda enxerga que a medicina convencional ignora
+  </div>
+  <div class="gancho-item">
+    <span class="dot"></span>
+    Como 7 dias podem mudar o estado do seu corpo de forma real
+  </div>
+</div>
+
+<!-- ── VÍDEO ── -->
+<div class="player-wrap">
+  <div class="player-outer">
+    <div class="player-ratio">
+      <iframe
+        src="https://drive.google.com/file/d/1Hq5ddIY2O-eIT5KVqTEoRBvSfbZMypsz/preview"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROGRESSO ── -->
+<div class="progress-bar-wrap">
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <p class="progress-hint" id="progressHint">
+    Continue assistindo — falta <span id="countdown">2:20</span>
+  </p>
+</div>
+
+<!-- ── CTA ── -->
+<div class="cta-section" id="ctaSection">
+
+  <p class="cta-titulo">Pronta para <em>começar</em>?</p>
+  <p class="cta-subtitulo">Tudo que você precisa para os 7 dias — protocolos, receitas e orientações completas.</p>
+
+  <div class="beneficios">
+    <div class="beneficio-item">
+      <span class="check">✓</span>
+      Protocolo diário completo — sem complicação
+    </div>
+    <div class="beneficio-item">
+      <span class="check">✓</span>
+      Receitas ayurvédicas que cabem na rotina real
+    </div>
+    <div class="beneficio-item">
+      <span class="check">✓</span>
+      Acesso imediato — começa hoje se quiser
+    </div>
+  </div>
+
+  <a href="https://mariahcaroline.com/detox-ayurvedico" class="cta-btn">
+    ✦ Quero fazer o Detox Ayurvédico →
+  </a>
+
+  <div class="garantia">
+    <span class="garantia-icon">🛡️</span>
+    <div class="garantia-text">
+      <strong>Garantia de 7 dias.</strong> Se não sentir diferença, devolvemos 100% do seu investimento. Sem burocracia.
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Mariah Caroline · Naturóloga — Saúde integral da mulher
+</footer>
+
+<script>
+  const CTA_DELAY_SECONDS = 140; // 2:20
+
+  const fill      = document.getElementById('progressFill');
+  const hint      = document.getElementById('progressHint');
+  const countdown = document.getElementById('countdown');
+  const ctaSection = document.getElementById('ctaSection');
+
+  let elapsed = 0;
+
+  function formatTime(s) {
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return m + ':' + String(sec).padStart(2, '0');
+  }
+
+  const timer = setInterval(() => {
+    elapsed++;
+    const pct = Math.min((elapsed / CTA_DELAY_SECONDS) * 100, 100);
+    fill.style.width = pct + '%';
+
+    const remaining = CTA_DELAY_SECONDS - elapsed;
+    if (remaining > 0) {
+      countdown.textContent = formatTime(remaining);
+    }
+
+    if (elapsed >= CTA_DELAY_SECONDS) {
+      clearInterval(timer);
+      hint.innerHTML = '✦ <span>Oferta liberada — veja abaixo</span>';
+      ctaSection.classList.add('visible');
+      ctaSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
