@@ -448,12 +448,11 @@ function submitForm(id){
   btn.textContent='Enviando...';
   btn.disabled=true;
 
-  fetch('https://script.google.com/macros/s/AKfycbyaoP4kVRlh7JefJXuxIAjxdMbf6J1U70HFZtSD7616WXux8DfiBl1gpQSVXzTatWey5A/exec',{
-    method:'POST',
-    mode:'no-cors',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({nome,email,tel})
-  }).catch(()=>{});
+  const url='https://script.google.com/macros/s/AKfycbwqAahKsTCX2pSOeQwoGBGKsJmLI49kJn1rsGXBiXNLB3kuwgPotT4z1cVOz0F7rIcybg/exec'
+    +'?nome='+encodeURIComponent(nome)
+    +'&email='+encodeURIComponent(email)
+    +'&tel='+encodeURIComponent(tel||'—');
+  fetch(url).catch(()=>{});
 
   document.getElementById('form-'+id).style.display='none';
   document.getElementById('success-'+id).classList.add('show');
