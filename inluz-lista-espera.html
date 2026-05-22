@@ -443,7 +443,18 @@ function submitForm(id){
   const tel=document.getElementById('tel-'+id).value.trim();
   if(!nome){alert('Por favor, informe seu nome.');return;}
   if(!email||!email.includes('@')){alert('Por favor, informe um e-mail válido.');return;}
-  console.log('Lead:',{nome,email,tel});
+
+  const btn=document.querySelector('#form-'+id+' .btn-submit');
+  btn.textContent='Enviando...';
+  btn.disabled=true;
+
+  fetch('https://script.google.com/macros/s/AKfycbyaoP4kVRlh7JefJXuxIAjxdMbf6J1U70HFZtSD7616WXux8DfiBl1gpQSVXzTatWey5A/exec',{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({nome,email,tel})
+  }).catch(()=>{});
+
   document.getElementById('form-'+id).style.display='none';
   document.getElementById('success-'+id).classList.add('show');
   document.getElementById('success-'+id).scrollIntoView({behavior:'smooth',block:'center'});
