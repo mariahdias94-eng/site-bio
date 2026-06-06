@@ -409,6 +409,34 @@ section { padding: 76px 24px; }
   .proc-steps { grid-template-columns: 1fr; }
 }
 
+/* PLAN STATEMENT */
+.sec-plan { background: var(--dark-green); }
+.plan-inner { text-align: center; }
+.plan-title { font-size: 2.4rem; color: #fff; max-width: 620px; margin: 0 auto 18px; line-height: 1.22; }
+.plan-title em { color: var(--gold-light); font-style: italic; }
+.plan-lead { color: rgba(255,255,255,0.65); text-align: center; margin: 0 auto 48px; }
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  text-align: left;
+}
+.plan-item {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+.plan-ico { font-size: 1.75rem; display: block; margin-bottom: 13px; }
+.plan-item-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.22rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 9px;
+}
+.plan-item-text { font-size: 0.88rem; color: rgba(255,255,255,0.68); line-height: 1.65; font-weight: 300; }
+
 /* INCLUDES + PRICE */
 .incl-grid {
   display: grid;
@@ -927,6 +955,39 @@ footer a:hover { text-decoration: underline; }
         <div class="step-num">4</div>
         <div class="step-title">Plano Terapêutico</div>
         <p class="step-text">Você recebe seu protocolo: alimentação, fitoterápicos, aromaterapia, florais e orientações práticas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN STATEMENT -->
+<section class="sec-plan">
+  <div class="inner">
+    <div class="plan-inner">
+      <span class="stag" style="color:var(--gold-light)">O que você leva</span>
+      <h2 class="stitle plan-title">Você sai com um <em>plano real</em> —<br>não com uma lista de possibilidades</h2>
+      <p class="slead plan-lead">Sem orientações genéricas, sem "tente isso e veja". Ao final da consulta você tem um protocolo escrito, completo e construído para o seu corpo, sua rotina e o seu momento de vida.</p>
+      <div class="plan-grid">
+        <div class="plan-item">
+          <span class="plan-ico">📋</span>
+          <div class="plan-item-title">Protocolo escrito</div>
+          <p class="plan-item-text">Um documento com todas as recomendações — alimentação, fitoterápicos, rotina e estratégias específicas para o seu caso.</p>
+        </div>
+        <div class="plan-item">
+          <span class="plan-ico">🌿</span>
+          <div class="plan-item-title">Prescrição natural</div>
+          <p class="plan-item-text">Plantas medicinais, suplementos, florais e aromaterapia indicados com dose, horário e forma de uso adequados a você.</p>
+        </div>
+        <div class="plan-item">
+          <span class="plan-ico">🎯</span>
+          <div class="plan-item-title">Causa identificada</div>
+          <p class="plan-item-text">Saímos com clareza sobre o que está gerando o desequilíbrio — não apenas o sintoma a tratar, mas a origem a resolver.</p>
+        </div>
+        <div class="plan-item">
+          <span class="plan-ico">📅</span>
+          <div class="plan-item-title">Próximos passos claros</div>
+          <p class="plan-item-text">Um plano com prazos realistas — para que você saiba exatamente o que fazer nos próximos dias e semanas.</p>
+        </div>
       </div>
     </div>
   </div>
