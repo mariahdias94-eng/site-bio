@@ -137,6 +137,20 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--text);over
 .form-wrap .btn-primary{width:100%;border-radius:50px;font-size:.93rem;padding:17px;}
 .form-success{display:none;background:rgba(255,255,255,.18);border-radius:12px;padding:28px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-style:italic;}
 
+.transformacao{padding:90px 56px;background:var(--warm);}
+.transformacao-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:860px;margin:56px auto 0;}
+.transf-col{padding:46px 42px;}
+.transf-antes{background:rgba(91,45,110,.06);}
+.transf-depois{background:rgba(107,142,110,.09);}
+.transf-titulo{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:500;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.transf-antes .transf-titulo{color:var(--muted);}
+.transf-depois .transf-titulo{color:var(--brown);}
+.transf-col ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
+.transf-col li{font-size:.95rem;font-weight:300;color:var(--muted);line-height:1.65;display:flex;align-items:flex-start;gap:11px;}
+.transf-antes li::before{content:'—';color:var(--plum-b);font-size:.9rem;flex-shrink:0;margin-top:2px;}
+.transf-depois li::before{content:'✦';color:var(--gold);font-size:.62rem;flex-shrink:0;margin-top:5px;}
+.hero-experiencias{font-size:.72rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.58);margin-top:12px;}
+
 .faq-wrap{padding:90px 56px;background:var(--warm);}
 .faq{max-width:760px;margin:0 auto;}
 .faq-item{border-bottom:1px solid rgba(58,38,16,.1);padding:20px 0;}
@@ -158,6 +172,8 @@ footer a:hover{color:var(--gold-l);}
 .sticky-cta a:hover{transform:translateY(-2px);}
 
 @media(max-width:900px){
+  .transformacao-grid{grid-template-columns:1fr;}
+  .transf-col{padding:32px 26px;}
   .intro,.place,.bio{grid-template-columns:1fr;}
   .intro-image{height:340px;}
   .intro-text,.place-text{padding:56px 32px;}
@@ -182,8 +198,9 @@ footer a:hover{color:var(--gold-l);}
     <div class="hero-tag">Retiro InLuz</div>
     <h1>Reconexão</h1>
     <div class="hero-info-wrap">
-      <p class="hero-sub">Autoconhecimento e autocuidado feminino</p>
+      <p class="hero-sub">Quatro dias para desacelerar, respirar e voltar para casa diferente.</p>
       <p class="hero-date"><strong>30 de Outubro — 02 de Novembro</strong> <span class="finados-highlight">&nbsp;·&nbsp; Feriado de Finados</span><span class="place-line">Barra do Una · São Paulo</span></p>
+      <p class="hero-experiencias">Yoga · Cachoeira · Meditações · Fogueira · Conexão feminina</p>
     </div>
     <a href="https://wa.me/5511992334076" target="_blank" class="btn-primary">Quero participar</a>
   </div>
@@ -331,6 +348,35 @@ footer a:hover{color:var(--gold-l);}
   </div>
 </section>
 
+<section class="transformacao">
+  <div class="section-header">
+    <div class="section-label">A jornada</div>
+    <h2>Uma transformação <em>real</em></h2>
+  </div>
+  <div class="transformacao-grid">
+    <div class="transf-col transf-antes">
+      <div class="transf-titulo">Como você provavelmente chega</div>
+      <ul>
+        <li>Cansada e sobrecarregada</li>
+        <li>Com a mente cheia e o corpo esquecido</li>
+        <li>Sem espaço real para cuidar de si</li>
+        <li>Desconectada do seu próprio ritmo</li>
+        <li>Com saudade de algo que mal consegue nomear</li>
+      </ul>
+    </div>
+    <div class="transf-col transf-depois">
+      <div class="transf-titulo">Como muitas mulheres voltam</div>
+      <ul>
+        <li>Mais leve e inteira</li>
+        <li>Com ferramentas concretas para cuidar de si</li>
+        <li>Reconectada com o seu corpo e seu ritmo</li>
+        <li>Com novas amizades genuínas e profundas</li>
+        <li>Pronta para florescer no dia a dia</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="investment" id="investimento">
   <div class="section-label">Investimento</div>
   <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:400;color:var(--warm);position:relative;z-index:1;">Seu presente de cuidado</h2>
@@ -338,11 +384,12 @@ footer a:hover{color:var(--gold-l);}
     <div class="price-tag"><span>R$</span> 3.200</div>
     <div class="price-label">investimento total por participante</div>
     <ul class="price-includes">
-      <li>4 dias e 3 noites de imersão completa</li>
-      <li>Hospedagem</li>
-      <li>Alimentação detox inclusa</li>
-      <li>Todas as práticas: yoga, meditações e vivências</li>
-      <li>Todos os materiais utilizados</li>
+      <li>4 dias e 3 noites de imersão na natureza</li>
+      <li>Hospedagem aconchegante no Sama Una</li>
+      <li>Todas as refeições naturais e detox</li>
+      <li>Todas as práticas: yoga, meditações, cachoeira, fogueira e mais</li>
+      <li>Materiais e kits do retiro</li>
+      <li>Presença e suporte da Mariah em cada momento</li>
     </ul>
     <a href="https://wa.me/5511992334076" target="_blank" class="btn-primary">Garantir minha vaga</a>
     <p class="price-note">Vagas limitadas para garantir atenção individual.<br>Condições de parcelamento disponíveis — entre em contato.</p>
