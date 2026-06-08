@@ -19,14 +19,14 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--text);over
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .hero-tag{display:inline-block;font-size:.68rem;font-weight:500;letter-spacing:.48em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.28);}
 .hero h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(5rem,13vw,9.5rem);color:#fff;line-height:1.05;margin-bottom:14px;text-shadow:0 2px 30px rgba(0,0,0,.55),0 4px 64px rgba(0,0,0,.3);}
-.hero-sub{font-size:1.55rem;font-weight:400;letter-spacing:.04em;color:rgba(255,255,255,.92);margin:0 0 32px;font-family:'Cormorant Garamond',serif;font-style:italic;text-shadow:0 1px 16px rgba(0,0,0,.6);position:relative;display:inline-block;padding-bottom:18px;}
-.hero-sub::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:52px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);}
-.hero-date{font-size:.88rem;font-weight:300;letter-spacing:.15em;color:rgba(255,255,255,.78);margin-bottom:38px;text-transform:uppercase;}
-.hero-date strong{font-weight:400;color:rgba(255,255,255,.92);letter-spacing:.08em;}
-.hero-date .finados-highlight{font-weight:400;font-style:italic;text-transform:none;letter-spacing:.04em;color:rgba(255,255,255,.68);}
-.hero-date .place-line{display:block;margin-top:10px;font-size:.82rem;letter-spacing:.26em;}
-.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--gold-b) 0%,var(--gold) 100%);color:var(--brown);font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:16px 44px;border-radius:50px;border:none;cursor:pointer;transition:background .3s,transform .2s,box-shadow .3s;box-shadow:0 8px 28px rgba(201,152,26,.35);}
-.btn-primary:hover{background:linear-gradient(135deg,var(--gold-l) 0%,var(--gold-b) 100%);transform:translateY(-2px);}
+.hero-info-wrap{background:rgba(75,32,96,.32);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(140,70,180,.28);border-radius:18px;padding:26px 40px 28px;margin:0 0 34px;display:inline-block;}
+.hero-sub{font-size:1.55rem;font-weight:400;letter-spacing:.04em;color:rgba(255,255,255,.95);margin:0 0 14px;font-family:'Cormorant Garamond',serif;font-style:italic;text-shadow:none;position:relative;display:block;}
+.hero-date{font-size:.84rem;font-weight:300;letter-spacing:.14em;color:rgba(255,255,255,.82);margin:0;text-transform:uppercase;}
+.hero-date strong{font-weight:400;color:#fff;letter-spacing:.08em;}
+.hero-date .finados-highlight{font-weight:400;font-style:italic;text-transform:none;letter-spacing:.04em;color:rgba(255,255,255,.72);}
+.hero-date .place-line{display:block;margin-top:8px;font-size:.8rem;letter-spacing:.24em;color:rgba(255,255,255,.68);}
+.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--plum) 0%,var(--plum-b) 100%);color:#fff;font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:16px 44px;border-radius:50px;border:none;cursor:pointer;transition:background .3s,transform .2s,box-shadow .3s;box-shadow:0 8px 28px rgba(91,45,110,.45);}
+.btn-primary:hover{background:linear-gradient(135deg,var(--plum-b) 0%,#9b4dbd 100%);transform:translateY(-2px);box-shadow:0 12px 36px rgba(91,45,110,.55);}
 .btn-outline{display:inline-block;border:2px solid var(--gold);color:var(--gold);font-family:'Jost',sans-serif;font-size:.88rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:14px 40px;border-radius:50px;cursor:pointer;background:transparent;transition:all .3s;}
 .btn-outline:hover{background:var(--gold);color:#fff;}
 .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;animation:bounce 2.5s ease-in-out infinite;}
@@ -181,10 +181,11 @@ footer a:hover{color:var(--gold-l);}
   <div class="hero-content">
     <div class="hero-tag">Retiro InLuz</div>
     <h1>Reconexão</h1>
-    <p class="hero-sub">Autoconhecimento e autocuidado feminino</p>
-    <p class="hero-date"><strong>30 de Outubro — 02 de Novembro</strong> <span class="finados-highlight">&nbsp;·&nbsp; Feriado de Finados</span><span class="place-line">Barra do Una · São Paulo</span></p>
+    <div class="hero-info-wrap">
+      <p class="hero-sub">Autoconhecimento e autocuidado feminino</p>
+      <p class="hero-date"><strong>30 de Outubro — 02 de Novembro</strong> <span class="finados-highlight">&nbsp;·&nbsp; Feriado de Finados</span><span class="place-line">Barra do Una · São Paulo</span></p>
+    </div>
     <a href="https://wa.me/5511992334076" target="_blank" class="btn-primary">Quero participar</a>
-    <p style="margin-top:18px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);">✦ Grupo Intimista — Até 14 mulheres</p>
   </div>
   <div class="scroll-hint"><div class="scroll-line"></div><span>Descubra</span></div>
 </section>
