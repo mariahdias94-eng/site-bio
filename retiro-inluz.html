@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retiro InLuz — Mariah Caroline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--warm:#FDF9F4;--bg2:#F5EFE4;--brown:#3A2610;--text:#2E1A08;--muted:#6B4E2A;--gold:#C9981A;--gold-b:#E8B020;--gold-l:#F5D060;--plum:#5B2D6E;--plum-b:#7B3D92;--plum-light:#F3ECF8;--sage:#6B8E6E;--sage-light:#A9C2AC;--border:rgba(201,152,26,.22);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;}
+
+.hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('images/retiro-inluz/galeria2.jpg') center/cover no-repeat;transform:scale(1.06);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(58,38,16,.25) 0%,rgba(58,38,16,.15) 45%,rgba(58,38,16,.72) 100%);}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 24px;animation:fadeUp 1.1s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-tag{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#fff;padding:9px 26px;border-radius:40px;margin-bottom:26px;background:linear-gradient(135deg,var(--plum) 0%,var(--plum-b) 100%);box-shadow:0 4px 18px rgba(91,45,110,.4);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:400;color:#fff;line-height:1.05;margin-bottom:18px;}
+.hero h1 em{font-style:italic;color:var(--gold-l);}
+.hero-date{font-size:.98rem;font-weight:300;letter-spacing:.12em;color:rgba(255,255,255,.88);margin-bottom:36px;text-transform:uppercase;}
+.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--gold-b) 0%,var(--gold) 100%);color:var(--brown);font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:16px 44px;border-radius:50px;border:none;cursor:pointer;transition:background .3s,transform .2s,box-shadow .3s;box-shadow:0 8px 28px rgba(201,152,26,.35);}
+.btn-primary:hover{background:linear-gradient(135deg,var(--gold-l) 0%,var(--gold-b) 100%);transform:translateY(-2px);}
+.btn-outline{display:inline-block;border:2px solid var(--gold);color:var(--gold);font-family:'Jost',sans-serif;font-size:.88rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:14px 40px;border-radius:50px;cursor:pointer;background:transparent;transition:all .3s;}
+.btn-outline:hover{background:var(--gold);color:#fff;}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;animation:bounce 2.5s ease-in-out infinite;}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.6),transparent);}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;min-height:65vh;}
+.intro-text{padding:80px 70px 80px 76px;display:flex;flex-direction:column;justify-content:center;}
+.section-label{font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.intro-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:400;line-height:1.2;color:var(--brown);margin-bottom:26px;}
+.intro-text h2 em{font-style:italic;color:var(--plum-b);}
+.intro-text p{font-size:1rem;font-weight:300;line-height:1.85;color:var(--muted);margin-bottom:16px;}
+.intro-image{overflow:hidden;}
+.intro-image img{width:100%;height:100%;object-fit:cover;display:block;}
+
+.date-banner{background:var(--brown);padding:34px 24px;display:flex;flex-wrap:wrap;justify-content:center;gap:36px 72px;}
+.date-item{display:flex;flex-direction:column;gap:4px;text-align:center;}
+.date-item .label{font-size:.67rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);font-weight:500;}
+.date-item .value{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:var(--warm);}
+
+.vivencias{padding:90px 56px;background:var(--warm);}
+.section-header{text-align:center;margin-bottom:60px;}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:400;color:var(--brown);}
+.section-header h2 em{font-style:italic;color:var(--plum-b);}
+.section-header p{margin-top:14px;font-size:1rem;font-weight:300;color:var(--muted);max-width:500px;margin-left:auto;margin-right:auto;line-height:1.75;}
+.vivencias-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;max-width:1100px;margin:0 auto;}
+.vivencia-card{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;background:#3A2610;}
+.vivencia-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s,filter .5s;filter:brightness(.7) saturate(.85);}
+.vivencia-card:hover img{transform:scale(1.07);filter:brightness(.55) saturate(1);}
+.vivencia-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(58,38,16,.92) 0%,rgba(58,38,16,.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px 18px;}
+.vivencia-icon{font-size:1.4rem;margin-bottom:7px;}
+.vivencia-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:#fff;line-height:1.2;margin-bottom:4px;}
+.vivencia-sub{font-size:.7rem;font-weight:300;letter-spacing:.1em;color:rgba(255,255,255,.72);text-transform:uppercase;}
+.vivencias-row2{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;max-width:1100px;margin:3px auto 0;}
+
+.place{display:grid;grid-template-columns:1fr 1fr;min-height:62vh;}
+.place-gallery{display:grid;grid-template-rows:1fr 1fr;gap:3px;}
+.place-gallery img{width:100%;height:100%;object-fit:cover;display:block;}
+.place-text{padding:72px 68px;background:var(--bg2);display:flex;flex-direction:column;justify-content:center;}
+.place-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3rem);font-weight:400;color:var(--brown);margin-bottom:22px;line-height:1.2;}
+.place-text p{font-size:.97rem;font-weight:300;line-height:1.85;color:var(--muted);margin-bottom:14px;}
+.place-features{margin-top:24px;display:flex;flex-direction:column;gap:10px;}
+.place-feature{display:flex;align-items:center;gap:12px;font-size:.94rem;color:var(--muted);}
+.place-feature::before{content:'';display:block;width:20px;height:1px;background:var(--gold);flex-shrink:0;}
+
+.bio{padding:90px 56px;background:var(--brown);display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.bio-image{width:100%;aspect-ratio:3/4;overflow:hidden;border-radius:2px;position:relative;z-index:1;}
+.bio-image img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);}
+.bio-image-wrap{position:relative;}
+.bio-image-wrap::before{content:'';position:absolute;inset:-18px -18px auto auto;width:65%;height:65%;border:1px solid rgba(245,208,96,.3);border-radius:2px;z-index:0;}
+.bio-text .section-label{color:var(--gold-l);}
+.bio-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3rem);font-weight:400;color:var(--warm);line-height:1.2;margin-bottom:24px;}
+.bio-text h2 em{font-style:italic;color:var(--gold-l);}
+.bio-text p{font-size:.97rem;font-weight:300;line-height:1.85;color:rgba(253,249,244,.78);margin-bottom:16px;}
+.bio-creds{margin-top:28px;display:flex;flex-wrap:wrap;gap:9px;}
+.bio-cred{padding:6px 16px;border:1px solid rgba(245,208,96,.35);border-radius:30px;font-size:.76rem;font-weight:400;letter-spacing:.08em;color:var(--gold-l);}
+
+.testimonials{padding:90px 56px;background:var(--bg2);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1060px;margin:56px auto 0;}
+.testimonial-card{background:#fff;padding:36px 28px;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,.05);border-left:4px solid var(--plum-b);}
+.testimonial-card::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:5rem;color:var(--plum-light);line-height:.8;display:block;margin-bottom:14px;}
+.testimonial-text{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-style:italic;font-weight:400;line-height:1.7;color:var(--brown);margin-bottom:22px;}
+.testimonial-name{font-size:.78rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--plum-b);}
+
+.investment{padding:100px 56px;background:var(--warm);text-align:center;}
+.price-card{max-width:580px;margin:46px auto 0;background:#fff;border:1px solid var(--border);border-radius:6px;padding:56px 48px;box-shadow:0 12px 50px rgba(0,0,0,.06);position:relative;overflow:hidden;}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--plum-b),var(--gold-b),var(--plum-b));}
+.price-tag{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:var(--brown);line-height:1;margin-bottom:6px;}
+.price-tag span{font-size:2rem;vertical-align:super;color:var(--muted);}
+.price-label{font-size:.78rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;}
+.price-includes{list-style:none;text-align:left;margin-bottom:40px;display:flex;flex-direction:column;gap:13px;}
+.price-includes li{display:flex;align-items:center;gap:12px;font-size:.95rem;font-weight:300;color:var(--text);}
+.price-includes li::before{content:'✦';color:var(--gold);font-size:.7rem;flex-shrink:0;}
+.price-note{font-size:.8rem;font-weight:300;color:var(--muted);margin-top:18px;line-height:1.6;}
+
+.waitlist{padding:100px 56px;background:linear-gradient(135deg,var(--plum) 0%,var(--plum-b) 100%);text-align:center;position:relative;overflow:hidden;}
+.waitlist .section-label{color:var(--gold-l);}
+.waitlist h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:400;color:#fff;margin-bottom:14px;}
+.waitlist p{font-size:1rem;font-weight:300;color:rgba(255,255,255,.85);margin-bottom:44px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.form-wrap{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:13px;position:relative;z-index:1;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.form-wrap input,.form-wrap textarea{width:100%;padding:15px 20px;border:1px solid rgba(255,255,255,.32);border-radius:50px;background:rgba(255,255,255,.15);color:#fff;font-family:'Jost',sans-serif;font-size:.93rem;font-weight:300;outline:none;transition:border .3s,background .3s;}
+.form-wrap textarea{border-radius:20px;resize:none;height:95px;}
+.form-wrap input::placeholder,.form-wrap textarea::placeholder{color:rgba(255,255,255,.62);}
+.form-wrap input:focus,.form-wrap textarea:focus{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.22);}
+.form-wrap .btn-primary{width:100%;border-radius:50px;font-size:.93rem;padding:17px;}
+.form-success{display:none;background:rgba(255,255,255,.18);border-radius:12px;padding:28px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-style:italic;}
+
+.faq-wrap{padding:90px 56px;background:var(--warm);}
+.faq{max-width:760px;margin:0 auto;}
+.faq-item{border-bottom:1px solid rgba(58,38,16,.1);padding:20px 0;}
+.faq-question{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--brown);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;user-select:none;}
+.faq-question::after{content:'+';font-size:1.5rem;font-weight:300;color:var(--gold);transition:transform .3s;flex-shrink:0;}
+.faq-item.open .faq-question::after{transform:rotate(45deg);}
+.faq-answer{display:none;padding-top:12px;font-size:.95rem;font-weight:300;line-height:1.8;color:var(--muted);}
+.faq-item.open .faq-answer{display:block;}
+
+footer{background:var(--brown);padding:56px;text-align:center;}
+footer .logo{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:italic;font-weight:400;color:var(--gold-l);margin-bottom:18px;display:block;}
+footer p{font-size:.83rem;font-weight:300;color:rgba(253,249,244,.5);letter-spacing:.05em;}
+footer a{color:var(--gold);text-decoration:none;transition:color .3s;}
+footer a:hover{color:var(--gold-l);}
+
+.sticky-cta{position:fixed;bottom:26px;right:26px;z-index:999;opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s;pointer-events:none;}
+.sticky-cta.visible{opacity:1;transform:translateY(0);pointer-events:all;}
+.sticky-cta a{display:flex;align-items:center;background:var(--brown);color:var(--gold-l);font-family:'Jost',sans-serif;font-size:.83rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 24px;border-radius:50px;box-shadow:0 8px 28px rgba(0,0,0,.3);transition:transform .2s;}
+.sticky-cta a:hover{transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .intro,.place,.bio{grid-template-columns:1fr;}
+  .intro-image{height:340px;}
+  .intro-text,.place-text{padding:56px 32px;}
+  .bio{padding:64px 32px;gap:40px;}
+  .vivencias-grid,.vivencias-row2{grid-template-columns:1fr 1fr;}
+  .vivencias,.investment,.waitlist,.testimonials,.faq-wrap{padding:64px 24px;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  footer{padding:44px 24px;}
+}
+@media(max-width:600px){
+  .vivencias-grid,.vivencias-row2{grid-template-columns:1fr 1fr;}
+  .price-card{padding:36px 20px;}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Retiro InLuz</div>
+    <h1>Volta para <em>si mesma</em></h1>
+    <p class="hero-date">30 de Outubro &nbsp;·&nbsp; 02 de Novembro &nbsp;·&nbsp; Barra do Una</p>
+    <a href="#inscricao" class="btn-primary">Quero participar</a>
+    <p style="margin-top:18px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);">✦ Vagas limitadas — turma reduzida para uma vivência íntima</p>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Descubra</span></div>
+</section>
+
+<section class="intro">
+  <div class="intro-text">
+    <div class="section-label">Por que este retiro?</div>
+    <h2>Um convite para desacelerar, <em>curar</em> e florir</h2>
+    <p>Em meio à natureza exuberante do litoral norte de São Paulo, você terá quatro dias inteiramente dedicados ao seu ser — ao seu corpo, à sua mente, à sua essência feminina.</p>
+    <p>O Retiro InLuz é um rito de passagem do Portal InLuz. Uma pausa sagrada onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é.</p>
+    <a href="#vivencias" class="btn-outline" style="margin-top:16px;width:fit-content;">Ver as vivências</a>
+  </div>
+  <div class="intro-image">
+    <img src="images/retiro-inluz/galeria3.jpg" alt="Natureza de Barra do Una">
+  </div>
+</section>
+
+<div class="date-banner">
+  <div class="date-item"><span class="label">Data</span><span class="value">30/10 — 02/11</span></div>
+  <div class="date-item"><span class="label">Local</span><span class="value">Barra do Una, SP</span></div>
+  <div class="date-item"><span class="label">Duração</span><span class="value">4 dias imersivos</span></div>
+  <div class="date-item"><span class="label">Investimento</span><span class="value">R$ 3.200</span></div>
+  <div class="date-item"><span class="label">Faltam</span><span class="value" id="countdown">—</span></div>
+</div>
+
+<section class="vivencias" id="vivencias">
+  <div class="section-header">
+    <div class="section-label">O que você vai vivenciar</div>
+    <h2>Práticas que <em>transformam</em></h2>
+    <p>Cada atividade foi escolhida para criar uma jornada completa de autoconhecimento e cura feminina.</p>
+  </div>
+  <div class="vivencias-grid">
+    <div class="vivencia-card">
+      <img src="images/retiro-inluz/yoga.jpg" alt="Yoga">
+      <div class="vivencia-overlay"><div class="vivencia-icon">🌿</div><div class="vivencia-title">Yoga</div><div class="vivencia-sub">Movimento &amp; respiração</div></div>
+    </div>
+    <div class="vivencia-card">
+      <img src="images/retiro-inluz/natureza104.jpg" alt="Meditações">
+      <div class="vivencia-overlay"><div class="vivencia-icon">🕊</div><div class="vivencia-title">Meditações</div><div class="vivencia-sub">Presença &amp; silêncio interior</div></div>
+    </div>
+    <div class="vivencia-card">
+      <img src="images/retiro-inluz/aromaterapia.jpg" alt="Aromaterapia">
+      <div class="vivencia-overlay"><div class="vivencia-icon">🌸</div><div class="vivencia-title">Aromaterapia</div><div class="vivencia-sub">Rituais de cura ancestral</div></div>
+    </div>
+    <div class="vivencia-card">
+      <img src="images/retiro-inluz/fitoterapia.jpg" alt="Farmácia Natural Caseira">
+      <div class="vivencia-overlay"><div class="vivencia-icon">🍃</div><div class="vivencia-title">Farmácia Natural Caseira</div><div class="vivencia-sub">Empodere sua saúde</div></div>
+    </div>
+  </div>
+  <div class="vivencias-row2">
+    <div class="vivencia-card">
+      <img src="images/retiro-inluz/fitoterapia2.jpg" alt="Fitoterapia">
+      <div class="vivencia-overlay"><div class="vivencia-icon">✨</div><div class="vivencia-title">Fitoterapia Aplicada</div><div class="vivencia-sub">Sabedoria das plantas</div></div>
+    </div>
+    <div class="vivencia-card">
+      <img src="images/retiro-inluz/fogueira.jpg" alt="Roda de Fogueira">
+      <div class="vivencia-overlay"><div class="vivencia-icon">🔥</div><div class="vivencia-title">Roda de Fogueira</div><div class="vivencia-sub">Partilha &amp; conexão</div></div>
+    </div>
+    <div class="vivencia-card" style="background:linear-gradient(135deg,var(--brown),#2a1b0c);">
+      <div class="vivencia-overlay" style="background:linear-gradient(to top,rgba(58,38,16,.95),rgba(58,38,16,.5));"><div class="vivencia-icon">🧠</div><div class="vivencia-title">Reprogramação Mental</div><div class="vivencia-sub">Liberte crenças limitantes</div></div>
+    </div>
+    <div class="vivencia-card">
+      <img src="images/retiro-inluz/natureza111.jpg" alt="Trilhas e Cachoeira">
+      <div class="vivencia-overlay"><div class="vivencia-icon">💧</div><div class="vivencia-title">Trilhas &amp; Cachoeira</div><div class="vivencia-sub">Banho de renovação na natureza</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="place" id="espaco">
+  <div class="place-gallery">
+    <img src="images/retiro-inluz/galeria.jpg" alt="Espaço do retiro">
+    <img src="images/retiro-inluz/natureza114.jpg" alt="Mata Atlântica em Barra do Una">
+  </div>
+  <div class="place-text">
+    <div class="section-label">O espaço</div>
+    <h2>Sama Una — Barra do Una</h2>
+    <p>Cercado pela Mata Atlântica e a poucos passos do mar, o Sama Una é um santuário natural onde cada detalhe foi pensado para você se sentir segura, acolhida e profundamente em paz.</p>
+    <p>Um lar temporário que convida ao descanso real — sem notificações, sem pressa, apenas você, a natureza e o convite do Portal InLuz para se encontrar.</p>
+    <div class="place-features">
+      <div class="place-feature">Natureza exuberante da Mata Atlântica</div>
+      <div class="place-feature">Cachoeira particular no espaço</div>
+      <div class="place-feature">Acomodação aconchegante e compartilhada</div>
+      <div class="place-feature">Alimentação natural inclusa</div>
+      <div class="place-feature">Litoral norte de São Paulo</div>
+    </div>
+  </div>
+</section>
+
+<div style="display:flex;overflow:hidden;height:280px;gap:3px;">
+  <div style="flex:2;overflow:hidden;background:var(--brown);display:flex;align-items:center;justify-content:center;padding:40px;">
+    <div style="text-align:center;max-width:400px;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-style:italic;font-weight:400;color:var(--gold-l);line-height:1.4;margin-bottom:22px;">"Quatro dias que podem mudar a sua relação com você mesma para sempre."</p>
+      <a href="#inscricao" class="btn-primary" style="font-size:.8rem;padding:13px 32px;">Garantir minha vaga</a>
+    </div>
+  </div>
+</div>
+
+<section class="bio">
+  <div class="bio-image-wrap">
+    <div class="bio-image">
+      <img src="images/retiro-inluz/eu.jpg" alt="Mariah Caroline">
+    </div>
+  </div>
+  <div class="bio-text">
+    <div class="section-label">Quem vai guiar você</div>
+    <h2>Mariah Caroline — <em>sua guia nessa jornada</em></h2>
+    <p>Naturóloga, terapeuta integrativa e idealizadora do Portal InLuz, Mariah Caroline dedica sua vida a apoiar mulheres no caminho do autoconhecimento, da saúde integral e da cura.</p>
+    <p>Com anos de prática e pesquisa em Ayurveda, fitoterapia, aromaterapia e medicina natural, ela cria experiências que unem o saber das tradições com as descobertas da ciência moderna.</p>
+    <p>Cada retiro conduzido por Mariah é um espaço seguro onde mulheres se permitem ser inteiramente quem são — com muito amor e cuidado.</p>
+    <div class="bio-creds">
+      <span class="bio-cred">Naturologia</span>
+      <span class="bio-cred">Ayurveda</span>
+      <span class="bio-cred">Fitoterapia</span>
+      <span class="bio-cred">Aromaterapia</span>
+      <span class="bio-cred">Reprogramação Mental</span>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="section-header">
+    <div class="section-label">Quem já viveu</div>
+    <h2>O que as mulheres <em>dizem</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-text">Foi o encontro mais profundo que já tive comigo mesma. Voltei para casa sendo uma versão mais inteira, mais suave e mais poderosa de mim.</p>
+      <div class="testimonial-name">Ana Paula M.</div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">A Mariah tem um dom especial de criar um ambiente seguro onde você se permite soltar o que não serve mais. Cada prática foi transformadora.</p>
+      <div class="testimonial-name">Fernanda R.</div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">Nunca imaginei que quatro dias pudessem mudar tanto a minha relação com meu corpo e com o mundo. Esse retiro é um presente para qualquer mulher.</p>
+      <div class="testimonial-name">Camila T.</div>
+    </div>
+  </div>
+</section>
+
+<section class="investment" id="investimento">
+  <div class="section-label">Investimento</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:400;color:var(--brown);">Seu presente de cuidado</h2>
+  <div class="price-card">
+    <div class="price-tag"><span>R$</span> 3.200</div>
+    <div class="price-label">investimento total por participante</div>
+    <ul class="price-includes">
+      <li>4 dias e 3 noites de imersão completa</li>
+      <li>Todas as práticas: yoga, meditações e vivências</li>
+      <li>Aromaterapia e rituais de cura ancestral</li>
+      <li>Farmácia natural caseira — leve para casa!</li>
+      <li>Aula de Ayurveda aplicada ao dia a dia</li>
+      <li>Reprogramação mental, fogueira e cachoeira</li>
+      <li>Alimentação natural inclusa</li>
+      <li>Materiais e kits das práticas</li>
+    </ul>
+    <a href="#inscricao" class="btn-primary">Garantir minha vaga</a>
+    <p class="price-note">Vagas limitadas para garantir atenção individual.<br>Condições de parcelamento disponíveis — entre em contato.</p>
+    <p style="margin-top:22px;font-size:.78rem;letter-spacing:.06em;color:var(--sage);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;">
+      <span>✦ Atendimento pessoal via WhatsApp</span><span>✦ Resposta em até 24h</span><span>✦ Parcelamento facilitado</span>
+    </p>
+  </div>
+</section>
+
+<section class="faq-wrap">
+  <div class="section-header">
+    <div class="section-label">Dúvidas</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:400;color:var(--brown);">Perguntas frequentes</h2>
+  </div>
+  <div class="faq">
+    <div class="faq-item"><div class="faq-question">O retiro é residencial (com hospedagem)?</div><div class="faq-answer">Sim! O retiro inclui hospedagem no espaço Sama Una em Barra do Una, com todas as refeições e vivências no mesmo local durante os 4 dias.</div></div>
+    <div class="faq-item"><div class="faq-question">O que está incluído no valor de R$ 3.200?</div><div class="faq-answer">Hospedagem (3 noites), alimentação natural durante todo o retiro, todas as práticas e vivências, materiais e kits. Não inclui transporte até o local.</div></div>
+    <div class="faq-item"><div class="faq-question">Preciso ter experiência prévia com yoga ou meditação?</div><div class="faq-answer">Não! O retiro é para mulheres em qualquer estágio. As práticas são adaptadas para iniciantes e praticantes mais experientes.</div></div>
+    <div class="faq-item"><div class="faq-question">Quantas vagas estão disponíveis?</div><div class="faq-answer">As vagas são intencionalmente limitadas para garantir atenção individualizada e a energia íntima que esse encontro merece.</div></div>
+    <div class="faq-item"><div class="faq-question">Como confirmo minha vaga?</div><div class="faq-answer">Preencha o formulário abaixo e a Mariah entrará em contato pelo WhatsApp para confirmar detalhes e condições de pagamento.</div></div>
+    <div class="faq-item"><div class="faq-question">Como chego até Barra do Una?</div><div class="faq-answer">Barra do Una fica no litoral norte de São Paulo, pela Rodovia Rio-Santos (SP-55). Após a inscrição confirmada você recebe todas as informações de acesso.</div></div>
+  </div>
+</section>
+
+<section class="waitlist" id="inscricao">
+  <div style="position:relative;z-index:1;">
+    <div class="section-label">Reservar minha vaga</div>
+    <h2>Este é o seu chamado</h2>
+    <p>Preencha o formulário e a Mariah entrará em contato para confirmar sua participação e todos os detalhes do Retiro InLuz.</p>
+    <div class="form-wrap" id="form-wrap">
+      <div class="form-row">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="tel" id="telefone" placeholder="WhatsApp" required>
+      </div>
+      <input type="email" id="email" placeholder="Seu e-mail" required>
+      <textarea id="mensagem" placeholder="Conte um pouquinho sobre você e o que te motivou a participar... (opcional)"></textarea>
+      <button class="btn-primary" onclick="handleSubmit()">Quero participar do retiro ✦</button>
+      <p style="font-size:.76rem;color:rgba(255,255,255,.7);">🔒 Seus dados estão seguros — a Mariah responde pessoalmente pelo WhatsApp em até 24h.</p>
+    </div>
+    <div class="form-success" id="form-success">
+      🌿 Recebemos seu interesse!<br>
+      <span style="font-family:'Jost',sans-serif;font-size:.95rem;font-weight:300;opacity:.85;">A Mariah entrará em contato em breve pelo WhatsApp.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="logo">Retiro InLuz</span>
+  <p>Mariah Caroline &nbsp;·&nbsp; Naturóloga &nbsp;·&nbsp; Portal InLuz &nbsp;·&nbsp; Guia de Retiros Femininos</p>
+  <p style="margin-top:10px;">
+    <a href="https://mariahcaroline.com" target="_blank">mariahcaroline.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://wa.me/5511992334076" target="_blank">WhatsApp</a>
+  </p>
+  <p style="margin-top:20px;font-size:.73rem;opacity:.4;">© 2026 Mariah Caroline · Portal InLuz · Todos os direitos reservados</p>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="#inscricao">Garantir minha vaga →</a>
+</div>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.addEventListener('click',()=>q.parentElement.classList.toggle('open'));
+});
+const cta=document.getElementById('stickyCta');
+const obs=new IntersectionObserver(([e])=>cta.classList.toggle('visible',!e.isIntersecting),{threshold:.1});
+obs.observe(document.querySelector('.hero'));
+function handleSubmit(){
+  const nome=document.getElementById('nome').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const tel=document.getElementById('telefone').value.trim();
+  if(!nome||!email||!tel){alert('Por favor, preencha nome, e-mail e WhatsApp.');return;}
+  const msg=encodeURIComponent(`Olá Mariah! 🌿\nMeu nome é ${nome} e tenho interesse no Retiro InLuz de 30/10 a 02/11 em Barra do Una.\nE-mail: ${email}\nWhatsApp: ${tel}`);
+  document.getElementById('form-wrap').style.display='none';
+  document.getElementById('form-success').style.display='block';
+  setTimeout(()=>window.open(`https://wa.me/5511992334076?text=${msg}`,'_blank'),800);
+}
+const revEls=document.querySelectorAll('.intro-text,.intro-image,.place-gallery,.place-text,.bio-image-wrap,.bio-text,.vivencia-card,.testimonial-card,.price-card');
+const ro=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';ro.unobserve(e.target);}})},{threshold:.1});
+revEls.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(22px)';el.style.transition='opacity .65s ease,transform .65s ease';ro.observe(el);});
+(function(){
+  var el=document.getElementById('countdown');
+  if(!el)return;
+  var target=new Date('2026-10-30T00:00:00');
+  var diff=Math.ceil((target-new Date())/(1000*60*60*24));
+  el.textContent=diff>0?(diff+' dias'):'Em breve';
+})();
+</script>
+</body>
+</html>
