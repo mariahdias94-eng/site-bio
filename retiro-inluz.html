@@ -190,26 +190,6 @@ footer a:hover{color:var(--gold-l);}
   <div class="scroll-hint"><div class="scroll-line"></div><span>Descubra</span></div>
 </section>
 
-<section class="intro">
-  <div class="intro-text">
-    <h2>Um convite para desacelerar, <em>cuidar</em> e florescer</h2>
-    <p>Em meio à natureza exuberante do litoral norte de São Paulo, você terá quatro dias inteiramente dedicados ao seu ser — ao seu corpo, à sua mente, à sua essência feminina.</p>
-    <p>Uma pausa sagrada onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é.</p>
-    <a href="#vivencias" class="btn-outline" style="margin-top:16px;width:fit-content;">Ver as vivências</a>
-  </div>
-  <div class="intro-image">
-    <img src="images/retiro-inluz/ayurveda-dia-a-dia.jpg" alt="Ayurveda no dia a dia">
-  </div>
-</section>
-
-<div class="date-banner">
-  <div class="date-item"><span class="label">Data</span><span class="value">30/10 — 02/11</span><span style="display:inline-block;margin-top:6px;font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brown);background:linear-gradient(135deg,var(--gold-l),var(--gold-b));padding:5px 16px;border-radius:30px;">Feriado de Finados</span></div>
-  <div class="date-item"><span class="label">Local</span><span class="value">Barra do Una, SP</span></div>
-  <div class="date-item"><span class="label">Duração</span><span class="value">4 dias imersivos</span></div>
-  <div class="date-item"><span class="label">Investimento</span><span class="value">R$ 3.200</span></div>
-  <div class="date-item"><span class="label">Faltam</span><span class="value" id="countdown">—</span></div>
-</div>
-
 <section class="vivencias" id="vivencias">
   <div class="section-header">
     <div class="section-label">O que você vai vivenciar</div>
@@ -253,6 +233,41 @@ footer a:hover{color:var(--gold-l);}
     </div>
   </div>
 </section>
+
+<section class="testimonials">
+  <div class="section-header">
+    <div class="section-label">Quem já viveu</div>
+    <h2>O que as mulheres <em>dizem</em></h2>
+  </div>
+  <div class="depo-carousel">
+    <div class="depo-track">
+      <button class="depo-arrow prev" onclick="navDepo(-1)" aria-label="Depoimento anterior">‹</button>
+      <img id="depo-img" src="images/retiro-inluz/depo/depo1.jpg" alt="Depoimento de uma mulher que viveu o Retiro Inluz">
+      <button class="depo-arrow next" onclick="navDepo(1)" aria-label="Próximo depoimento">›</button>
+    </div>
+    <div class="depo-counter" id="depo-counter"></div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="intro-text">
+    <h2>Um convite para desacelerar, <em>cuidar</em> e florescer</h2>
+    <p>Em meio à natureza exuberante do litoral norte de São Paulo, você terá quatro dias inteiramente dedicados ao seu ser — ao seu corpo, à sua mente, à sua essência feminina.</p>
+    <p>Uma pausa sagrada onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é.</p>
+    <a href="#vivencias" class="btn-outline" style="margin-top:16px;width:fit-content;">Ver as vivências</a>
+  </div>
+  <div class="intro-image">
+    <img src="images/retiro-inluz/ayurveda-dia-a-dia.jpg" alt="Ayurveda no dia a dia">
+  </div>
+</section>
+
+<div class="date-banner">
+  <div class="date-item"><span class="label">Data</span><span class="value">30/10 — 02/11</span><span style="display:inline-block;margin-top:6px;font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brown);background:linear-gradient(135deg,var(--gold-l),var(--gold-b));padding:5px 16px;border-radius:30px;">Feriado de Finados</span></div>
+  <div class="date-item"><span class="label">Local</span><span class="value">Barra do Una, SP</span></div>
+  <div class="date-item"><span class="label">Duração</span><span class="value">4 dias imersivos</span></div>
+  <div class="date-item"><span class="label">Investimento</span><span class="value">R$ 3.200</span></div>
+  <div class="date-item"><span class="label">Faltam</span><span class="value" id="countdown">—</span></div>
+</div>
 
 <section class="place" id="espaco">
   <div class="place-gallery">
@@ -313,21 +328,6 @@ footer a:hover{color:var(--gold-l);}
       <span class="bio-cred">Thetahealing</span>
       <span class="bio-cred">Yoga</span>
     </div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="section-header">
-    <div class="section-label">Quem já viveu</div>
-    <h2>O que as mulheres <em>dizem</em></h2>
-  </div>
-  <div class="depo-carousel">
-    <div class="depo-track">
-      <button class="depo-arrow prev" onclick="navDepo(-1)" aria-label="Depoimento anterior">‹</button>
-      <img id="depo-img" src="images/retiro-inluz/depo/depo1.jpg" alt="Depoimento de uma mulher que viveu o Retiro Inluz">
-      <button class="depo-arrow next" onclick="navDepo(1)" aria-label="Próximo depoimento">›</button>
-    </div>
-    <div class="depo-counter" id="depo-counter"></div>
   </div>
 </section>
 
