@@ -13,19 +13,18 @@ html{scroll-behavior:smooth;font-size:110%;}
 body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;}
 
 .hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:url('images/retiro-inluz/hero-circulo-cristal.jpg') center/cover no-repeat;transform:scale(1.06);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(58,38,16,.25) 0%,rgba(58,38,16,.15) 45%,rgba(58,38,16,.72) 100%);}
-.hero-content{position:relative;z-index:2;text-align:center;padding:0 24px;animation:fadeUp 1.1s ease both;}
+.hero-bg{position:absolute;inset:0;background:url('images/retiro-inluz/hero-circulo-cristal.jpg') center 22%/cover no-repeat;transform:scale(1.04);}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,transparent 22%,rgba(8,2,0,.36) 100%),linear-gradient(180deg,rgba(14,4,0,.52) 0%,rgba(8,2,0,.06) 38%,rgba(8,2,0,.72) 100%);}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 28px;animation:fadeUp 1.1s ease both;max-width:780px;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-.hero-tag{display:inline-block;font-size:1.15rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#fff;padding:13px 38px;border-radius:40px;margin-bottom:26px;background:linear-gradient(135deg,var(--plum) 0%,var(--plum-b) 100%);box-shadow:0 4px 18px rgba(91,45,110,.4);}
-.hero-sub{font-size:1.7rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.94);margin:0 0 34px;font-family:'Cormorant Garamond',serif;font-style:italic;text-shadow:0 2px 20px rgba(0,0,0,.4);position:relative;display:inline-block;padding-bottom:16px;}
-.hero-sub::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-l),transparent);}
-.hero-date strong{font-weight:600;color:var(--gold-l);letter-spacing:.04em;}
-.hero-date .finados-highlight{font-weight:600;font-style:italic;color:rgba(255,255,255,.92);letter-spacing:.04em;}
-.hero-date .place-line{display:block;margin-top:10px;font-size:.86rem;letter-spacing:.2em;}
-.hero h1{font-family:'Parisienne',cursive;font-weight:400;font-size:clamp(4.2rem,11vw,8rem);color:#fff;line-height:1.15;margin-bottom:10px;text-shadow:0 4px 30px rgba(0,0,0,.3);}
-.hero h1 em{font-style:italic;color:var(--gold-l);}
-.hero-date{font-size:.98rem;font-weight:300;letter-spacing:.12em;color:rgba(255,255,255,.88);margin-bottom:36px;text-transform:uppercase;}
+.hero-tag{display:inline-block;font-size:.68rem;font-weight:500;letter-spacing:.48em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.24);}
+.hero h1{font-family:'Parisienne',cursive;font-weight:400;font-size:clamp(4.4rem,12vw,8.6rem);color:#fff;line-height:1.1;margin-bottom:14px;text-shadow:0 2px 40px rgba(0,0,0,.45),0 0 80px rgba(0,0,0,.2);}
+.hero-sub{font-size:1.6rem;font-weight:400;letter-spacing:.04em;color:rgba(255,255,255,.88);margin:0 0 30px;font-family:'Cormorant Garamond',serif;font-style:italic;text-shadow:0 2px 18px rgba(0,0,0,.5);position:relative;display:inline-block;padding-bottom:18px;}
+.hero-sub::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:52px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);}
+.hero-date{font-size:.88rem;font-weight:300;letter-spacing:.15em;color:rgba(255,255,255,.78);margin-bottom:38px;text-transform:uppercase;}
+.hero-date strong{font-weight:400;color:rgba(255,255,255,.92);letter-spacing:.08em;}
+.hero-date .finados-highlight{font-weight:400;font-style:italic;text-transform:none;letter-spacing:.04em;color:rgba(255,255,255,.68);}
+.hero-date .place-line{display:block;margin-top:10px;font-size:.82rem;letter-spacing:.26em;}
 .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--gold-b) 0%,var(--gold) 100%);color:var(--brown);font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:16px 44px;border-radius:50px;border:none;cursor:pointer;transition:background .3s,transform .2s,box-shadow .3s;box-shadow:0 8px 28px rgba(201,152,26,.35);}
 .btn-primary:hover{background:linear-gradient(135deg,var(--gold-l) 0%,var(--gold-b) 100%);transform:translateY(-2px);}
 .btn-outline{display:inline-block;border:2px solid var(--gold);color:var(--gold);font-family:'Jost',sans-serif;font-size:.88rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:14px 40px;border-radius:50px;cursor:pointer;background:transparent;transition:all .3s;}
@@ -183,7 +182,7 @@ footer a:hover{color:var(--gold-l);}
     <div class="hero-tag">Retiro InLuz</div>
     <h1>Reconexão</h1>
     <p class="hero-sub">Autoconhecimento e autocuidado feminino</p>
-    <p class="hero-date"><strong>30 de Outubro À 02 de Novembro</strong> &nbsp;·&nbsp; <span class="finados-highlight">Feriado de Finados</span><span class="place-line">Barra do Una</span></p>
+    <p class="hero-date"><strong>30 de Outubro — 02 de Novembro</strong> <span class="finados-highlight">&nbsp;·&nbsp; Feriado de Finados</span><span class="place-line">Barra do Una · São Paulo</span></p>
     <a href="https://wa.me/5511992334076" target="_blank" class="btn-primary">Quero participar</a>
     <p style="margin-top:18px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);">✦ Grupo Intimista — Até 14 mulheres</p>
   </div>
