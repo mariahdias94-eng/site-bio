@@ -392,7 +392,7 @@ footer a:hover{color:var(--gold-l);}
     <a href="https://wa.me/5511992334076" target="_blank" class="btn-primary">Garantir minha vaga</a>
     <p class="price-note">Vagas limitadas para garantir atenção individual.<br>Condições de parcelamento disponíveis — entre em contato.</p>
     <p style="margin-top:22px;font-size:.78rem;letter-spacing:.06em;color:var(--sage);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;">
-      <span>✦ Atendimento pessoal via WhatsApp</span><span>✦ Resposta em até 24h</span><span>✦ Parcelamento facilitado</span>
+      <span>✦ Atendimento pessoal via WhatsApp</span><span>✦ Parcelamento facilitado</span>
     </p>
   </div>
 </section>
@@ -407,7 +407,6 @@ footer a:hover{color:var(--gold-l);}
     <div class="faq-item"><div class="faq-question">O que está incluído no valor de R$ 3.200?</div><div class="faq-answer">Hospedagem (3 noites), alimentação natural durante todo o retiro, todas as práticas e vivências, materiais e kits. Não inclui transporte até o local.</div></div>
     <div class="faq-item"><div class="faq-question">Preciso ter experiência prévia com yoga ou meditação?</div><div class="faq-answer">Não! O retiro é para mulheres em qualquer estágio. As práticas são adaptadas para iniciantes e praticantes mais experientes.</div></div>
     <div class="faq-item"><div class="faq-question">Quantas vagas estão disponíveis?</div><div class="faq-answer">As vagas são intencionalmente limitadas para garantir atenção individualizada e a energia íntima que esse encontro merece.</div></div>
-    <div class="faq-item"><div class="faq-question">Como confirmo minha vaga?</div><div class="faq-answer">Preencha o formulário abaixo e a Mariah entrará em contato pelo WhatsApp para confirmar detalhes e condições de pagamento.</div></div>
     <div class="faq-item"><div class="faq-question">Como chego até Barra do Una?</div><div class="faq-answer">Barra do Una fica no litoral norte de São Paulo, pela Rodovia Rio-Santos (SP-55). Após a inscrição confirmada você recebe todas as informações de acesso — e disponibilizaremos grupo de caronas e/ou transfer para as mulheres do retiro.</div></div>
   </div>
 </section>
@@ -456,15 +455,20 @@ document.querySelectorAll('.faq-question').forEach(q=>{
 const cta=document.getElementById('stickyCta');
 const obs=new IntersectionObserver(([e])=>cta.classList.toggle('visible',!e.isIntersecting),{threshold:.1});
 obs.observe(document.querySelector('.hero'));
+var SHEETS_URL='COLE_AQUI_A_URL_DO_APPS_SCRIPT';
 function handleSubmit(){
   const nome=document.getElementById('nome').value.trim();
   const email=document.getElementById('email').value.trim();
   const tel=document.getElementById('telefone').value.trim();
+  const mensagem=document.getElementById('mensagem').value.trim();
   if(!nome||!email||!tel){alert('Por favor, preencha nome, e-mail e WhatsApp.');return;}
-  const msg=encodeURIComponent(`Olá Mariah! 🌿\nMeu nome é ${nome} e tenho interesse no Retiro InLuz de 30/10 a 02/11 em Barra do Una.\nE-mail: ${email}\nWhatsApp: ${tel}`);
+  if(SHEETS_URL&&SHEETS_URL!=='COLE_AQUI_A_URL_DO_APPS_SCRIPT'){
+    fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({nome,email,telefone:tel,mensagem})}).catch(()=>{});
+  }
   document.getElementById('form-wrap').style.display='none';
   document.getElementById('form-success').style.display='block';
-  setTimeout(()=>window.open(`https://wa.me/5511992334076?text=${msg}`,'_blank'),800);
+  const msg=encodeURIComponent('Olá Mariah! 🌿\nMeu nome é '+nome+' e tenho interesse no Retiro Inluz de 30/10 a 02/11 em Barra do Una.\nE-mail: '+email+'\nWhatsApp: '+tel);
+  setTimeout(()=>window.open('https://wa.me/5511992334076?text='+msg,'_blank'),800);
 }
 const revEls=document.querySelectorAll('.intro-text,.intro-image,.place-gallery,.place-text,.bio-image-wrap,.bio-text,.vivencia-card,.depo-carousel,.price-card');
 const ro=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';ro.unobserve(e.target);}})},{threshold:.1});
