@@ -455,7 +455,7 @@ document.querySelectorAll('.faq-question').forEach(q=>{
 const cta=document.getElementById('stickyCta');
 const obs=new IntersectionObserver(([e])=>cta.classList.toggle('visible',!e.isIntersecting),{threshold:.1});
 obs.observe(document.querySelector('.hero'));
-var SHEETS_URL='COLE_AQUI_A_URL_DO_APPS_SCRIPT';
+var SHEETS_URL='https://script.google.com/macros/s/AKfycbxq7jS1Q_EtS1-QNAvYdh0MH4nDxIx7zNQMubxJtFGoU68LCqD9Wax7nGAu0sdtylHh/exec';
 function handleSubmit(){
   const nome=document.getElementById('nome').value.trim();
   const email=document.getElementById('email').value.trim();
