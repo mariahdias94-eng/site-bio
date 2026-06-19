@@ -14,47 +14,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--card-bg:#F4EFE7;--cream:#FBF6EE;--gold:#B8946A;--gold-light:#C9A87C;--dark-green:#2C4A3E;--text-dark:#3D2F20;--text-mid:#6B5240;--text-light:#9B8070;--border:rgba(184,148,106,0.3);}
+:root{--card-bg:#F4EFE7;--cream:#FBF6EE;--gold:#B8946A;--gold-light:#C9A87C;--dark-green:#2C4A3E;--text-dark:#3D2F20;--text-mid:#6B5240;--text-light:#9B8070;--border:rgba(184,148,106,0.3);--max-w:880px;}
 html{scroll-behavior:smooth;}
 body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--text-dark);}
 a{color:inherit;text-decoration:none;}
+section{padding:76px 24px;}
+.inner{max-width:var(--max-w);margin:0 auto;}
 
-nav{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:22px 24px;flex-wrap:wrap;gap:12px;}
+nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:22px 24px;flex-wrap:wrap;gap:12px;}
 .logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--gold);}
 .nav-links{display:flex;gap:22px;flex-wrap:wrap;font-size:.86rem;color:var(--text-mid);}
 .nav-links a:hover{color:var(--gold);}
 
-.hero{max-width:1080px;margin:0 auto;padding:40px 24px 60px;display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
-.hero-text{flex:1;min-width:280px;}
-.hero-photo{flex:1;min-width:240px;max-width:380px;}
-.hero-photo img{width:100%;border-radius:18px;object-fit:cover;aspect-ratio:4/5;box-shadow:0 16px 40px rgba(61,47,32,.15);}
+/* HERO — foto grande no estilo Portal InLuz */
+.hero{padding:0;max-width:none;display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;min-height:86vh;}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:56px 8vw 56px 7vw;}
+.hero-photo{position:relative;overflow:hidden;min-height:380px;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 0%,rgba(251,246,238,0) 14%);pointer-events:none;}
 .section-label{font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
-h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.15;margin-bottom:18px;}
+h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.4rem,5.5vw,3.6rem);line-height:1.12;margin-bottom:20px;}
 h1 em{font-style:italic;color:var(--gold);}
-.hero-text p{font-size:1rem;line-height:1.65;color:var(--text-mid);max-width:480px;margin-bottom:24px;}
+.hero-text p{font-size:1.05rem;line-height:1.65;color:var(--text-mid);max-width:480px;margin-bottom:28px;}
 .btn{display:inline-block;background:var(--dark-green);color:#fff;padding:14px 32px;border-radius:30px;font-size:.92rem;letter-spacing:.04em;transition:transform .2s,box-shadow .2s;}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(44,74,62,.25);}
-.btn-outline{display:inline-block;border:1.5px solid var(--gold);color:var(--text-dark);padding:13px 30px;border-radius:30px;font-size:.92rem;}
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-photo{height:58vw;min-height:300px;order:-1;}
+  .hero-photo::after{background:linear-gradient(0deg,var(--cream) 0%,rgba(251,246,238,0) 18%);}
+  .hero-text{padding:40px 28px 44px;}
+}
 
-.services{max-width:1080px;margin:0 auto;padding:40px 24px 70px;}
-.services h2,.about h2,.keywords h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.7rem,3vw,2.2rem);text-align:center;margin-bottom:36px;}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-@media(max-width:880px){.services-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
-.service-card{background:var(--card-bg);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;gap:8px;border:1px solid transparent;transition:border-color .2s,box-shadow .2s,transform .2s;}
-.service-card:hover{border-color:var(--border);box-shadow:0 12px 30px rgba(184,148,106,.15);transform:translateY(-3px);}
-.service-card .icon{font-size:1.6rem;}
-.service-card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.3rem;color:var(--text-dark);}
-.service-card p{font-size:.88rem;line-height:1.5;color:var(--text-mid);flex:1;}
-.service-card span.cta{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);}
+/* PRÁTICAS — cards com imagem, inspirado nas vivências do retiro */
+.practices h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.9rem,3.4vw,2.5rem);text-align:center;margin-bottom:10px;}
+.practices .slead{text-align:center;margin:0 auto 40px;}
+.practices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:1180px;margin:0 auto;}
+.practice-card{position:relative;aspect-ratio:3/4;overflow:hidden;display:block;background:#3A2610;}
+.practice-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s,filter .5s;filter:brightness(.98) saturate(1.05);}
+.practice-card:hover img{transform:scale(1.07);filter:brightness(.9) saturate(1.1);}
+.practice-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(58,38,16,.82) 0%,rgba(58,38,16,.08) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px 20px;}
+.practice-icon{font-size:1.4rem;margin-bottom:7px;}
+.practice-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;color:#fff;line-height:1.2;margin-bottom:4px;}
+.practice-sub{font-size:.74rem;font-weight:300;letter-spacing:.06em;color:rgba(255,255,255,.78);}
+@media(max-width:880px){.practices-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.practices-grid{grid-template-columns:1fr;}}
 
-.about{max-width:780px;margin:0 auto;padding:20px 24px 70px;text-align:center;}
-.about p{font-size:1rem;line-height:1.7;color:var(--text-mid);margin-bottom:14px;}
-.bio-creds{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px;}
-.bio-cred{background:var(--card-bg);border-radius:20px;padding:8px 16px;font-size:.8rem;color:var(--text-mid);}
+.stag{display:block;font-size:.74rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.stitle{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2.35rem;line-height:1.22;color:var(--text-dark);margin-bottom:18px;}
+.stitle em{font-style:italic;color:var(--gold);}
+.slead{font-size:1.04rem;font-weight:300;color:var(--text-mid);line-height:1.78;max-width:640px;}
 
-.keywords{max-width:900px;margin:0 auto;padding:10px 24px 80px;}
-.keywords p{font-size:.86rem;line-height:1.8;color:var(--text-light);text-align:center;}
+/* COMO POSSO TE AJUDAR */
+.sec-problem{background:var(--card-bg);}
+.prob-head{text-align:center;margin-bottom:52px;}
+.prob-head .stitle{font-size:2.1rem;}
+.prob-head .slead{margin:0 auto;text-align:center;}
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:40px;}
+.spec-card{background:var(--cream);border-radius:14px;padding:22px 18px;text-align:center;border:1px solid transparent;transition:border-color .2s,box-shadow .2s;}
+.spec-card:hover{border-color:var(--border);box-shadow:0 4px 18px rgba(184,148,106,.10);}
+.spec-icon{font-size:1.75rem;margin-bottom:10px;display:block;}
+.spec-name{font-size:.91rem;font-weight:500;color:var(--text-dark);line-height:1.4;}
+
+/* SOBRE MIM */
+.sec-about{background:var(--cream);}
+.about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;}
+.about-photo{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--card-bg);}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.about-content .slead{margin-bottom:20px;}
+.cred-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:26px;}
+.cred-list li{display:flex;align-items:flex-start;gap:11px;font-size:.95rem;color:var(--text-dark);line-height:1.5;}
+.cred-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px;}
+@media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:28px;}.about-photo{aspect-ratio:4/3;}}
 
 footer{text-align:center;padding:40px 24px 60px;font-size:.82rem;color:var(--text-light);border-top:1px solid var(--border);max-width:1080px;margin:0 auto;}
 footer .foot-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
@@ -87,68 +117,84 @@ footer a:hover{color:var(--gold);}
   </div>
 </section>
 
-<section class="services">
-  <h2>Como posso te acompanhar</h2>
-  <div class="services-grid">
-    <a class="service-card" href="consultas.html">
-      <div class="icon">🌿</div>
-      <h3>Consultas</h3>
-      <p>Naturologia e ginecologia natural online — tratamento natural para menopausa, endometriose, SOP, cólica e infecção urinária.</p>
-      <span class="cta">Ver consultas →</span>
+<section class="practices">
+  <div class="section-label" style="text-align:center;">Como posso te acompanhar</div>
+  <h2>Um cuidado para <em style="font-style:italic;color:var(--gold);">cada momento</em> da sua jornada</h2>
+  <p class="slead">Da consulta individual ao retiro presencial — cada caminho criado para tratar a causa raiz da sua saúde.</p>
+  <div class="practices-grid">
+    <a class="practice-card" href="consultas.html">
+      <img src="images/retiro-inluz/fitoterapia.jpg" alt="Consultas de Naturologia — ginecologia natural e fitoterapia">
+      <div class="practice-overlay"><div class="practice-icon">🌿</div><div class="practice-title">Consultas</div><div class="practice-sub">Ginecologia natural &amp; fitoterapia</div></div>
     </a>
-    <a class="service-card" href="retiro-inluz.html">
-      <div class="icon">🌾</div>
-      <h3>Retiro Feminino InLuz</h3>
-      <p>Retiro para mulheres em Barra do Una: 4 dias de imersão com yoga, rituais e reconexão com a natureza feminina.</p>
-      <span class="cta">Ver retiro →</span>
+    <a class="practice-card" href="retiro-inluz.html">
+      <img src="images/retiro-inluz/natureza114.jpg" alt="Retiro Feminino InLuz — retiro para mulheres em Barra do Una">
+      <div class="practice-overlay"><div class="practice-icon">🌾</div><div class="practice-title">Retiro Feminino InLuz</div><div class="practice-sub">Retiros para mulheres em Barra do Una</div></div>
     </a>
-    <a class="service-card" href="ciclo-resgate-saude.html">
-      <div class="icon">🔄</div>
-      <h3>Ciclo de Resgate da Saúde</h3>
-      <p>Programa de 3 meses com fitoterapia e mentalidade para dores e doenças crônicas femininas.</p>
-      <span class="cta">Conhecer o ciclo →</span>
+    <a class="practice-card" href="ciclo-resgate-saude.html">
+      <img src="images/retiro-inluz/reprogramacao-mental.jpg" alt="Ciclo de Resgate da Saúde — tratamento natural para menopausa, endometriose e SOP">
+      <div class="practice-overlay"><div class="practice-icon">🔄</div><div class="practice-title">Ciclo de Resgate da Saúde</div><div class="practice-sub">Menopausa, endometriose &amp; SOP</div></div>
     </a>
-    <a class="service-card" href="lista-espera.html">
-      <div class="icon">✨</div>
-      <h3>Portal InLuz</h3>
-      <p>Saúde integrativa feminina unindo naturologia, mentalidade e neurociência em um só lugar.</p>
-      <span class="cta">Entrar na lista →</span>
+    <a class="practice-card" href="lista-espera.html">
+      <img src="images/retiro-inluz/retiros-passados/ritual-luz.jpg" alt="Portal InLuz — saúde integrativa, mentalidade e neurociência">
+      <div class="practice-overlay"><div class="practice-icon">✨</div><div class="practice-title">Portal InLuz</div><div class="practice-sub">Mentalidade &amp; neurociência</div></div>
     </a>
-    <a class="service-card" href="detox-ayurvedico.html">
-      <div class="icon">🍃</div>
-      <h3>Detox Ayurvédico</h3>
-      <p>7 dias de desintoxicação natural com plantas medicinais e preparados caseiros.</p>
-      <span class="cta">Fazer o detox →</span>
+    <a class="practice-card" href="detox-ayurvedico.html">
+      <img src="images/retiro-inluz/ayurveda-dia-a-dia.jpg" alt="Detox Ayurvédico — plantas medicinais e preparados caseiros">
+      <div class="practice-overlay"><div class="practice-icon">🍃</div><div class="practice-title">Detox Ayurvédico</div><div class="practice-sub">Plantas medicinais &amp; preparados caseiros</div></div>
     </a>
-    <a class="service-card" href="youtube.html">
-      <div class="icon">▶</div>
-      <h3>Canal no YouTube</h3>
-      <p>Conteúdos gratuitos sobre saúde feminina natural, fitoterapia e mentalidade.</p>
-      <span class="cta">Ver vídeos →</span>
+    <a class="practice-card" href="youtube.html">
+      <img src="images/retiro-inluz/yoga.jpg" alt="Canal no YouTube — conteúdo gratuito sobre saúde feminina natural">
+      <div class="practice-overlay"><div class="practice-icon">▶</div><div class="practice-title">Canal no YouTube</div><div class="practice-sub">Conteúdo gratuito sobre saúde feminina</div></div>
     </a>
   </div>
 </section>
 
-<section class="about">
-  <div class="section-label">Quem te acompanha</div>
-  <h2>Mariah Caroline</h2>
-  <p>Naturóloga especializada em saúde integral feminina, com foco em três pilares: saúde, autoconhecimento e espiritualidade. Acredito que tratar a causa raiz dos sintomas — e não apenas os sintomas — é o caminho para uma transformação real e duradoura.</p>
-  <div class="bio-creds">
-    <span class="bio-cred">Naturologia</span>
-    <span class="bio-cred">Ginecologia Natural</span>
-    <span class="bio-cred">Ayurveda</span>
-    <span class="bio-cred">Fitoterapia</span>
-    <span class="bio-cred">Plantas Medicinais</span>
-    <span class="bio-cred">Aromaterapia</span>
-    <span class="bio-cred">Thetahealing</span>
-    <span class="bio-cred">Reprogramação Mental</span>
-    <span class="bio-cred">Neurociência</span>
-    <span class="bio-cred">Yoga</span>
+<!-- COMO POSSO TE AJUDAR -->
+<section class="sec-problem">
+  <div class="inner">
+    <span class="stag">Especialidades</span>
+    <h2 class="stitle">Como posso <em>te ajudar</em></h2>
+    <p class="slead">Com formação em Naturologia, Ayurveda, Ginecologia Natural e Thetahealing, atendo mulheres em diferentes fases da vida.</p>
+    <div class="spec-grid">
+      <div class="spec-card"><span class="spec-icon">🩺</span><span class="spec-name">Saúde Ginecológica</span></div>
+      <div class="spec-card"><span class="spec-icon">🌾</span><span class="spec-name">Distúrbios Gastrointestinais</span></div>
+      <div class="spec-card"><span class="spec-icon">🌸</span><span class="spec-name">Fertilidade</span></div>
+      <div class="spec-card"><span class="spec-icon">🤱</span><span class="spec-name">Pré e Pós-parto</span></div>
+      <div class="spec-card"><span class="spec-icon">🧘‍♀️</span><span class="spec-name">Saúde Mental</span></div>
+      <div class="spec-card"><span class="spec-icon">🔄</span><span class="spec-name">Infecções de Repetição</span></div>
+      <div class="spec-card"><span class="spec-icon">⚖️</span><span class="spec-name">Emagrecimento e Síndrome Metabólica</span></div>
+      <div class="spec-card"><span class="spec-icon">💪</span><span class="spec-name">Dores e Doenças Crônicas</span></div>
+      <div class="spec-card"><span class="spec-icon">🥗</span><span class="spec-name">Terapia Nutricional</span></div>
+      <div class="spec-card"><span class="spec-icon">🌙</span><span class="spec-name">Menopausa</span></div>
+      <div class="spec-card"><span class="spec-icon">🌊</span><span class="spec-name">Ciclos Femininos</span></div>
+      <div class="spec-card"><span class="spec-icon">🧬</span><span class="spec-name">Doenças Degenerativas</span></div>
+    </div>
   </div>
 </section>
 
-<section class="keywords">
-  <p>Tratamentos naturais para menopausa, endometriose, síndrome do ovário policístico (SOP), ansiedade, dermatite, infecção urinária, candidíase de repetição, cólica, dor de cabeça, enxaqueca e fertilidade — através de ginecologia natural, fitoterapia, plantas medicinais, preparados caseiros, mentalidade e neurociência aplicada à saúde feminina.</p>
+<!-- SOBRE MIM -->
+<section class="sec-about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="images/retiro-inluz/eu.jpg" alt="Mariah Caroline" loading="lazy">
+      </div>
+      <div class="about-content">
+        <span class="stag">Sobre mim</span>
+        <h2 class="stitle">Mariah Caroline,<br><em>Naturóloga</em></h2>
+        <p class="slead">Sou Mariah Caroline, Naturóloga especializada em saúde da mulher, Ayurveda, Yoga, Fitoterapia e Comportamento. Uno a ciência moderna aos saberes tradicionais ancestrais para te ajudar a recuperar sua saúde, seu autoconhecimento e seu equilíbrio — de dentro para fora.</p>
+        <p class="slead" style="margin-top:16px">Nas minhas consultas, retiros e programas, não trato apenas sintomas isolados. Faço uma análise completa da sua saúde — física, mental e emocional — para encontrar a causa raiz do desequilíbrio e criar um plano real e personalizado para você.</p>
+        <ul class="cred-list">
+          <li>Graduação em Naturologia — Unisul</li>
+          <li>Especialização em Ginecologia Natural — IGN</li>
+          <li>Especialização em Ayurveda</li>
+          <li>Certificação em Thetahealing</li>
+          <li>Formação em Desenvolvimento Mental e Comportamental</li>
+          <li>Formação em YogaTerapia (múltiplas modalidades)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
