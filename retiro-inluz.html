@@ -205,16 +205,9 @@ footer a:hover{color:var(--gold-l);}
   .vivencias-grid,.vivencias-row2{grid-template-columns:1fr 1fr;}
   .price-card{padding:36px 20px;}
 }
-
-.leva-list{list-style:none;max-width:560px;margin:40px auto 0;display:flex;flex-direction:column;gap:14px;}
-.leva-list li{display:flex;gap:12px;font-size:1rem;font-weight:300;color:var(--muted);line-height:1.6;}
-.leva-list li::before{content:'✦';color:var(--gold);flex-shrink:0;}
-.leva-list li strong{color:var(--brown);font-weight:500;}
-
 </style>
 </head>
 <body>
-
 
 <section class="hero">
   <div class="hero-bg"></div>
@@ -228,51 +221,6 @@ footer a:hover{color:var(--gold-l);}
   </div>
   <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn-primary hero-btn-bottom">Quero participar</a>
   <div class="scroll-hint"><div class="scroll-line"></div><span>Descubra</span></div>
-</section>
-
-<div class="date-banner">
-  <div class="date-item"><span class="label">Data</span><span class="value">30/10 — 02/11</span><span style="display:block;margin-top:6px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;letter-spacing:.05em;color:rgba(253,249,244,.8);">Feriado de Finados</span></div>
-  <div class="date-item"><span class="label">Local</span><span class="value">Barra do Una, SP</span></div>
-  <div class="date-item"><span class="label">Duração</span><span class="value">4 dias imersivos</span></div>
-  <div class="date-item"><span class="label">Investimento</span><span class="value">R$ 3.200</span></div>
-  <div class="date-item"><span class="label">Vagas</span><span class="value" style="color:var(--gold-l);">Limitadas</span></div>
-  <div class="date-item"><span class="label">Faltam</span><span class="value" id="countdown">—</span></div>
-</div>
-
-<section class="intro" id="sobre">
-  <div class="intro-text">
-    <div class="section-label">O que é o Retiro InLuz</div>
-    <h2>Um convite para desacelerar, <em>cuidar</em> e florescer</h2>
-    <p>Em meio à natureza exuberante do litoral norte de São Paulo, você terá quatro dias inteiramente dedicados ao seu ser — ao seu corpo, à sua mente, à sua essência feminina.</p>
-    <p>Uma pausa sagrada onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é. Aqui você vai:</p>
-    <div class="place-features">
-      <div class="place-feature">Desacelerar de verdade, sem culpa e sem pressa</div>
-      <div class="place-feature">Reconectar com seu corpo e sua intuição feminina</div>
-      <div class="place-feature">Soltar o que pesa através de rituais e práticas guiadas</div>
-      <div class="place-feature">Aprender ferramentas naturais para levar para o dia a dia</div>
-      <div class="place-feature">Criar laços genuínos com outras mulheres</div>
-    </div>
-    <a href="#vivencias" class="btn-outline" style="margin-top:24px;width:fit-content;">Ver as vivências</a>
-  </div>
-  <div class="intro-image">
-    <img src="images/retiro-inluz/ayurveda-dia-a-dia.jpg" alt="Ayurveda no dia a dia">
-  </div>
-</section>
-
-<section id="para-quem" style="padding:90px 56px;background:var(--bg2);">
-  <div class="section-header">
-    <div class="section-label">Para quem é</div>
-    <h2>Este retiro é <em>para você</em></h2>
-    <p>O Retiro InLuz é para mulheres que sentem o chamado de parar, olhar para dentro e se cuidar — em qualquer fase da vida.</p>
-  </div>
-  <div class="place-features" style="max-width:560px;margin:0 auto;gap:14px;">
-    <div class="place-feature">Você sente que está no automático, cuidando de tudo e de todos, menos de si</div>
-    <div class="place-feature">Está em um momento de transição e precisa de clareza para os próximos passos</div>
-    <div class="place-feature">Busca ferramentas reais de autocuidado, não apenas teoria</div>
-    <div class="place-feature">Quer se reconectar com o seu corpo, seu ciclo e sua intuição</div>
-    <div class="place-feature">Sente saudade de um espaço seguro para se abrir e ser ouvida</div>
-  </div>
-  <p style="text-align:center;max-width:520px;margin:32px auto 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--muted);">Se você se reconheceu em pelo menos uma dessas frases, esse convite é para você.</p>
 </section>
 
 <section class="vivencias" id="vivencias">
@@ -319,49 +267,40 @@ footer a:hover{color:var(--gold-l);}
   </div>
 </section>
 
-<section id="voce-leva" style="padding:90px 56px;background:var(--warm);">
+<section class="testimonials">
   <div class="section-header">
-    <div class="section-label">Ao participar, você leva</div>
-    <h2>Mais do que <em>memórias</em></h2>
+    <div class="section-label">Quem já viveu</div>
+    <h2>O que as mulheres <em>dizem</em></h2>
   </div>
-  <ul class="leva-list">
-    <li><strong>Clareza</strong> sobre o momento de vida em que você está e os próximos passos</li>
-    <li><strong>Ferramentas naturais</strong> de saúde e autocuidado para usar no seu dia a dia</li>
-    <li><strong>Alívio</strong> do que estava represado — emocional e físico</li>
-    <li><strong>Novas amizades</strong> genuínas com mulheres no mesmo caminho</li>
-    <li><strong>Rituais e práticas</strong> que você pode repetir sozinha depois do retiro</li>
-    <li><strong>Um novo ponto de partida</strong> — mais leve, mais inteira, mais você</li>
-  </ul>
+  <div class="depo-carousel">
+    <div class="depo-track">
+      <button class="depo-arrow prev" onclick="navDepo(-1)" aria-label="Depoimento anterior">‹</button>
+      <img id="depo-img" src="images/retiro-inluz/depo/depo1.jpg" alt="Depoimento de uma mulher que viveu o Retiro Inluz">
+      <button class="depo-arrow next" onclick="navDepo(1)" aria-label="Próximo depoimento">›</button>
+    </div>
+    <div class="depo-counter" id="depo-counter"></div>
+  </div>
 </section>
 
-<section class="transformacao">
-  <div class="section-header">
-    <div class="section-label">A jornada</div>
-    <h2>Uma transformação <em>real</em></h2>
+<section class="intro">
+  <div class="intro-text">
+    <h2>Um convite para desacelerar, <em>cuidar</em> e florescer</h2>
+    <p>Em meio à natureza exuberante do litoral norte de São Paulo, você terá quatro dias inteiramente dedicados ao seu ser — ao seu corpo, à sua mente, à sua essência feminina.</p>
+    <p>Uma pausa sagrada onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é.</p>
+    <a href="#vivencias" class="btn-outline" style="margin-top:16px;width:fit-content;">Ver as vivências</a>
   </div>
-  <div class="transformacao-grid">
-    <div class="transf-col transf-antes">
-      <div class="transf-titulo">Como você provavelmente chega</div>
-      <ul>
-        <li>Cansada e sobrecarregada</li>
-        <li>Com a mente cheia e o corpo esquecido</li>
-        <li>Sem espaço real para cuidar de si</li>
-        <li>Desconectada do seu próprio ritmo</li>
-        <li>Com saudade de algo que mal consegue nomear</li>
-      </ul>
-    </div>
-    <div class="transf-col transf-depois">
-      <div class="transf-titulo">Como muitas mulheres voltam</div>
-      <ul>
-        <li>Mais leve e inteira</li>
-        <li>Com ferramentas concretas para cuidar de si</li>
-        <li>Reconectada com o seu corpo e seu ritmo</li>
-        <li>Com novas amizades genuínas e profundas</li>
-        <li>Pronta para florescer no dia a dia</li>
-      </ul>
-    </div>
+  <div class="intro-image">
+    <img src="images/retiro-inluz/ayurveda-dia-a-dia.jpg" alt="Ayurveda no dia a dia">
   </div>
 </section>
+
+<div class="date-banner">
+  <div class="date-item"><span class="label">Data</span><span class="value">30/10 — 02/11</span><span style="display:block;margin-top:6px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;letter-spacing:.05em;color:rgba(253,249,244,.8);">Feriado de Finados</span></div>
+  <div class="date-item"><span class="label">Local</span><span class="value">Barra do Una, SP</span></div>
+  <div class="date-item"><span class="label">Duração</span><span class="value">4 dias imersivos</span></div>
+  <div class="date-item"><span class="label">Investimento</span><span class="value">R$ 3.200</span></div>
+  <div class="date-item"><span class="label">Faltam</span><span class="value" id="countdown">—</span></div>
+</div>
 
 <section class="place" id="espaco">
   <div class="place-gallery">
@@ -402,27 +341,6 @@ footer a:hover{color:var(--gold-l);}
   </div>
 </div>
 
-<section class="investment" id="investimento">
-  <div class="section-label">Investimento</div>
-  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:400;color:var(--warm);position:relative;z-index:1;">Seu presente de cuidado</h2>
-  <div class="price-card">
-    <div class="price-tag"><span>R$</span> 3.200</div>
-    <div class="price-label">investimento total por participante</div>
-    <ul class="price-includes">
-      <li>4 dias e 3 noites de imersão completa</li>
-      <li>Hospedagem</li>
-      <li>Alimentação detox inclusa</li>
-      <li>Todas as práticas: yoga, meditações e vivências</li>
-      <li>Todos os materiais utilizados</li>
-    </ul>
-    <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn-primary">Garantir minha vaga</a>
-    <p class="price-note">Vagas limitadas para garantir atenção individual.<br>Condições de parcelamento disponíveis — entre em contato.</p>
-    <p style="margin-top:22px;font-size:.78rem;letter-spacing:.06em;color:var(--sage);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;">
-      <span>✦ Atendimento pessoal via WhatsApp</span><span>✦ Parcelamento facilitado</span>
-    </p>
-  </div>
-</section>
-
 <section class="bio">
   <div class="bio-image-wrap">
     <div class="bio-image">
@@ -446,18 +364,32 @@ footer a:hover{color:var(--gold-l);}
   </div>
 </section>
 
-<section class="testimonials">
+<section class="transformacao">
   <div class="section-header">
-    <div class="section-label">Quem já viveu</div>
-    <h2>O que as mulheres <em>dizem</em></h2>
+    <div class="section-label">A jornada</div>
+    <h2>Uma transformação <em>real</em></h2>
   </div>
-  <div class="depo-carousel">
-    <div class="depo-track">
-      <button class="depo-arrow prev" onclick="navDepo(-1)" aria-label="Depoimento anterior">‹</button>
-      <img id="depo-img" src="images/retiro-inluz/depo/depo1.jpg" alt="Depoimento de uma mulher que viveu o Retiro Inluz">
-      <button class="depo-arrow next" onclick="navDepo(1)" aria-label="Próximo depoimento">›</button>
+  <div class="transformacao-grid">
+    <div class="transf-col transf-antes">
+      <div class="transf-titulo">Como você provavelmente chega</div>
+      <ul>
+        <li>Cansada e sobrecarregada</li>
+        <li>Com a mente cheia e o corpo esquecido</li>
+        <li>Sem espaço real para cuidar de si</li>
+        <li>Desconectada do seu próprio ritmo</li>
+        <li>Com saudade de algo que mal consegue nomear</li>
+      </ul>
     </div>
-    <div class="depo-counter" id="depo-counter"></div>
+    <div class="transf-col transf-depois">
+      <div class="transf-titulo">Como muitas mulheres voltam</div>
+      <ul>
+        <li>Mais leve e inteira</li>
+        <li>Com ferramentas concretas para cuidar de si</li>
+        <li>Reconectada com o seu corpo e seu ritmo</li>
+        <li>Com novas amizades genuínas e profundas</li>
+        <li>Pronta para florescer no dia a dia</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -485,6 +417,27 @@ footer a:hover{color:var(--gold-l);}
     <img id="lightbox-img2" src="" alt="Retiro InLuz — memórias">
     <button class="lightbox-arrow next" onclick="navLightbox2(1)" aria-label="Próxima foto">›</button>
     <div class="lightbox-counter" id="lightbox-counter2"></div>
+  </div>
+</section>
+
+<section class="investment" id="investimento">
+  <div class="section-label">Investimento</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:400;color:var(--warm);position:relative;z-index:1;">Seu presente de cuidado</h2>
+  <div class="price-card">
+    <div class="price-tag"><span>R$</span> 3.200</div>
+    <div class="price-label">investimento total por participante</div>
+    <ul class="price-includes">
+      <li>4 dias e 3 noites de imersão completa</li>
+      <li>Hospedagem</li>
+      <li>Alimentação detox inclusa</li>
+      <li>Todas as práticas: yoga, meditações e vivências</li>
+      <li>Todos os materiais utilizados</li>
+    </ul>
+    <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn-primary">Garantir minha vaga</a>
+    <p class="price-note">Vagas limitadas para garantir atenção individual.<br>Condições de parcelamento disponíveis — entre em contato.</p>
+    <p style="margin-top:22px;font-size:.78rem;letter-spacing:.06em;color:var(--sage);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;">
+      <span>✦ Atendimento pessoal via WhatsApp</span><span>✦ Parcelamento facilitado</span>
+    </p>
   </div>
 </section>
 
@@ -567,7 +520,7 @@ function openLightbox2(i){lightboxIndex2=i;updateLightbox2();document.getElement
 function closeLightbox2(){document.getElementById('passado-lightbox').classList.remove('open');}
 function navLightbox2(dir){lightboxIndex2=(lightboxIndex2+dir+passadosPhotos.length)%passadosPhotos.length;updateLightbox2();}
 function updateLightbox2(){document.getElementById('lightbox-img2').src=passadosPhotos[lightboxIndex2];document.getElementById('lightbox-counter2').textContent=(lightboxIndex2+1)+' / '+passadosPhotos.length;}
-const revEls=document.querySelectorAll('.intro-text,.intro-image,.place-gallery,.place-text,.bio-image-wrap,.bio-text,.vivencia-card,.depo-carousel,.price-card,.retiros-passados .section-header,.past-gallery,#para-quem .section-header,#para-quem .place-features,#voce-leva .section-header,#voce-leva .leva-list');
+const revEls=document.querySelectorAll('.intro-text,.intro-image,.place-gallery,.place-text,.bio-image-wrap,.bio-text,.vivencia-card,.depo-carousel,.price-card,.retiros-passados .section-header,.past-gallery');
 const ro=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';ro.unobserve(e.target);}})},{threshold:.1});
 revEls.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(22px)';el.style.transition='opacity .65s ease,transform .65s ease';ro.observe(el);});
 (function(){
