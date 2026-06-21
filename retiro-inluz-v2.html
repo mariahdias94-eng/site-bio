@@ -7,113 +7,117 @@
 <meta name="description" content="Retiro feminino de 4 dias em Barra do Una, SP: terapias naturais, yoga, rituais e vivências para mulheres que buscam reconexão, saúde integral e cura emocional. Vagas limitadas.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--warm:#FDF9F4;--bg2:#F5EFE4;--brown:#3A2610;--text:#2E1A08;--muted:#6B4E2A;--gold:#C9981A;--gold-l:#F5D060;--plum:#5B2D6E;--plum-b:#7B3D92;--sage:#6B8E6E;--border:rgba(201,152,26,.22);}
+/* Paleta extraída do CSS real da pagina de referencia (Sucesso com Alma Experience) */
+:root{
+  --purple:#812F7A;
+  --pink:#FD9FC9;
+  --cream:#FFF8EB;
+  --cream-text:#EEEAE7;
+  --dark:#383B2A;
+  --green:#77B255;
+}
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;font-size:110%;}
-body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--purple);overflow-x:hidden;}
+
+/* BOTÃO — replica exata do estilo: fundo roxo, borda branca deslocada (baixo/direita), radius 50px */
+.btn{
+  display:inline-block;background:var(--purple);color:#fff;
+  font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;
+  text-decoration:none;text-align:center;
+  border-style:solid;border-width:0 5px 5px 0;border-color:#fff;
+  border-radius:50px;padding:20px 40px;
+  transition:transform .2s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(129,47,122,.35);}
 
 /* HERO */
-.hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:url('images/retiro-inluz/hero-circulo-cristal.jpg') center 22%/cover no-repeat;transform:scale(1.04);filter:brightness(1.1) contrast(1.1) saturate(1.2);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,4,0,.5) 0%,rgba(10,4,0,.22) 38%,rgba(10,4,0,.3) 62%,rgba(10,4,0,.62) 100%);}
-.hero-content{position:relative;z-index:2;text-align:center;padding:28px;max-width:780px;animation:fadeUp 1.1s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-.hero-eyebrow{font-size:clamp(.82rem,2vw,1.05rem);font-weight:500;letter-spacing:.36em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:18px;text-shadow:0 1px 8px rgba(0,0,0,.9),0 0 28px rgba(190,110,240,.4),0 0 60px rgba(150,60,210,.2);}
-.hero h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(4.4rem,12vw,8.5rem);color:#fff;line-height:1.05;margin-bottom:20px;text-shadow:0 2px 30px rgba(0,0,0,.55),0 4px 64px rgba(0,0,0,.3);}
-.hero h1 em{font-style:italic;color:var(--gold-l);}
-.hero-sub{font-size:1.4rem;font-weight:400;letter-spacing:.02em;color:rgba(255,255,255,.95);margin:0 auto 26px;max-width:560px;font-family:'Cormorant Garamond',serif;font-style:italic;text-shadow:0 2px 16px rgba(0,0,0,.6);line-height:1.5;}
-.hero-date{font-size:.84rem;font-weight:300;letter-spacing:.14em;color:rgba(255,255,255,.88);margin:0 0 30px;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.55);}
-.hero-date strong{font-weight:400;color:#fff;letter-spacing:.08em;}
-.hero-date .place-line{display:block;margin-top:8px;font-size:.8rem;letter-spacing:.24em;color:rgba(255,255,255,.7);}
-.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--plum) 0%,var(--plum-b) 100%);color:#fff;font-family:'Jost',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:16px 44px;border-radius:50px;border:none;cursor:pointer;transition:background .3s,transform .2s,box-shadow .3s;box-shadow:0 8px 28px rgba(91,45,110,.45);}
-.btn-primary:hover{background:linear-gradient(135deg,var(--plum-b) 0%,#9b4dbd 100%);transform:translateY(-2px);box-shadow:0 12px 36px rgba(91,45,110,.55);}
-.btn-outline{display:inline-block;border:2px solid var(--gold);color:var(--gold);font-family:'Jost',sans-serif;font-size:.88rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:14px 40px;border-radius:50px;cursor:pointer;background:transparent;transition:all .3s;}
-.btn-outline:hover{background:var(--gold);color:#fff;}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center;}
+.hero-bg{position:absolute;inset:0;background:url('images/retiro-inluz/hero-circulo-cristal.jpg') center 22%/cover no-repeat;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(56,20,52,.55) 0%,rgba(129,47,122,.35) 45%,rgba(56,20,52,.72) 100%);}
+.hero-inner{position:relative;z-index:2;max-width:760px;padding:60px 28px 40px;}
+.hero-title{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:700;color:var(--cream-text);line-height:1.15;margin-bottom:22px;text-shadow:0 4px 28px rgba(0,0,0,.45);}
+.hero-title em{font-style:normal;color:var(--pink);}
+.hero-sub{font-size:22px;font-weight:400;line-height:1.45;color:var(--cream-text);max-width:600px;margin:0 auto 30px;text-shadow:0 2px 14px rgba(0,0,0,.4);}
+.hero-info{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:32px;}
+.hero-info li{font-size:20px;font-weight:400;color:var(--cream-text);text-transform:uppercase;letter-spacing:.02em;}
+.hero-info li b{font-weight:700;color:#fff;}
 
-/* INFORMAÇÕES PRÁTICAS + URGÊNCIA */
-.pratico{background:var(--brown);padding:38px 24px;text-align:center;}
-.pratico-vagas{font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);margin-bottom:22px;}
-.date-banner{display:flex;flex-wrap:wrap;justify-content:center;gap:32px 64px;margin-bottom:26px;}
-.date-item{display:flex;flex-direction:column;gap:4px;text-align:center;}
-.date-item .label{font-size:.67rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(253,249,244,.62);font-weight:400;}
-.date-item .value{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:var(--warm);}
+/* TICKER VAGAS LIMITADAS */
+.ticker-wrap{background:var(--purple);overflow:hidden;padding:14px 0;white-space:nowrap;}
+.ticker{display:inline-block;animation:ticker-scroll 16s linear infinite;}
+.ticker span{display:inline-block;color:var(--pink);font-weight:700;font-size:18px;letter-spacing:.04em;padding:0 28px;text-transform:uppercase;}
+@keyframes ticker-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* SECTIONS GENERIC */
-section{padding:90px 56px;}
-.section-header{text-align:center;margin-bottom:56px;max-width:640px;margin-left:auto;margin-right:auto;}
-.section-label{font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
-.section-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:400;color:var(--brown);line-height:1.2;}
-.section-header h2 em{font-style:italic;color:var(--plum-b);}
-.section-header p{margin-top:14px;font-size:1rem;font-weight:300;color:var(--muted);line-height:1.75;}
+/* SECTIONS GENERAL */
+section{padding:100px 24px;}
+.wrap{max-width:760px;margin:0 auto;text-align:center;}
+.eyebrow{font-size:24px;font-weight:600;text-transform:uppercase;color:var(--purple);margin-bottom:18px;letter-spacing:.01em;}
+.eyebrow.on-dark{color:var(--cream-text);}
+.heading{font-size:38px;font-weight:700;line-height:1.2em;color:var(--purple);margin-bottom:10px;}
+.heading em{font-style:normal;color:var(--pink);}
+.heading.on-dark{color:var(--cream-text);}
+.tagline{font-size:22px;font-weight:400;line-height:1.3em;color:var(--purple);margin-bottom:34px;}
+.body-text{font-size:20px;font-weight:400;line-height:1.5em;color:var(--purple);margin-bottom:18px;}
+.body-text.on-dark{color:var(--cream-text);}
 
-/* O QUE É + PARA QUEM (bullet feature lists) */
-.feat-list{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:13px;}
-.feat-item{display:flex;align-items:center;gap:12px;font-size:.96rem;color:var(--muted);line-height:1.5;}
-.feat-item::before{content:'';display:block;width:20px;height:1px;background:var(--gold);flex-shrink:0;}
-.feat-closing{text-align:center;max-width:520px;margin:32px auto 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--muted);}
+/* LISTAS (Aqui você vai / Para você que) — bullet simples roxo */
+.feat-list{list-style:none;max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;text-align:left;}
+.feat-list li{font-size:20px;font-weight:400;line-height:1.3em;color:var(--purple);display:flex;gap:14px;}
+.feat-list li::before{content:'—';color:var(--pink);font-weight:700;flex-shrink:0;}
 
-/* O QUE VOCÊ VAI EXPERIENCIAR (galeria) */
-.vivencias-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;max-width:1100px;margin:0 auto;}
-.vivencia-card{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;background:#3A2610;}
-.vivencia-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s,filter .5s;filter:brightness(.98) saturate(1.05);}
-.vivencia-card:hover img{transform:scale(1.07);filter:brightness(.92) saturate(1.1);}
-.vivencia-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(58,38,16,.78) 0%,rgba(58,38,16,.04) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 16px;}
-.vivencia-icon{font-size:1.3rem;margin-bottom:6px;}
-.vivencia-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;color:#fff;line-height:1.2;}
-.vivencia-sub{font-size:.66rem;font-weight:300;letter-spacing:.08em;color:rgba(255,255,255,.72);text-transform:uppercase;}
-.vivencias-row2{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;max-width:1100px;margin:3px auto 0;}
+/* LISTA "AO PARTICIPAR VOCÊ LEVA" — check verde, igual ao original */
+.check-list{list-style:none;max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:16px;text-align:left;}
+.check-list li{font-size:20px;font-weight:400;line-height:1.3em;color:var(--purple);display:flex;gap:14px;align-items:flex-start;}
+.check-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:18px;flex-shrink:0;margin-top:2px;}
 
-/* AO PARTICIPAR VOCÊ LEVA */
-.leva-list{list-style:none;max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
-.leva-list li{display:flex;gap:12px;font-size:1rem;font-weight:300;color:var(--muted);line-height:1.6;}
-.leva-list li::before{content:'✦';color:var(--gold);flex-shrink:0;}
-.leva-list li strong{color:var(--brown);font-weight:500;}
+/* GALERIA "O QUE VOCÊ VAI EXPERIENCIAR" */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:1100px;margin:40px auto 0;}
+.gallery-item{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:6px;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;}
+.gallery-row2{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:1100px;margin:6px auto 0;}
 
-/* QUAL O VALOR (investimento) */
-.investment{background:linear-gradient(160deg,var(--brown) 0%,#1c1206 100%);text-align:center;position:relative;overflow:hidden;}
-.investment::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(232,176,32,.12),transparent 60%);pointer-events:none;}
-.investment .section-label,.investment .section-header h2{color:var(--gold-l);position:relative;z-index:1;}
-.price-card{max-width:560px;margin:44px auto 0;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015));border:1px solid rgba(232,176,32,.4);border-radius:6px;padding:52px 46px;box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.07);position:relative;overflow:hidden;z-index:1;}
-.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-l),var(--gold));}
-.price-tag{font-family:'Cormorant Garamond',serif;font-size:4.6rem;font-weight:300;color:var(--gold-l);line-height:1;margin-bottom:6px;text-shadow:0 0 36px rgba(232,176,32,.3);}
-.price-tag span{font-size:1.9rem;vertical-align:super;color:rgba(253,249,244,.6);}
-.price-label{font-size:.78rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:rgba(253,249,244,.62);margin-bottom:32px;}
-.price-includes{list-style:none;text-align:left;margin-bottom:38px;display:flex;flex-direction:column;gap:13px;}
-.price-includes li{display:flex;align-items:center;gap:12px;font-size:.95rem;font-weight:300;color:rgba(253,249,244,.92);}
-.price-includes li::before{content:'✦';color:var(--gold-l);font-size:.7rem;flex-shrink:0;}
-.price-note{font-size:.8rem;font-weight:300;color:rgba(253,249,244,.5);margin-top:18px;line-height:1.6;}
-
-/* SOBRE MARIAH */
-.bio{background:var(--brown);display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center;}
-.bio-image{width:100%;aspect-ratio:3/4;overflow:hidden;border-radius:2px;}
-.bio-image img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);}
-.bio-image-wrap{position:relative;}
-.bio-image-wrap::before{content:'';position:absolute;inset:-18px -18px auto auto;width:65%;height:65%;border:1px solid rgba(245,208,96,.3);border-radius:2px;z-index:0;}
-.bio-image{position:relative;z-index:1;}
-.bio-text .section-label{color:var(--gold-l);}
-.bio-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;color:var(--warm);line-height:1.2;margin-bottom:22px;}
-.bio-text h2 em{font-style:italic;color:var(--gold-l);}
-.bio-text p{font-size:.97rem;font-weight:300;line-height:1.85;color:rgba(253,249,244,.78);margin-bottom:14px;}
-.bio-creds{margin-top:24px;display:flex;flex-wrap:wrap;gap:9px;}
-.bio-cred{padding:6px 16px;border:1px solid rgba(245,208,96,.35);border-radius:30px;font-size:.76rem;font-weight:400;letter-spacing:.08em;color:var(--gold-l);}
+/* QUAL O VALOR (investimento) — fundo escuro #383B2A */
+.investment{background:var(--dark);text-align:center;}
+.price-card{max-width:560px;margin:40px auto 0;background:rgba(255,255,255,.05);border:1px solid rgba(253,159,201,.4);border-radius:16px;padding:48px 40px;}
+.price-tag{font-size:54px;font-weight:700;color:var(--pink);line-height:1;margin-bottom:6px;}
+.price-tag span{font-size:24px;vertical-align:super;color:var(--cream-text);}
+.price-label{font-size:16px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,234,231,.6);margin-bottom:30px;}
+.price-includes{list-style:none;text-align:left;margin-bottom:34px;display:flex;flex-direction:column;gap:12px;}
+.price-includes li{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:400;color:var(--cream-text);}
+.price-includes li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+.price-note{font-size:15px;font-weight:400;color:rgba(238,234,231,.55);margin-top:20px;line-height:1.6;}
 
 /* FECHAMENTO */
-.fechamento{background:var(--warm);text-align:center;}
-.fechamento p{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-style:italic;color:var(--brown);max-width:600px;margin:0 auto 34px;line-height:1.45;}
+.fechamento{background:var(--cream);text-align:center;}
+.fechamento p{font-size:28px;font-weight:700;color:var(--purple);max-width:620px;margin:0 auto 36px;line-height:1.35;}
+.fechamento p em{font-style:normal;color:var(--pink);}
 
-footer{background:var(--brown);padding:50px 24px;text-align:center;}
-footer .logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-style:italic;font-weight:400;color:var(--gold-l);margin-bottom:16px;display:block;}
-footer p{font-size:.83rem;font-weight:300;color:rgba(253,249,244,.5);letter-spacing:.05em;}
-footer a{color:var(--gold);text-decoration:none;}
-footer a:hover{color:var(--gold-l);}
+/* SOBRE MARIAH */
+.bio{background:var(--purple);display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;}
+.bio-image{width:100%;aspect-ratio:3/4;overflow:hidden;border-radius:8px;}
+.bio-image img{width:100%;height:100%;object-fit:cover;display:block;}
+.bio-text{text-align:left;}
+.bio-text .eyebrow{text-align:left;}
+.bio-text .heading{text-align:left;}
+.bio-text .body-text{text-align:left;color:var(--cream-text);}
+.bio-creds{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;}
+.bio-cred{padding:7px 18px;border:1px solid rgba(253,159,201,.5);border-radius:30px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--pink);}
+
+footer{background:var(--dark);padding:50px 24px;text-align:center;}
+footer .logo{font-size:24px;font-weight:700;color:var(--pink);margin-bottom:16px;display:block;}
+footer p{font-size:14px;font-weight:400;color:rgba(238,234,231,.55);letter-spacing:.02em;}
+footer a{color:var(--cream-text);text-decoration:none;}
+footer a:hover{color:var(--pink);}
 
 @media(max-width:900px){
-  .bio{grid-template-columns:1fr;gap:40px;padding:64px 32px;}
-  section{padding:64px 24px;}
-  .vivencias-grid,.vivencias-row2{grid-template-columns:1fr 1fr;}
-  .price-card{padding:36px 22px;}
+  .heading{font-size:35px;}
+  .bio{grid-template-columns:1fr;gap:36px;padding:70px 28px;}
+  section{padding:70px 22px;}
+  .gallery,.gallery-row2{grid-template-columns:1fr 1fr;}
+  .price-card{padding:36px 24px;}
 }
 </style>
 </head>
@@ -123,128 +127,99 @@ footer a:hover{color:var(--gold-l);}
 <section class="hero" style="padding:0;">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Natureza Feminina</p>
-    <h1>Retiro <em>InLuz</em></h1>
-    <p class="hero-sub">4 dias de autoconhecimento e autocuidado feminino para se nutrir da essência que pulsa em você</p>
-    <p class="hero-date"><strong>30 de Outubro — 02 de Novembro</strong><span class="place-line">Barra do Una · São Paulo</span></p>
-    <a href="#investimento" class="btn-primary">Quero participar</a>
+  <div class="hero-inner">
+    <h1 class="hero-title">RETIRO <em>INLUZ</em></h1>
+    <p class="hero-sub">Uma experiência para se reconectar com a sua essência feminina e voltar pra casa mais leve, inteira e em paz com seu corpo.</p>
+    <ul class="hero-info">
+      <li><b>30 DE OUTUBRO A 02 DE NOVEMBRO</b>, FERIADO DE FINADOS</li>
+      <li><b>SAMA UNA — BARRA DO UNA, SP</b></li>
+    </ul>
+    <a href="#investimento" class="btn">QUERO PARTICIPAR DO RETIRO INLUZ!</a>
   </div>
 </section>
 
-<!-- 2. INFORMAÇÕES PRÁTICAS + URGÊNCIA -->
-<section class="pratico">
-  <div class="pratico-vagas">🔥 Vagas limitadas — turma reduzida para garantir atenção individual</div>
-  <div class="date-banner">
-    <div class="date-item"><span class="label">Data</span><span class="value">30/10 — 02/11</span></div>
-    <div class="date-item"><span class="label">Local</span><span class="value">Barra do Una, SP</span></div>
-    <div class="date-item"><span class="label">Duração</span><span class="value">4 dias imersivos</span></div>
-    <div class="date-item"><span class="label">Investimento</span><span class="value">R$ 3.200</span></div>
+<!-- TICKER VAGAS LIMITADAS -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span>
+    <span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span><span>● VAGAS LIMITADAS ●</span>
   </div>
-  <a href="#investimento" class="btn-outline" style="border-color:var(--gold-l);color:var(--gold-l);">Quero participar</a>
-</section>
+</div>
 
-<!-- 3. O QUE É -->
-<section style="background:var(--warm);" id="o-que-e">
-  <div class="section-header">
-    <div class="section-label">O que é</div>
-    <h2>O que é o <em>Retiro InLuz</em></h2>
-    <p>Em meio à natureza exuberante do litoral norte de São Paulo, o Retiro InLuz é um dia profundo e conduzido — quatro dias inteiramente dedicados ao seu ser, onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é: clareza, reconexão, liberação e realinhamento.</p>
-  </div>
-  <div style="text-align:center;margin-bottom:28px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--brown);">Aqui você vai:</div>
-  <div class="feat-list">
-    <div class="feat-item">Desacelerar de verdade, sem culpa e sem pressa</div>
-    <div class="feat-item">Reconectar com seu corpo e sua intuição feminina</div>
-    <div class="feat-item">Soltar o que pesa através de rituais e práticas guiadas</div>
-    <div class="feat-item">Aprender ferramentas naturais para levar para o dia a dia</div>
-    <div class="feat-item">Criar laços genuínos com outras mulheres</div>
+<!-- 2. O QUE É -->
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <p class="eyebrow">O que é o</p>
+    <h2 class="heading"><em>RETIRO INLUZ</em></h2>
+    <p class="tagline">clareza, reconexão, liberação e renovação.</p>
+    <p class="body-text">Em meio à natureza exuberante do litoral norte de São Paulo, o Retiro InLuz é um dia profundo e conduzido — quatro dias inteiramente dedicados ao seu ser, onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é.</p>
+    <p class="body-text" style="font-weight:600;margin-top:30px;">Aqui você vai:</p>
+    <ul class="feat-list">
+      <li>Desacelerar de verdade, sem culpa e sem pressa</li>
+      <li>Reconectar com seu corpo e sua intuição feminina</li>
+      <li>Soltar o que pesa através de rituais e práticas guiadas</li>
+      <li>Aprender ferramentas naturais para levar para o dia a dia</li>
+      <li>Criar laços genuínos com outras mulheres</li>
+    </ul>
   </div>
 </section>
 
-<!-- 4. PARA QUEM É -->
-<section style="background:var(--bg2);" id="para-quem">
-  <div class="section-header">
-    <div class="section-label">Para quem é</div>
-    <h2>Para quem é <em>essa experiência</em></h2>
-    <p>O Retiro InLuz é para mulheres que sentem o chamado de parar, olhar para dentro e se cuidar — em qualquer fase da vida.</p>
-  </div>
-  <div class="feat-list">
-    <div class="feat-item">Você sente que está no automático, cuidando de tudo e de todos, menos de si</div>
-    <div class="feat-item">Está em um momento de transição e precisa de clareza para os próximos passos</div>
-    <div class="feat-item">Busca ferramentas reais de autocuidado, não apenas teoria</div>
-    <div class="feat-item">Quer se reconectar com o seu corpo, seu ciclo e sua intuição</div>
-    <div class="feat-item">Sente saudade de um espaço seguro para se abrir e ser ouvida</div>
-  </div>
-  <p class="feat-closing">Se você se reconheceu em pelo menos uma dessas frases, esse convite é para você.</p>
-</section>
-
-<!-- 5. O QUE VOCÊ VAI EXPERIENCIAR -->
-<section style="background:var(--warm);" id="vivencias">
-  <div class="section-header">
-    <div class="section-label">O que você vai experienciar</div>
-    <h2>Práticas que <em>transformam</em></h2>
-    <p>Cada atividade foi escolhida para criar uma jornada completa de autoconhecimento e autocuidado feminino.</p>
-  </div>
-  <div class="vivencias-grid">
-    <div class="vivencia-card">
-      <img src="images/retiro-inluz/yoga.jpg" alt="Yoga">
-      <div class="vivencia-overlay"><div class="vivencia-icon">🌿</div><div class="vivencia-title">Yoga</div><div class="vivencia-sub">Movimento &amp; respiração</div></div>
-    </div>
-    <div class="vivencia-card">
-      <img src="images/retiro-inluz/natureza104.jpg" alt="Meditações">
-      <div class="vivencia-overlay"><div class="vivencia-icon">🕊</div><div class="vivencia-title">Meditações</div><div class="vivencia-sub">Presença &amp; silêncio interior</div></div>
-    </div>
-    <div class="vivencia-card">
-      <img src="images/retiro-inluz/aromaterapia.jpg" alt="Aromaterapia">
-      <div class="vivencia-overlay"><div class="vivencia-icon">🌸</div><div class="vivencia-title">Aromaterapia</div><div class="vivencia-sub">Rituais de cura ancestral</div></div>
-    </div>
-    <div class="vivencia-card">
-      <img src="images/retiro-inluz/fitoterapia.jpg" alt="Farmácia Natural Caseira">
-      <div class="vivencia-overlay"><div class="vivencia-icon">🍃</div><div class="vivencia-title">Farmácia Natural Caseira</div><div class="vivencia-sub">Empodere sua saúde</div></div>
-    </div>
-  </div>
-  <div class="vivencias-row2">
-    <div class="vivencia-card">
-      <img src="images/retiro-inluz/fitoterapia2.jpg" alt="Fitoterapia">
-      <div class="vivencia-overlay"><div class="vivencia-icon">✨</div><div class="vivencia-title">Fitoterapia Aplicada</div><div class="vivencia-sub">Sabedoria das plantas</div></div>
-    </div>
-    <div class="vivencia-card">
-      <img src="images/retiro-inluz/fogueira.jpg" alt="Roda de Fogueira">
-      <div class="vivencia-overlay"><div class="vivencia-icon">🔥</div><div class="vivencia-title">Roda de Fogueira</div><div class="vivencia-sub">Partilha &amp; conexão</div></div>
-    </div>
-    <div class="vivencia-card">
-      <img src="images/retiro-inluz/reprogramacao-mental.jpg" alt="Reprogramação Mental">
-      <div class="vivencia-overlay"><div class="vivencia-icon">🧠</div><div class="vivencia-title">Reprogramação Mental</div><div class="vivencia-sub">Liberte crenças limitantes</div></div>
-    </div>
-    <div class="vivencia-card">
-      <img src="images/retiro-inluz/cachoeira2.jpg" alt="Trilhas e Cachoeira">
-      <div class="vivencia-overlay"><div class="vivencia-icon">💧</div><div class="vivencia-title">Trilhas &amp; Cachoeira</div><div class="vivencia-sub">Banho de renovação na natureza</div></div>
-    </div>
+<!-- 3. PARA QUEM É -->
+<section style="background:#fff;">
+  <div class="wrap">
+    <h2 class="heading">Para quem é <em>essa experiência</em></h2>
+    <p class="body-text" style="font-weight:600;margin:24px 0 30px;">Para você que:</p>
+    <ul class="feat-list">
+      <li>Sente que está no automático, cuidando de tudo e de todos, menos de si</li>
+      <li>Está em um momento de transição e precisa de clareza para os próximos passos</li>
+      <li>Busca ferramentas reais de autocuidado, não apenas teoria</li>
+      <li>Quer se reconectar com o seu corpo, seu ciclo e sua intuição</li>
+      <li>Sente saudade de um espaço seguro para se abrir e ser ouvida</li>
+    </ul>
   </div>
 </section>
 
-<!-- 6. AO PARTICIPAR, VOCÊ LEVA -->
-<section style="background:var(--bg2);" id="voce-leva">
-  <div class="section-header">
-    <div class="section-label">Ao participar, você leva</div>
-    <h2>Mais do que <em>memórias</em></h2>
+<!-- 4. O QUE VOCÊ VAI EXPERIENCIAR -->
+<section style="background:var(--cream);">
+  <div class="wrap" style="max-width:1100px;">
+    <h2 class="heading">O que você vai <em>experienciar</em><br>no Retiro InLuz?</h2>
   </div>
-  <ul class="leva-list">
-    <li><strong>Clareza</strong> sobre o momento de vida em que você está e os próximos passos</li>
-    <li><strong>Ferramentas naturais</strong> de saúde e autocuidado para usar no seu dia a dia</li>
-    <li><strong>Alívio</strong> do que estava represado — emocional e físico</li>
-    <li><strong>Novas amizades</strong> genuínas com mulheres no mesmo caminho</li>
-    <li><strong>Rituais e práticas</strong> que você pode repetir sozinha depois do retiro</li>
-    <li><strong>Um novo ponto de partida</strong> — mais leve, mais inteira, mais você</li>
+  <div class="gallery">
+    <div class="gallery-item"><img src="images/retiro-inluz/yoga.jpg" alt="Yoga"></div>
+    <div class="gallery-item"><img src="images/retiro-inluz/natureza104.jpg" alt="Meditações"></div>
+    <div class="gallery-item"><img src="images/retiro-inluz/aromaterapia.jpg" alt="Aromaterapia"></div>
+    <div class="gallery-item"><img src="images/retiro-inluz/fitoterapia.jpg" alt="Farmácia Natural Caseira"></div>
+  </div>
+  <div class="gallery-row2">
+    <div class="gallery-item"><img src="images/retiro-inluz/fitoterapia2.jpg" alt="Fitoterapia Aplicada"></div>
+    <div class="gallery-item"><img src="images/retiro-inluz/fogueira.jpg" alt="Roda de Fogueira"></div>
+    <div class="gallery-item"><img src="images/retiro-inluz/reprogramacao-mental.jpg" alt="Reprogramação Mental"></div>
+    <div class="gallery-item"><img src="images/retiro-inluz/cachoeira2.jpg" alt="Trilhas e Cachoeira"></div>
+  </div>
+</section>
+
+<!-- 5. AO PARTICIPAR, VOCÊ LEVA -->
+<section style="background:#fff;">
+  <div class="wrap">
+    <h2 class="heading">Ao participar, <em>você leva:</em></h2>
+  </div>
+  <ul class="check-list" style="margin-top:30px;">
+    <li>Clareza sobre o momento de vida em que você está e os próximos passos</li>
+    <li>Ferramentas naturais de saúde e autocuidado para usar no seu dia a dia</li>
+    <li>Alívio do que estava represado — emocional e físico</li>
+    <li>Novas amizades genuínas com mulheres no mesmo caminho</li>
+    <li>Rituais e práticas que você pode repetir sozinha depois do retiro</li>
+    <li>Um novo ponto de partida — mais leve, mais inteira, mais você</li>
   </ul>
+  <div style="text-align:center;margin-top:36px;">
+    <a href="#investimento" class="btn">QUERO PARTICIPAR DO RETIRO INLUZ!</a>
+  </div>
 </section>
 
-<!-- 7. QUAL O VALOR DESSA EXPERIÊNCIA -->
+<!-- 6. QUAL O VALOR DESSA EXPERIÊNCIA -->
 <section class="investment" id="investimento">
-  <div class="section-header">
-    <div class="section-label">Investimento</div>
-    <h2>Qual o valor <em>dessa experiência?</em></h2>
-  </div>
+  <p class="eyebrow on-dark">qual o valor</p>
+  <h2 class="heading on-dark">dessa experiência?</h2>
   <div class="price-card">
     <div class="price-tag"><span>R$</span> 3.200</div>
     <div class="price-label">investimento total por participante</div>
@@ -256,23 +231,29 @@ footer a:hover{color:var(--gold-l);}
       <li>Todos os materiais utilizados</li>
       <li>Campo seguro e acolhedor para sua transformação</li>
     </ul>
-    <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn-primary">Garantir minha vaga</a>
+    <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn">GARANTIR MINHA VAGA</a>
     <p class="price-note">Vagas limitadas para garantir atenção individual.<br>Condições de parcelamento disponíveis — entre em contato.</p>
+  </div>
+</section>
+
+<!-- 7. FECHAMENTO -->
+<section class="fechamento">
+  <div class="wrap">
+    <p>Se você sente que chegou o momento de parar, olhar para dentro e se realinhar… <em>esse retiro foi criado para você.</em></p>
+    <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn">QUERO PARTICIPAR DO RETIRO INLUZ!</a>
   </div>
 </section>
 
 <!-- 8. SOBRE MARIAH CAROLINE -->
 <section class="bio">
-  <div class="bio-image-wrap">
-    <div class="bio-image">
-      <img src="images/retiro-inluz/eu.jpg" alt="Mariah Caroline">
-    </div>
+  <div class="bio-image">
+    <img src="images/retiro-inluz/eu.jpg" alt="Mariah Caroline">
   </div>
   <div class="bio-text">
-    <div class="section-label">Quem vai guiar você</div>
-    <h2>Mariah Caroline — <em>sua guia nessa jornada</em></h2>
-    <p>Naturóloga, especializada em saúde integral feminina, tenho como foco do meu trabalho 3 pilares essenciais para o bem estar verdadeiro: saúde, autoconhecimento e espiritualidade.</p>
-    <p>Nos retiros trabalhamos todos estes aspectos para abrir espaço para o corpo, a mente e o espírito entrarem em harmonia e alinhamento.</p>
+    <p class="eyebrow on-dark">Quem vai guiar você</p>
+    <h2 class="heading on-dark">SOBRE MARIAH <em>CAROLINE</em></h2>
+    <p class="body-text on-dark">Naturóloga, especializada em saúde integral feminina, tenho como foco do meu trabalho 3 pilares essenciais para o bem estar verdadeiro: saúde, autoconhecimento e espiritualidade.</p>
+    <p class="body-text on-dark">Nos retiros trabalhamos todos estes aspectos para abrir espaço para o corpo, a mente e o espírito entrarem em harmonia e alinhamento.</p>
     <div class="bio-creds">
       <span class="bio-cred">Naturologia</span>
       <span class="bio-cred">Ayurveda</span>
@@ -285,12 +266,7 @@ footer a:hover{color:var(--gold-l);}
   </div>
 </section>
 
-<!-- 9. FECHAMENTO -->
-<section class="fechamento">
-  <p>"Se você sente que chegou o momento de parar, olhar para dentro e se realinhar… esse retiro foi criado para você."</p>
-  <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn-primary">Garantir minha vaga</a>
-</section>
-
+<!-- 9. FOOTER -->
 <footer>
   <span class="logo">Retiro InLuz</span>
   <p>Mariah Caroline &nbsp;·&nbsp; Naturóloga &nbsp;·&nbsp; Portal InLuz &nbsp;·&nbsp; Guia de Retiros Femininos</p>
@@ -299,7 +275,7 @@ footer a:hover{color:var(--gold-l);}
     &nbsp;·&nbsp;
     <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank">WhatsApp</a>
   </p>
-  <p style="margin-top:20px;font-size:.73rem;opacity:.4;">© 2026 Mariah Caroline · Portal InLuz · Todos os direitos reservados</p>
+  <p style="margin-top:20px;font-size:12px;opacity:.6;">© 2026 Mariah Caroline · Portal InLuz · Todos os direitos reservados</p>
 </footer>
 
 </body>
