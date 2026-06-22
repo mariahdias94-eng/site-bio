@@ -109,16 +109,16 @@ section{padding:100px 24px;position:relative;}
 .gallery-sub{font-size:.62rem;color:rgba(255,255,255,.78);text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
 
 /* QUAL O VALOR (investimento) — com foto de fundo */
-.investment{text-align:left;}
-.price-card{position:relative;z-index:1;align-self:center;width:100%;max-width:480px;margin:36px auto 0;text-align:left;background:rgba(255,255,255,.1);backdrop-filter:blur(3px);border:1px solid rgba(217,180,92,.4);border-radius:16px;padding:44px 36px;}
-.price-tag{font-size:54px;font-weight:700;color:var(--pink);line-height:1;margin-bottom:6px;}
-.price-tag span{font-size:24px;vertical-align:super;color:var(--cream-text);}
-.price-label{font-size:16px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,234,231,.7);margin-bottom:30px;}
+.investment-header{background:var(--cream);text-align:center;padding:90px 24px 0;}
+.price-card{position:relative;z-index:1;width:100%;max-width:480px;margin:36px auto 0;text-align:left;background:#fff;border:1px solid rgba(217,180,92,.35);box-shadow:0 24px 60px rgba(129,47,122,.1);border-radius:16px;padding:44px 36px;}
+.price-tag{font-size:54px;font-weight:700;color:var(--purple);line-height:1;margin-bottom:6px;}
+.price-tag span{font-size:24px;vertical-align:super;color:var(--pink);}
+.price-label{font-size:14px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);opacity:.6;margin-bottom:30px;}
 .price-includes{list-style:none;text-align:left;margin-bottom:34px;display:flex;flex-direction:column;gap:12px;}
-.price-includes li{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:400;color:var(--cream-text);}
+.price-includes li{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:400;color:var(--purple);}
 .price-includes li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
-.price-note{font-size:15px;font-weight:400;color:rgba(238,234,231,.6);margin-top:20px;line-height:1.6;}
-.investment-closing{position:relative;z-index:1;font-size:22px;font-weight:700;color:var(--cream-text);max-width:460px;margin:36px 0 0;text-align:left;line-height:1.4;}
+.price-note{font-size:14px;font-weight:400;color:var(--purple);opacity:.55;margin-top:20px;line-height:1.6;}
+.investment-closing{position:relative;z-index:1;font-size:22px;font-weight:700;color:var(--cream-text);max-width:460px;margin:0;text-align:left;line-height:1.4;}
 .investment-closing em{font-style:normal;color:var(--pink);}
 
 /* SOBRE MARIAH */
@@ -382,25 +382,28 @@ footer a:hover{color:var(--purple);}
   </div>
 </section>
 
-<!-- 6. QUAL O VALOR DESSA EXPERIÊNCIA — com foto de fundo, em moldura -->
-<section class="bg-outer" id="investimento">
+<!-- 6. QUAL O VALOR DESSA EXPERIÊNCIA — cabecalho/preco em fundo claro + faixa de foto so na citacao final -->
+<section class="investment-header" id="investimento">
+  <p class="eyebrow">qual o valor</p>
+  <h2 class="heading">dessa experiência?</h2>
+  <div class="price-card">
+    <div class="price-tag"><span>R$</span> 3.200</div>
+    <div class="price-label">investimento total por participante</div>
+    <ul class="price-includes">
+      <li>4 dias e 3 noites de imersão completa</li>
+      <li>Hospedagem no Sama Una, Barra do Una</li>
+      <li>Alimentação natural e detox inclusa</li>
+      <li>Todas as vivências</li>
+      <li>Todos os materiais utilizados</li>
+      <li>Campo seguro e acolhedor para sua transformação</li>
+    </ul>
+    <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn">QUERO VIVER ESTA EXPERIÊNCIA</a>
+    <p class="price-note">Vagas limitadas para garantir atenção individual.<br>Condições de parcelamento disponíveis — entre em contato.</p>
+  </div>
+</section>
+
+<section class="bg-outer">
   <div class="bg-section investment" style="background-image:url('images/retiro-inluz/investimento-46-natureza-divina.jpg');">
-    <p class="eyebrow on-dark" style="position:relative;z-index:1;">qual o valor</p>
-    <h2 class="heading on-dark" style="position:relative;z-index:1;">dessa experiência?</h2>
-    <div class="price-card">
-      <div class="price-tag"><span>R$</span> 3.200</div>
-      <div class="price-label">investimento total por participante</div>
-      <ul class="price-includes">
-        <li>4 dias e 3 noites de imersão completa</li>
-        <li>Hospedagem no Sama Una, Barra do Una</li>
-        <li>Alimentação natural e detox inclusa</li>
-        <li>Todas as vivências</li>
-        <li>Todos os materiais utilizados</li>
-        <li>Campo seguro e acolhedor para sua transformação</li>
-      </ul>
-      <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" class="btn">QUERO VIVER ESTA EXPERIÊNCIA</a>
-      <p class="price-note">Vagas limitadas para garantir atenção individual.<br>Condições de parcelamento disponíveis — entre em contato.</p>
-    </div>
     <p class="investment-closing">Se você sente que chegou o momento de parar, olhar e se realinhar…<br><em>essa experiência foi criada para você!</em></p>
   </div>
 </section>
