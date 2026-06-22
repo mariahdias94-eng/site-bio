@@ -12,7 +12,7 @@
 /* Paleta extraída do CSS real da pagina de referencia (Sucesso com Alma Experience) */
 :root{
   --purple:#812F7A;
-  --pink:#FD9FC9;
+  --pink:#D9B45C;
   --cream:#FFF8EB;
   --cream-text:#EEEAE7;
   --dark:#383B2A;
@@ -80,7 +80,7 @@ section{padding:100px 24px;position:relative;}
 .bg-outer{background:var(--cream);padding:64px 24px;}
 .bg-section{position:relative;background-size:cover;background-position:center;border-radius:18px;overflow:hidden;max-width:1100px;margin:0 auto;padding:70px 6vw;display:flex;flex-direction:column;align-items:flex-start;}
 .bg-section::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.5) 30%,rgba(0,0,0,.15) 55%,rgba(0,0,0,0) 75%);z-index:0;}
-.bg-section.investment::before{background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.62) 24%,rgba(0,0,0,.2) 44%,rgba(0,0,0,0) 62%);}
+.bg-section.investment::before{background:linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.32) 22%,rgba(0,0,0,.08) 38%,rgba(0,0,0,0) 50%);}
 .bg-section .wrap{margin:0;max-width:460px;text-align:left;}
 
 /* LISTAS (Aqui você vai / Para você que) — bullet simples */
@@ -110,7 +110,7 @@ section{padding:100px 24px;position:relative;}
 
 /* QUAL O VALOR (investimento) — com foto de fundo */
 .investment{text-align:left;}
-.price-card{position:relative;z-index:1;align-self:center;width:100%;max-width:480px;margin:36px auto 0;text-align:left;background:rgba(255,255,255,.1);backdrop-filter:blur(3px);border:1px solid rgba(253,159,201,.4);border-radius:16px;padding:44px 36px;}
+.price-card{position:relative;z-index:1;align-self:center;width:100%;max-width:480px;margin:36px auto 0;text-align:left;background:rgba(255,255,255,.1);backdrop-filter:blur(3px);border:1px solid rgba(217,180,92,.4);border-radius:16px;padding:44px 36px;}
 .price-tag{font-size:54px;font-weight:700;color:var(--pink);line-height:1;margin-bottom:6px;}
 .price-tag span{font-size:24px;vertical-align:super;color:var(--cream-text);}
 .price-label{font-size:16px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,234,231,.7);margin-bottom:30px;}
@@ -141,7 +141,8 @@ footer a:hover{color:var(--purple);}
   section{padding:70px 22px;}
   .bg-outer{padding:32px 14px;}
   .bg-section{padding:46px 24px;border-radius:14px;}
-  .bg-section::before{background:linear-gradient(100deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.4) 35%,rgba(0,0,0,.65) 58%,rgba(0,0,0,.82) 100%);}
+  .bg-section::before{background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.55) 30%,rgba(0,0,0,.2) 52%,rgba(0,0,0,0) 75%);}
+  .bg-section.investment::before{background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.3) 28%,rgba(0,0,0,0) 48%);}
   .bg-section .wrap,.bg-section .feat-list,.bg-section .check-list{max-width:100%;}
   .gallery,.gallery-row2{grid-template-columns:1fr 1fr;}
   .price-card{padding:36px 24px;}
