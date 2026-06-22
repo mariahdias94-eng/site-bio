@@ -7,7 +7,7 @@
 <meta name="description" content="Retiro feminino de 4 dias em Barra do Una, SP: terapias naturais, yoga, rituais e vivências para mulheres que buscam reconexão, saúde integral e cura emocional. Vagas limitadas.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* Paleta extraída do CSS real da pagina de referencia (Sucesso com Alma Experience) */
 :root{
@@ -36,7 +36,7 @@ body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--purple
 /* HERO — foto de fundo cheia, sombra so do lado direito (onde fica o texto), foto visivel a esquerda */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-end;overflow:hidden;}
 .hero-photo{position:absolute;inset:0;}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 62%;display:block;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block;}
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.1) 42%,rgba(0,0,0,.5) 62%,rgba(0,0,0,.78) 100%);}
 .hero-content{position:relative;z-index:1;padding:40px 5vw;text-align:left;}
 .hero-inner{max-width:420px;margin:0;}
@@ -78,8 +78,9 @@ section{padding:100px 24px;position:relative;}
 /* Molduras: a foto nunca encosta na seção seguinte — sempre com respiro creme em volta */
 /* Texto e sombra alinhados à esquerda, clareando da esquerda pra direita — como a Luana fez */
 .bg-outer{background:var(--cream);padding:64px 24px;}
-.bg-section{background-size:cover;background-position:center;border-radius:18px;overflow:hidden;max-width:1100px;margin:0 auto;padding:70px 6vw;display:flex;flex-direction:column;align-items:flex-start;}
+.bg-section{position:relative;background-size:cover;background-position:center;border-radius:18px;overflow:hidden;max-width:1100px;margin:0 auto;padding:70px 6vw;display:flex;flex-direction:column;align-items:flex-start;}
 .bg-section::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.5) 30%,rgba(0,0,0,.15) 55%,rgba(0,0,0,0) 75%);z-index:0;}
+.bg-section.investment::before{background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.62) 24%,rgba(0,0,0,.2) 44%,rgba(0,0,0,0) 62%);}
 .bg-section .wrap{margin:0;max-width:460px;text-align:left;}
 
 /* LISTAS (Aqui você vai / Para você que) — bullet simples */
@@ -151,16 +152,23 @@ footer a:hover{color:var(--purple);}
   .depo-arrow.next{right:6px;}
 }
 
-/* O ESPAÇO */
-.place-split{display:grid;grid-template-columns:1fr 1fr;}
-.place-gallery2{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;}
+/* O ESPAÇO — exatamente como na pagina vigente do retiro (Cormorant Garamond, paleta dourada/marrom) */
+.place-split{display:grid;grid-template-columns:1fr 1fr;min-height:62vh;}
+.place-gallery2{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;position:relative;}
 .place-gallery2 .gal-btn{display:block;overflow:hidden;position:relative;cursor:pointer;border:none;padding:0;background:none;}
 .place-gallery2 .gal-btn img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s;}
 .place-gallery2 .gal-btn:hover img{transform:scale(1.06);}
-.place-text2{padding:70px 50px;background:var(--cream);display:flex;flex-direction:column;justify-content:center;}
-.place-features2{margin-top:20px;display:flex;flex-direction:column;gap:10px;}
-.place-feature2{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--purple);}
-.place-feature2::before{content:'✦';color:var(--pink);flex-shrink:0;}
+.place-gallery2 .gal-btn::after{content:'Ver em tela cheia ↗';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(58,38,16,.45);color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .3s;}
+.place-gallery2 .gal-btn:hover::after{opacity:1;}
+.place-text2{padding:72px 68px;background:#F5EFE4;display:flex;flex-direction:column;justify-content:center;}
+.place-text2 .section-label2{font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#C9981A;margin-bottom:20px;}
+.place-text2 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3rem);font-weight:400;color:#3A2610;margin-bottom:22px;line-height:1.2;}
+.place-text2 p{font-size:.97rem;font-weight:300;line-height:1.85;color:#6B4E2A;margin-bottom:14px;}
+.place-features2{margin-top:24px;display:flex;flex-direction:column;gap:10px;}
+.place-feature2{display:flex;align-items:center;gap:12px;font-size:.94rem;color:#6B4E2A;}
+.place-feature2::before{content:'';display:block;width:20px;height:1px;background:#C9981A;flex-shrink:0;}
+.btn-outline2{display:inline-block;border:2px solid #C9981A;color:#C9981A;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:500;letter-spacing:.06em;text-decoration:none;padding:14px 32px;border-radius:50px;cursor:pointer;background:transparent;transition:all .3s;margin-top:24px;width:fit-content;}
+.btn-outline2:hover{background:#C9981A;color:#fff;}
 
 /* LIGHTBOX (espaço e galeria de retiros passados) */
 .lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,5,8,.95);align-items:center;justify-content:center;padding:40px;}
@@ -196,7 +204,7 @@ footer a:hover{color:var(--purple);}
 <!-- 1. HERO -->
 <section class="hero" style="padding:0;">
   <div class="hero-photo">
-    <img src="images/retiro-inluz/hero-55-natureza-divina.jpg" alt="Retiro Natureza Feminina">
+    <img src="images/retiro-inluz/bio-portal-inluz.jpg" alt="Retiro Natureza Feminina">
   </div>
   <div class="hero-content">
     <div class="hero-inner">
@@ -321,10 +329,10 @@ footer a:hover{color:var(--purple);}
     <div class="lightbox-counter" id="lightbox-counter"></div>
   </div>
   <div class="place-text2">
-    <p class="eyebrow">O espaço</p>
-    <h2 class="heading">Sama Una — <em>Serra de Barra do Una</em></h2>
-    <p class="body-text">Cercado pela Mata Atlântica, o Sama Una é um santuário natural onde cada detalhe foi pensado para você se sentir segura, acolhida e profundamente em paz.</p>
-    <p class="body-text">O espaço se localiza na serra de Barra do Una, a apenas 2h30 de São Paulo — um lar temporário que convida ao descanso real, sem notificações, sem pressa.</p>
+    <div class="section-label2">O espaço</div>
+    <h2>Sama Una — Serra de Barra do Una</h2>
+    <p>Cercado pela Mata Atlântica, o Sama Una é um santuário natural onde cada detalhe foi pensado para você se sentir segura, acolhida e profundamente em paz.</p>
+    <p>O espaço se localiza na serra de Barra do Una, a apenas 2h30 de São Paulo — um lar temporário que convida ao descanso real, sem notificações, sem pressa: apenas você, a natureza e o convite do Portal InLuz para se encontrar.</p>
     <div class="place-features2">
       <div class="place-feature2">Natureza exuberante da Mata Atlântica</div>
       <div class="place-feature2">Com acesso à cachoeira</div>
@@ -332,6 +340,7 @@ footer a:hover{color:var(--purple);}
       <div class="place-feature2">Alimentação natural inclusa</div>
       <div class="place-feature2">A 2h30 de São Paulo</div>
     </div>
+    <button onclick="openLightbox(0)" class="btn-outline2">Ver galeria completa do Sama Una ↗</button>
   </div>
 </section>
 
