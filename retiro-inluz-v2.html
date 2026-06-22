@@ -48,12 +48,12 @@ body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--purple
 .hero-info li b{font-weight:700;}
 .hero-info .ic{font-size:15px;flex-shrink:0;margin-top:1px;}
 @media(max-width:860px){
-  .hero{min-height:92vh;}
-  .hero-photo::after{background:linear-gradient(100deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.35) 38%,rgba(0,0,0,.62) 60%,rgba(0,0,0,.82) 100%);}
+  .hero{min-height:92vh;justify-content:flex-start;}
+  .hero-photo::after{background:linear-gradient(100deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.62) 36%,rgba(0,0,0,.25) 58%,rgba(0,0,0,0) 80%);}
   .hero-content{padding:32px 22px;}
   .hero-inner{max-width:100%;}
-  .hero-title{font-size:clamp(1.7rem,7vw,2.2rem);}
-  .hero-info li{font-size:12.5px;white-space:normal;}
+  .hero-title{font-size:clamp(2.1rem,9vw,2.7rem);}
+  .hero-info li{font-size:13px;white-space:normal;}
 }
 
 /* TICKER VAGAS LIMITADAS */
@@ -103,6 +103,7 @@ section{padding:100px 24px;position:relative;}
 .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s;}
 .gallery-item:hover img{transform:scale(1.06);}
 .gallery-row2{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:1100px;margin:6px auto 0;}
+.gallery-row3{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;max-width:546px;margin:6px auto 0;}
 .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(56,20,52,.85) 0%,rgba(56,20,52,.05) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;}
 .gallery-icon{font-size:1.25rem;margin-bottom:4px;}
 .gallery-title{font-weight:700;color:#fff;font-size:.98rem;line-height:1.2;}
@@ -110,14 +111,15 @@ section{padding:100px 24px;position:relative;}
 
 /* QUAL O VALOR (investimento) — com foto de fundo */
 .investment-header{background:var(--cream);text-align:center;padding:90px 24px 0;}
-.price-card{position:relative;z-index:1;width:100%;max-width:480px;margin:36px auto 0;text-align:left;background:#fff;border:1px solid rgba(217,180,92,.35);box-shadow:0 24px 60px rgba(129,47,122,.1);border-radius:16px;padding:44px 36px;}
-.price-tag{font-size:54px;font-weight:700;color:var(--purple);line-height:1;margin-bottom:6px;}
-.price-tag span{font-size:24px;vertical-align:super;color:var(--pink);}
-.price-label{font-size:14px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);opacity:.6;margin-bottom:30px;}
+.price-card{position:relative;z-index:1;overflow:hidden;width:100%;max-width:480px;margin:36px auto 0;text-align:left;background:linear-gradient(165deg,#3a1240 0%,#1a0a1f 60%,#0d0510 100%);border:1px solid rgba(217,180,92,.5);box-shadow:0 30px 70px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.05);border-radius:16px;padding:46px 38px;}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,rgba(217,180,92,.2),var(--pink),rgba(217,180,92,.2));}
+.price-tag{font-size:56px;font-weight:700;color:var(--pink);line-height:1;margin-bottom:6px;text-shadow:0 0 28px rgba(217,180,92,.35);}
+.price-tag span{font-size:24px;vertical-align:super;color:rgba(238,234,231,.65);}
+.price-label{font-size:14px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(238,234,231,.6);margin-bottom:30px;}
 .price-includes{list-style:none;text-align:left;margin-bottom:34px;display:flex;flex-direction:column;gap:12px;}
-.price-includes li{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:400;color:var(--purple);}
-.price-includes li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
-.price-note{font-size:14px;font-weight:400;color:var(--purple);opacity:.55;margin-top:20px;line-height:1.6;}
+.price-includes li{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:400;color:rgba(238,234,231,.92);}
+.price-includes li::before{content:'✓';color:var(--pink);font-weight:700;flex-shrink:0;}
+.price-note{font-size:14px;font-weight:400;color:rgba(238,234,231,.5);margin-top:20px;line-height:1.6;}
 .investment-closing{position:relative;z-index:1;font-size:22px;font-weight:700;color:var(--cream-text);max-width:460px;margin:0;text-align:left;line-height:1.4;}
 .investment-closing em{font-style:normal;color:var(--pink);}
 
@@ -144,9 +146,10 @@ footer a:hover{color:var(--purple);}
   .bg-section::before{background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.28) 55%,rgba(0,0,0,0) 78%);}
   .bg-section.investment::before{background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.3) 28%,rgba(0,0,0,0) 48%);}
   .bg-section .wrap,.bg-section .feat-list,.bg-section .check-list{max-width:100%;}
-  .gallery,.gallery-row2{grid-template-columns:1fr 1fr;}
+  .gallery,.gallery-row2,.gallery-row3{grid-template-columns:1fr 1fr;}
   .price-card{padding:36px 24px;}
-  .place-split{grid-template-columns:1fr;}
+  .place-split{grid-template-columns:1fr;min-height:auto;}
+  .place-gallery2{height:300px;}
   .place-text2{padding:48px 24px;}
   .past-gallery{grid-template-columns:1fr 1fr;}
   .depo-arrow.prev{left:6px;}
@@ -210,7 +213,7 @@ footer a:hover{color:var(--purple);}
   </div>
   <div class="hero-content">
     <div class="hero-inner">
-      <h1 class="hero-title">RETIRO <em>NATUREZA FEMININA</em></h1>
+      <h1 class="hero-title">RETIRO<br><em>NATUREZA FEMININA</em></h1>
       <p class="hero-sub">Uma experiência para se reconectar com a sua essência feminina e voltar pra casa mais leve, inteira e em paz com seu corpo.</p>
       <ul class="hero-info">
         <li><span class="ic">📅</span> <b>30 de Outubro a 02 de Novembro</b>, Feriado de Finados</li>
@@ -235,40 +238,7 @@ footer a:hover{color:var(--purple);}
     <p class="eyebrow">O que é o</p>
     <h2 class="heading"><em>RETIRO NATUREZA FEMININA</em></h2>
     <p class="tagline">clareza, reconexão, liberação e renovação.</p>
-    <p class="body-text">Em meio à natureza exuberante do litoral norte de São Paulo, o Retiro Natureza Feminina é um dia profundo e conduzido — quatro dias inteiramente dedicados ao seu ser, onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é.</p>
-  </div>
-</section>
-
-<!-- 2b. AQUI VOCÊ VAI — com foto de fundo, em moldura -->
-<section class="bg-outer">
-  <div class="bg-section" style="background-image:url('images/retiro-inluz/aqui-voce-vai-85-natureza-divina.jpg');">
-    <div class="wrap">
-      <p class="body-text on-dark" style="font-weight:700;font-size:24px;margin-bottom:30px;">Aqui você vai:</p>
-      <ul class="feat-list on-dark">
-        <li>Desacelerar de verdade, sem culpa e sem pressa</li>
-        <li>Reconectar com seu corpo e sua intuição feminina</li>
-        <li>Soltar o que pesa através de rituais e práticas guiadas</li>
-        <li>Aprender ferramentas naturais para levar para o dia a dia</li>
-        <li>Criar laços genuínos com outras mulheres</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 3. PARA QUEM É — com foto de fundo, em moldura -->
-<section class="bg-outer">
-  <div class="bg-section" style="background-image:url('images/retiro-inluz/para-quem-e-esta.jpg');">
-    <div class="wrap">
-      <h2 class="heading on-dark">Para quem é <em>essa experiência</em></h2>
-      <p class="body-text on-dark" style="font-weight:700;font-size:24px;margin:24px 0 30px;">Para você que:</p>
-      <ul class="feat-list on-dark">
-        <li>Sente que está no automático, cuidando de tudo e de todos, menos de si</li>
-        <li>Está em um momento de transição e precisa de clareza para os próximos passos</li>
-        <li>Busca ferramentas reais de autocuidado, não apenas teoria</li>
-        <li>Quer se reconectar com o seu corpo, seu ciclo e sua intuição</li>
-        <li>Sente saudade de um espaço seguro para se abrir e ser ouvida</li>
-      </ul>
-    </div>
+    <p class="body-text">Em meio à natureza exuberante do litoral norte de São Paulo, o Retiro Natureza Feminina é uma experiência de autocuidado e autoconhecimento feminino, quatro dias inteiramente dedicados ao seu ser, onde ferramentas ancestrais e sabedorias contemporâneas se encontram para te reconectar com quem você realmente é.</p>
   </div>
 </section>
 
@@ -311,6 +281,49 @@ footer a:hover{color:var(--purple);}
     <div class="gallery-item">
       <img src="images/retiro-inluz/cachoeira2.jpg" alt="Trilhas e Cachoeira">
       <div class="gallery-overlay"><div class="gallery-icon">💧</div><div class="gallery-title">Trilhas &amp; Cachoeira</div><div class="gallery-sub">Banho de renovação na natureza</div></div>
+    </div>
+  </div>
+  <div class="gallery-row3">
+    <div class="gallery-item">
+      <img src="images/retiro-inluz/cama-ervas.jpg" alt="Cama de ervas">
+      <div class="gallery-overlay"><div class="gallery-icon">🌾</div><div class="gallery-title">Cama de ervas</div><div class="gallery-sub">Reconexão à matriz feminina</div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/retiro-inluz/ginecologia-natural.jpg" alt="Ginecologia natural">
+      <div class="gallery-overlay"><div class="gallery-icon">🌺</div><div class="gallery-title">Ginecologia natural</div><div class="gallery-sub">Saúde e autoconhecimento</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2b. AQUI VOCÊ VAI — com foto de fundo, em moldura -->
+<section class="bg-outer">
+  <div class="bg-section" style="background-image:url('images/retiro-inluz/aqui-voce-vai-85-natureza-divina.jpg');">
+    <div class="wrap">
+      <p class="body-text on-dark" style="font-weight:700;font-size:24px;margin-bottom:30px;">Aqui você vai:</p>
+      <ul class="feat-list on-dark">
+        <li>Desacelerar de verdade, sem culpa e sem pressa</li>
+        <li>Reconectar com seu corpo e sua intuição feminina</li>
+        <li>Soltar o que pesa através de rituais e práticas guiadas</li>
+        <li>Aprender ferramentas naturais para levar para o dia a dia</li>
+        <li>Criar laços genuínos com outras mulheres</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PARA QUEM É — com foto de fundo, em moldura -->
+<section class="bg-outer">
+  <div class="bg-section" style="background-image:url('images/retiro-inluz/para-quem-e-esta.jpg');">
+    <div class="wrap">
+      <h2 class="heading on-dark">Para quem é <em>essa experiência</em></h2>
+      <p class="body-text on-dark" style="font-weight:700;font-size:24px;margin:24px 0 30px;">Para você que:</p>
+      <ul class="feat-list on-dark">
+        <li>Sente que está no automático, cuidando de tudo e de todos, menos de si</li>
+        <li>Está em um momento de transição e precisa de clareza para os próximos passos</li>
+        <li>Busca ferramentas reais de autocuidado, não apenas teoria</li>
+        <li>Quer se reconectar com o seu corpo, seu ciclo e sua intuição</li>
+        <li>Sente saudade de um espaço seguro para se abrir e ser ouvida</li>
+      </ul>
     </div>
   </div>
 </section>
