@@ -137,25 +137,6 @@ footer p{font-size:14px;font-weight:400;color:#8a7a55;letter-spacing:.02em;}
 footer a{color:#D9B45C;text-decoration:none;font-weight:600;}
 footer a:hover{color:var(--purple);}
 
-@media(max-width:900px){
-  .heading{font-size:35px;}
-  .bio{grid-template-columns:1fr;gap:36px;padding:70px 28px;}
-  section{padding:70px 22px;}
-  .bg-outer{padding:32px 14px;}
-  .bg-section{padding:46px 24px;border-radius:14px;}
-  .bg-section::before{background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.28) 55%,rgba(0,0,0,0) 78%);}
-  .bg-section.investment::before{background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.3) 28%,rgba(0,0,0,0) 48%);}
-  .bg-section .wrap,.bg-section .feat-list,.bg-section .check-list{max-width:100%;}
-  .gallery,.gallery-row2,.gallery-row3{grid-template-columns:1fr 1fr;}
-  .price-card{padding:36px 24px;}
-  .place-split{grid-template-columns:1fr;min-height:auto;}
-  .place-gallery2{height:300px;}
-  .place-text2{padding:48px 24px;}
-  .past-gallery{grid-template-columns:1fr 1fr;}
-  .depo-arrow.prev{left:6px;}
-  .depo-arrow.next{right:6px;}
-}
-
 /* O ESPAÇO — exatamente como na pagina vigente do retiro, mas com fonte Poppins */
 .place-split,.place-split *{font-family:'Poppins',sans-serif;}
 .place-split{display:grid;grid-template-columns:1fr 1fr;min-height:62vh;}
@@ -174,6 +155,28 @@ footer a:hover{color:var(--purple);}
 .place-feature2::before{content:'';display:block;width:20px;height:1px;background:#C9981A;flex-shrink:0;}
 .btn-outline2{display:inline-block;border:2px solid #C9981A;color:#C9981A;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:500;letter-spacing:.06em;text-decoration:none;padding:14px 32px;border-radius:50px;cursor:pointer;background:transparent;transition:all .3s;margin-top:24px;width:fit-content;}
 .btn-outline2:hover{background:#C9981A;color:#fff;}
+
+@media(max-width:900px){
+  .heading{font-size:35px;}
+  .bio{grid-template-columns:1fr;gap:36px;padding:70px 28px;}
+  section{padding:70px 22px;}
+  .bg-outer{padding:32px 14px;}
+  .bg-section{padding:46px 24px;border-radius:14px;}
+  .bg-section::before{background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.68) 32%,rgba(0,0,0,.28) 55%,rgba(0,0,0,0) 78%);}
+  .bg-section.investment::before{background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.3) 28%,rgba(0,0,0,0) 48%);}
+  .bg-section .wrap,.bg-section .feat-list,.bg-section .check-list{max-width:100%;}
+  .gallery,.gallery-row2,.gallery-row3{grid-template-columns:1fr 1fr;}
+  .price-card{padding:36px 24px;}
+  .place-split{grid-template-columns:1fr;min-height:auto;}
+  .place-gallery2{height:340px;}
+  .place-text2{padding:44px 24px;}
+  .place-text2 h2{font-size:1.7rem;}
+  .place-text2 p{font-size:1rem;}
+  .place-feature2{font-size:1rem;}
+  .past-gallery{grid-template-columns:1fr 1fr;}
+  .depo-arrow.prev{left:6px;}
+  .depo-arrow.next{right:6px;}
+}
 
 /* LIGHTBOX (espaço e galeria de retiros passados) */
 .lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,5,8,.95);align-items:center;justify-content:center;padding:40px;}
@@ -441,7 +444,6 @@ footer a:hover{color:var(--purple);}
   <div class="wrap" style="max-width:1100px;">
     <p class="eyebrow">Memórias</p>
     <h2 class="heading">Galeria dos <em>retiros passados</em></h2>
-    <p class="body-text" style="max-width:560px;margin:14px auto 0;">Momentos reais de mulheres que já viveram o Retiro Natureza Feminina — rodas, rituais, práticas e a reconexão com a natureza feminina.</p>
   </div>
   <div class="past-gallery">
     <button class="gal-btn" onclick="openLightbox2(0)"><img src="images/retiro-inluz/retiros-passados/turma-mirante.jpg" alt="Mulheres reunidas em retiro feminino com vista para o mar"></button>
