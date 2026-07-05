@@ -214,63 +214,6 @@ section { padding: 76px 24px; }
 
 /* PROBLEM */
 .sec-problem { background: var(--card-bg); }
-.prob-head { text-align: center; margin-bottom: 52px; }
-.prob-head .stitle { font-size: 2.1rem; }
-.prob-head .slead { margin: 0 auto; text-align: center; }
-
-.symp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(252px, 1fr));
-  gap: 12px;
-  margin-bottom: 42px;
-}
-.symp-item {
-  background: var(--cream);
-  border-radius: 12px;
-  padding: 17px 18px;
-  display: flex;
-  align-items: flex-start;
-  gap: 13px;
-  border: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-.symp-item:hover { border-color: var(--border); }
-.symp-icon { font-size: 1.35rem; flex-shrink: 0; margin-top: 1px; }
-.symp-text { font-size: 0.94rem; color: var(--text-dark); line-height: 1.5; }
-
-.prob-close {
-  background: var(--cream);
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  padding: 36px 32px;
-  text-align: center;
-}
-.prob-close p {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.45rem;
-  color: var(--text-dark);
-  line-height: 1.55;
-  margin-bottom: 26px;
-  max-width: 580px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.btn-gold {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  background: var(--gold);
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 30px;
-  border-radius: 100px;
-  font-size: 0.96rem;
-  font-weight: 500;
-  transition: background 0.2s, transform 0.15s;
-}
-.btn-gold:hover { background: var(--text-mid); transform: translateY(-1px); }
-
 /* SPECIALTIES */
 .spec-grid {
   display: grid;
@@ -410,34 +353,6 @@ section { padding: 76px 24px; }
 @media (max-width: 380px) {
   .proc-steps { grid-template-columns: 1fr; }
 }
-
-/* PLAN STATEMENT */
-.sec-plan { background: var(--dark-green); }
-.plan-inner { text-align: center; }
-.plan-title { font-size: 2.4rem; color: #fff; max-width: 620px; margin: 0 auto 18px; line-height: 1.22; }
-.plan-title em { color: var(--gold-light); font-style: italic; }
-.plan-lead { color: rgba(255,255,255,0.65); text-align: center; margin: 0 auto 48px; }
-.plan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  text-align: left;
-}
-.plan-item {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.11);
-  border-radius: 14px;
-  padding: 26px 22px;
-}
-.plan-ico { font-size: 1.75rem; display: block; margin-bottom: 13px; }
-.plan-item-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.22rem;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 9px;
-}
-.plan-item-text { font-size: 0.88rem; color: rgba(255,255,255,0.68); line-height: 1.65; font-weight: 300; }
 
 /* INCLUDES + PRICE */
 .incl-grid {
@@ -810,36 +725,6 @@ footer a:hover { text-decoration: underline; }
   </div>
 </section>
 
-<!-- PLAN STATEMENT -->
-<section class="sec-plan">
-  <div class="inner">
-    <div class="plan-inner">
-      <div class="plan-grid">
-        <div class="plan-item">
-          <span class="plan-ico">📋</span>
-          <div class="plan-item-title">Protocolo escrito</div>
-          <p class="plan-item-text">Um documento com todas as recomendações — alimentação, fitoterápicos, rotina e estratégias específicas para o seu caso.</p>
-        </div>
-        <div class="plan-item">
-          <span class="plan-ico">🌿</span>
-          <div class="plan-item-title">Prescrição natural</div>
-          <p class="plan-item-text">Plantas medicinais, suplementos, florais e aromaterapia indicados com dose, horário e forma de uso adequados a você.</p>
-        </div>
-        <div class="plan-item">
-          <span class="plan-ico">🎯</span>
-          <div class="plan-item-title">Causa identificada</div>
-          <p class="plan-item-text">Saímos com clareza sobre o que está gerando o desequilíbrio — não apenas o sintoma a tratar, mas a origem a resolver.</p>
-        </div>
-        <div class="plan-item">
-          <span class="plan-ico">📅</span>
-          <div class="plan-item-title">Próximos passos claros</div>
-          <p class="plan-item-text">Um plano com prazos realistas — para que você saiba exatamente o que fazer nos próximos dias e semanas.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section class="sec-about">
   <div class="inner">
@@ -932,66 +817,8 @@ footer a:hover { text-decoration: underline; }
       <div class="proc-step">
         <div class="step-num">4</div>
         <div class="step-title">Plano Terapêutico</div>
-        <p class="step-text">Você recebe seu protocolo: alimentação, fitoterápicos, aromaterapia, florais e orientações práticas.</p>
+        <p class="step-text">Você recebe seu protocolo personalizado por escrito, com todos os detalhes do seu cuidado.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section>
-  <div class="inner">
-    <div class="prob-head">
-      <span class="stag">Para quem é a consulta</span>
-      <h2 class="stitle">Para quem é <em>esse atendimento</em></h2>
-      <p class="slead">O atendimento é indicado para mulheres que buscam compreender a origem dos seus desequilíbrios, conhecer melhor o próprio corpo e adotar recursos naturais e integrativos como parte do cuidado com a saúde. Também para quem quer ajustar a rotina às suas tendências genéticas e de saúde, construir um bom estilo de vida e investir em longevidade saudável — uma abordagem de medicina preventiva naturalista.</p>
-    </div>
-    <div class="symp-grid">
-      <div class="symp-item">
-        <span class="symp-icon">😮‍💨</span>
-        <span class="symp-text">Cansaço profundo que não passa mesmo com sono adequado</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">🌀</span>
-        <span class="symp-text">Ciclo irregular, TPM intensa, cólicas ou fluxo desregulado</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">🌿</span>
-        <span class="symp-text">Intestino preso, inchaço, digestão lenta ou intestino irritável</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">⚖️</span>
-        <span class="symp-text">Excesso de peso que resiste a qualquer dieta</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">🌸</span>
-        <span class="symp-text">Dificuldade para engravidar ou suporte no pré e pós-parto</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">🔁</span>
-        <span class="symp-text">Infecções de repetição — candidíase, ITU, vaginose bacteriana</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">🧠</span>
-        <span class="symp-text">Ansiedade, instabilidade emocional ou dificuldade de concentração</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">🌙</span>
-        <span class="symp-text">Sintomas da menopausa afetando sua qualidade de vida</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">🦴</span>
-        <span class="symp-text">Dores crônicas, fibromialgia ou condições degenerativas</span>
-      </div>
-      <div class="symp-item">
-        <span class="symp-icon">💊</span>
-        <span class="symp-text">Exames normais, mas você não se sente bem — sem diagnóstico real</span>
-      </div>
-    </div>
-    <div class="prob-close">
-      <a href="https://wa.me/5511960010586?text=Ol%C3%A1!" class="btn-gold" target="_blank" rel="noopener">
-        Agendar minha consulta
-      </a>
     </div>
   </div>
 </section>
