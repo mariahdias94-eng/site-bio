@@ -354,6 +354,72 @@
   }
   .restart-btn:hover { color: var(--text); }
 
+  /* Lead gate */
+  .lead-screen { animation: fadeUp 0.6s ease both; }
+  .lead-icon { font-size: 28px; margin-bottom: 14px; text-align: center; }
+  .lead-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .lead-subtitle { font-size: 14px; color: var(--muted); text-align: center; line-height: 1.7; margin-bottom: 1.75rem; }
+  .lead-form-group { margin-bottom: 12px; }
+  .lead-input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--surface);
+    transition: border-color 0.2s;
+  }
+  .lead-input:focus { outline: none; border-color: var(--green); }
+  .lead-input::placeholder { color: #aaa; }
+  .btn-lead-submit {
+    display: block;
+    width: 100%;
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 6px;
+  }
+  .btn-lead-submit:hover { background: var(--green-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(29,107,82,0.25); }
+  .btn-lead-submit:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
+  .lead-note { font-size: 11.5px; color: var(--muted); text-align: center; margin-top: 12px; line-height: 1.6; }
+
+  /* Raiz à Coroa embed */
+  .raiz-coroa-embed { margin-top: 2rem; }
+  .raiz-coroa-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .raiz-coroa-embed iframe {
+    width: 100%;
+    height: 820px;
+    border: 1px solid var(--border);
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
   /* Footer */
   .footer {
     margin-top: 2.5rem;
@@ -415,6 +481,18 @@
       </div>
     </div>
 
+    <!-- Lead screen -->
+    <div id="lead-screen" style="display:none" class="lead-screen">
+      <div class="lead-icon">🔒</div>
+      <h2 class="lead-title">Para onde enviamos seu resultado?</h2>
+      <p class="lead-subtitle">Preencha seus dados para ver agora qual dosha está em desequilíbrio e entrar na lista de espera do Portal InLuz.</p>
+      <div class="lead-form-group"><input class="lead-input" type="text" id="lead-nome" placeholder="Seu nome" autocomplete="given-name"></div>
+      <div class="lead-form-group"><input class="lead-input" type="email" id="lead-email" placeholder="Seu melhor e-mail" autocomplete="email"></div>
+      <div class="lead-form-group"><input class="lead-input" type="tel" id="lead-tel" placeholder="Seu WhatsApp" autocomplete="tel"></div>
+      <button class="btn-lead-submit" id="leadSubmitBtn" onclick="submitLead()">Ver meu resultado →</button>
+      <p class="lead-note">Seus dados estão seguros e você também garante sua vaga na lista de espera do Portal InLuz.</p>
+    </div>
+
     <!-- Result screen -->
     <div id="result-screen" style="display:none" class="result-screen">
       <div class="dosha-badge" id="dosha-badge"></div>
@@ -426,6 +504,11 @@
       <p class="cta-label">Quer entender o que está por trás desse desequilíbrio e o que a Ayurveda indica para reequilibrar?</p>
       <a class="btn-cta" id="cta-link" href="https://mariahcaroline.com" target="_blank">Quero reequilibrar meu dosha →</a>
       <button class="restart-btn" onclick="restart()">Refazer o quiz</button>
+
+      <div class="raiz-coroa-embed" id="raizCoroaEmbed">
+        <div class="raiz-coroa-label">✦ Convite especial pra você ✦</div>
+        <div id="raizCoroaFrameContainer"></div>
+      </div>
     </div>
 
   </div>
@@ -613,12 +696,41 @@ function goNext() {
     selected = answers[current] !== undefined ? answers[current] : null;
     render();
   } else {
-    showResult();
+    showLeadGate();
   }
 }
 
 function goBack() {
   if (current > 0) { current--; render(); }
+}
+
+function showLeadGate() {
+  document.getElementById("quiz-screen").style.display = "none";
+  document.getElementById("lead-screen").style.display = "block";
+  document.getElementById("quiz-card").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function submitLead() {
+  const nome = document.getElementById("lead-nome").value.trim();
+  const email = document.getElementById("lead-email").value.trim();
+  const tel = document.getElementById("lead-tel").value.trim();
+  if (!nome) { alert("Por favor, informe seu nome."); return; }
+  if (!email || !email.includes("@")) { alert("Por favor, informe um e-mail válido."); return; }
+  if (!tel) { alert("Por favor, informe seu WhatsApp."); return; }
+
+  const btn = document.getElementById("leadSubmitBtn");
+  btn.textContent = "Enviando...";
+  btn.disabled = true;
+
+  fetch("https://script.google.com/macros/s/AKfycbyaoP4kVRlh7JefJXuxIAjxdMbf6J1U70HFZtSD7616WXux8DfiBl1gpQSVXzTatWey5A/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nome, email, tel, origem: "quiz-dosha-vikriti" })
+  }).catch(() => {});
+
+  document.getElementById("lead-screen").style.display = "none";
+  showResult();
 }
 
 function showResult() {
@@ -654,6 +766,15 @@ function showResult() {
     `<span class="tag" style="background:${d.tagBg};color:${d.tagColor}">${t}</span>`
   ).join("");
 
+  const raizContainer = document.getElementById("raizCoroaFrameContainer");
+  if (raizContainer && !raizContainer.dataset.loaded) {
+    raizContainer.dataset.loaded = "1";
+    const ifr = document.createElement("iframe");
+    ifr.src = "https://mariahcaroline.com/da-raiz-a-coroa.html";
+    ifr.title = "Da Raiz à Coroa — Evento Inluz";
+    raizContainer.appendChild(ifr);
+  }
+
   document.getElementById("quiz-card").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -661,6 +782,7 @@ function restart() {
   current = 0;
   answers = [];
   selected = null;
+  document.getElementById("lead-screen").style.display = "none";
   document.getElementById("result-screen").style.display = "none";
   document.getElementById("quiz-screen").style.display = "block";
   render(false);
