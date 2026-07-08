@@ -175,7 +175,13 @@ footer a{color:var(--plum);text-decoration:none}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr}
   .hero-left{padding:56px 28px 40px}
-  .hero-right{height:70vw;min-height:380px}
+  .hero-break{display:none}
+  .hero-title{font-size:clamp(30px,8vw,46px);white-space:nowrap}
+  .hero-right{height:auto;min-height:520px}
+  .chakra-col{padding:32px 0 32px 24px}
+  .chakra-row{padding:9px 18px 9px 9px;margin:7px 0}
+  .chakra-dot{width:14px;height:14px}
+  .chakra-row .clabel{font-size:18px}
   .gallery-strip{grid-template-columns:1fr 1fr;height:280px}
   .gallery-strip>div:last-child{display:none}
   .about-section{grid-template-columns:1fr;padding:0 24px;gap:36px;margin:64px auto}
@@ -186,9 +192,13 @@ footer a{color:var(--plum);text-decoration:none}
   .bottom-cta{padding:64px 24px 88px}
 }
 @media(max-width:540px){
+  .hero-title{font-size:8.5vw}
   .gallery-strip{height:220px;grid-template-columns:1fr}
   .gallery-strip>div:not(:first-child){display:none}
   .testi-grid{grid-template-columns:1fr}
+  .chakra-col{padding:26px 0 26px 16px}
+  .chakra-row{gap:10px;padding:8px 14px 8px 8px}
+  .chakra-row .clabel{font-size:16.5px;white-space:normal}
 }
 </style>
 </head>
@@ -199,7 +209,7 @@ footer a{color:var(--plum);text-decoration:none}
   <div class="hero-left">
     <div class="hero-portrait-bg"><img src="images/da-raiz-a-coroa/hero-portrait-mariah.jpg" alt=""></div>
     <span class="eyebrow">✦ Evento Gratuito Inluz · 21 de Julho ✦</span>
-    <h1 class="hero-title">Da Raiz<br>à <em>Coroa</em></h1>
+    <h1 class="hero-title">Da Raiz<br class="hero-break">à <em>Coroa</em></h1>
     <p class="hero-tagline">1 dia · Ao vivo · Gratuito</p>
 
     <div class="highlight-box">
@@ -284,15 +294,15 @@ footer a{color:var(--plum);text-decoration:none}
     <span class="s-lbl">Quem já viveu jornadas comigo</span>
     <h2 class="s-title">Transformações <em>reais</em></h2>
     <div class="testi-grid">
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1EKCovNkJ1RqNVwvmhWS7mh7SoCZKKFYT&sz=w800" alt="Depoimento"></div>
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1q4qjisjdW5JhN6uIUN-wLbgWkzOM85uT&sz=w800" alt="Depoimento"></div>
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1uQ0uFD59BY1dafMWJg8zIcxSKFQEvhwr&sz=w800" alt="Depoimento"></div>
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1JgSTHl-2QpI9HjNRt6dGwzBKnfjADuSy&sz=w800" alt="Depoimento"></div>
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=16avL-yXxlt8zp2oS95VfXidx-8R5_Kz1&sz=w800" alt="Depoimento"></div>
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1Prq--FgNILxDvo6LXSUNVMzFECPz-yZC&sz=w800" alt="Depoimento"></div>
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=19Dk_UIpS7EX5B8cwneyMFG0DolSB2zFF&sz=w800" alt="Depoimento"></div>
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1BOHI5H2QiFSMB0JgBrj8eOcUxypjkq_N&sz=w800" alt="Depoimento"></div>
-      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1YQ-CwFp4KVQN3kx8qD3noie_uUjJuE3t&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-01.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-02.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-03.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-04.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-05.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-06.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-07.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-08.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/depoimento-09.jpg" alt="Depoimento"></div>
       <div class="testi-card"><img src="images/da-raiz-a-coroa/testi-relatos-encontros.jpg" alt="Depoimento"></div>
     </div>
   </div>
