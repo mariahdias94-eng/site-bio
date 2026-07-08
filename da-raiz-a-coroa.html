@@ -403,11 +403,8 @@ document.querySelectorAll('.deliver-item,.testi-card').forEach(c=>obs.observe(c)
 
 (function(){
   function sendHeight(){ try{ window.parent.postMessage({raizCoroaHeight: document.documentElement.scrollHeight}, '*'); }catch(e){} }
-  window.addEventListener('load', sendHeight);
-  window.addEventListener('resize', sendHeight);
-  if (window.ResizeObserver) { new ResizeObserver(sendHeight).observe(document.body); }
-  setTimeout(sendHeight, 400);
-  setTimeout(sendHeight, 1200);
+  window.addEventListener('load', function(){ setTimeout(sendHeight, 300); });
+  setTimeout(sendHeight, 1000);
 })();
 </script>
 </body>
