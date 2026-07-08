@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Chás & Shots Medicinais — Grátis | Mariah Caroline</title>
+<meta name="description" content="Baixe grátis o Guia de Chás & Shots Medicinais — receitas para curar, fortalecer e equilibrar seu corpo naturalmente.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green: #2C4A3E;
+  --green-light: #4C7A63;
+  --terracota: #A9682E;
+  --cream: #FBF6EE;
+  --card-bg: #F4EFE7;
+  --text-dark: #2E241A;
+  --text-mid: #6B5240;
+  --text-light: #9B8070;
+  --border: rgba(44,74,62,0.16);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  padding: 48px 16px 60px;
+}
+
+.container { max-width: 560px; margin: 0 auto; }
+
+.header { text-align: center; margin-bottom: 28px; }
+.brand { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracota); font-weight: 600; margin-bottom: 18px; }
+.badge {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+}
+.header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 2.7rem; line-height: 1.15; color: var(--green); margin-bottom: 14px; }
+.header h1 em { font-style: italic; color: var(--terracota); }
+.ornament { color: var(--terracota); font-size: 18px; margin-bottom: 14px; }
+.header p { font-size: 15px; color: var(--text-mid); max-width: 420px; margin: 0 auto; }
+
+.plants-row { display: flex; justify-content: center; gap: 22px; margin: 28px 0; flex-wrap: wrap; }
+.plant { text-align: center; }
+.plant-dot {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--card-bg); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin: 0 auto 8px;
+}
+.plant-name { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-mid); }
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 50px rgba(44,74,62,0.08);
+}
+@media (max-width: 480px) { .card { padding: 26px 20px; } }
+
+.card h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; color: var(--green); margin-bottom: 10px; text-align: center; }
+.card > p.lead { font-size: 14.5px; color: var(--text-mid); margin-bottom: 24px; text-align: center; }
+
+.form-group { margin-bottom: 12px; }
+.form-input {
+  width: 100%; background: var(--cream); border: 1.5px solid var(--border); border-radius: 10px;
+  padding: 14px 16px; font-family: 'DM Sans', sans-serif; font-size: 14.5px; color: var(--text-dark); outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus { border-color: var(--terracota); }
+.form-input::placeholder { color: var(--text-light); }
+.btn-submit {
+  width: 100%; padding: 16px 28px; background: var(--green); border: none; border-radius: 40px;
+  font-family: 'DM Sans', sans-serif; font-size: 14.5px; font-weight: 600; letter-spacing: 0.02em; color: #fff;
+  cursor: pointer; margin-top: 8px; transition: opacity 0.2s, transform 0.2s;
+}
+.btn-submit:hover { opacity: 0.92; transform: translateY(-1px); }
+.btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.form-note { font-size: 11.5px; color: var(--text-light); margin-top: 14px; text-align: center; line-height: 1.6; }
+
+/* success / whatsapp step */
+.success-screen { display: none; text-align: center; }
+.success-icon { font-size: 34px; margin-bottom: 14px; }
+.success-screen h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; color: var(--green); margin-bottom: 12px; }
+.success-steps { text-align: left; background: var(--card-bg); border-radius: 12px; padding: 20px 22px; margin: 20px 0 26px; }
+.success-steps li { font-size: 14px; color: var(--text-dark); line-height: 1.9; margin-left: 18px; }
+.btn-whatsapp {
+  display: block; width: 100%; background: #25D366; color: #fff; text-decoration: none;
+  padding: 16px 24px; border-radius: 40px; font-size: 15px; font-weight: 600; text-align: center;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-whatsapp:hover { opacity: 0.92; transform: translateY(-1px); }
+
+.footer { text-align: center; margin-top: 26px; font-size: 12px; color: var(--text-light); }
+.footer a { color: var(--terracota); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <p class="brand">Portal InLuz · Farmácia Natural Caseira</p>
+    <span class="badge">✦ E-book 100% gratuito</span>
+    <h1>Guia de <em>Chás & Shots</em><br>Medicinais</h1>
+    <div class="ornament">✦</div>
+    <p>Receitas poderosas para curar, fortalecer e equilibrar seu corpo naturalmente — direto da sua cozinha, sem complicação.</p>
+  </header>
+
+  <div class="plants-row">
+    <div class="plant"><div class="plant-dot">🫚</div><div class="plant-name">Gengibre</div></div>
+    <div class="plant"><div class="plant-dot">🌿</div><div class="plant-name">Tulsi</div></div>
+    <div class="plant"><div class="plant-dot">🌱</div><div class="plant-name">Tomilho</div></div>
+    <div class="plant"><div class="plant-dot">🌸</div><div class="plant-name">Passiflora</div></div>
+  </div>
+
+  <div class="card" id="card">
+
+    <!-- Form step -->
+    <div id="form-screen">
+      <h2>Baixe agora, é grátis</h2>
+      <p class="lead">Preencha seus dados para receber o guia completo.</p>
+      <div class="form-group"><input class="form-input" type="text" id="lead-nome" placeholder="Seu nome" autocomplete="given-name"></div>
+      <div class="form-group"><input class="form-input" type="email" id="lead-email" placeholder="Seu melhor e-mail" autocomplete="email"></div>
+      <div class="form-group"><input class="form-input" type="tel" id="lead-tel" placeholder="Seu WhatsApp" autocomplete="tel"></div>
+      <button class="btn-submit" id="submitBtn" onclick="submitLead()">Baixar Grátis Agora →</button>
+      <p class="form-note">Sem spam. Seus dados estão seguros.</p>
+    </div>
+
+    <!-- Success / WhatsApp step -->
+    <div id="success-screen" class="success-screen">
+      <div class="success-icon">✅</div>
+      <h2>Falta só 1 passo!</h2>
+      <ul class="success-steps">
+        <li>1. Clique no botão verde abaixo e entre no grupo do WhatsApp.</li>
+        <li>2. Dentro do grupo, toque na <strong>descrição</strong> — o link do guia está lá.</li>
+        <li>3. Baixe seu Guia de Chás & Shots Medicinais gratuitamente.</li>
+      </ul>
+      <a class="btn-whatsapp" href="https://chat.whatsapp.com/Ki5pZBI27Xp8ttzgPQHPV2" target="_blank" rel="noopener">Entrar no grupo e baixar o guia →</a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>© Mariah Caroline · <a href="https://mariahcaroline.com">mariahcaroline.com</a></p>
+  </footer>
+
+</div>
+
+<script>
+function submitLead() {
+  const nome = document.getElementById('lead-nome').value.trim();
+  const email = document.getElementById('lead-email').value.trim();
+  const tel = document.getElementById('lead-tel').value.trim();
+  if (!nome) { alert('Por favor, informe seu nome.'); return; }
+  if (!email || !email.includes('@')) { alert('Por favor, informe um e-mail válido.'); return; }
+  if (!tel) { alert('Por favor, informe seu WhatsApp.'); return; }
+
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+
+  fetch('https://script.google.com/macros/s/AKfycbyaoP4kVRlh7JefJXuxIAjxdMbf6J1U70HFZtSD7616WXux8DfiBl1gpQSVXzTatWey5A/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nome, email, tel, origem: 'guia-chas-e-shots' })
+  }).catch(() => {});
+
+  document.getElementById('form-screen').style.display = 'none';
+  document.getElementById('success-screen').style.display = 'block';
+  document.getElementById('card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.querySelectorAll('.form-input').forEach(inp => {
+  inp.addEventListener('keydown', e => { if (e.key === 'Enter') submitLead(); });
+});
+</script>
+
+</body>
+</html>
