@@ -209,7 +209,7 @@ footer a{color:var(--plum);text-decoration:none}
   <div class="hero-left">
     <div class="hero-portrait-bg"><img src="images/da-raiz-a-coroa/hero-portrait-mariah.jpg" alt=""></div>
     <span class="eyebrow">✦ Evento Gratuito Inluz · 21 de Julho ✦</span>
-    <h1 class="hero-title">Da Raiz<br class="hero-break">à <em>Coroa</em></h1>
+    <h1 class="hero-title">Da Raiz <br class="hero-break">à <em>Coroa</em></h1>
     <p class="hero-tagline">1 dia · Ao vivo · Gratuito</p>
 
     <div class="highlight-box">
@@ -400,6 +400,15 @@ const obs=new IntersectionObserver(entries=>{
   });
 },{threshold:.1});
 document.querySelectorAll('.deliver-item,.testi-card').forEach(c=>obs.observe(c));
+
+(function(){
+  function sendHeight(){ try{ window.parent.postMessage({raizCoroaHeight: document.documentElement.scrollHeight}, '*'); }catch(e){} }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  if (window.ResizeObserver) { new ResizeObserver(sendHeight).observe(document.body); }
+  setTimeout(sendHeight, 400);
+  setTimeout(sendHeight, 1200);
+})();
 </script>
 </body>
 </html>
