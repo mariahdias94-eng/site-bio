@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Da Raiz à Coroa — Evento Inluz | Mariah Caroline</title>
+<meta name="description" content="Um evento gratuito e ao vivo com Mariah Caroline — da raiz à coroa, uma jornada guiada pelos 7 centros energéticos em um único encontro. Dia 21 de julho.">
+<meta property="og:title" content="Da Raiz à Coroa — Evento Gratuito Inluz · 21/07">
+<meta property="og:description" content="1 dia · 1 live ao vivo · gratuita. Uma jornada guiada pelos 7 centros do corpo e da emoção, com Mariah Caroline. Dia 21 de julho.">
+<meta property="og:image" content="https://mariahcaroline.com/images/da-raiz-a-coroa/hero-right-portal.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Da Raiz à Coroa — Evento Gratuito Inluz · 21/07">
+<meta name="twitter:description" content="1 dia · 1 live ao vivo · gratuita. Dia 21 de julho, com Mariah Caroline.">
+<meta name="twitter:image" content="https://mariahcaroline.com/images/da-raiz-a-coroa/hero-right-portal.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --warm:#FDF9F4;
+  --gold:#C9981A;--gold-b:#E8B020;--gold-l:#F5D060;--gold-p:#EDE0C8;
+  --brown:#3A2610;--text:#2E1A08;--muted:#6B4E2A;
+  --plum:#5B2D6E;--plum-b:#7B3D92;--plum-light:#F3ECF8;
+  --sage:#6B8E6E;--border:rgba(201,152,26,.22);
+  --bg2:#F5EFE4;
+
+  --raiz:#A9432E; --sacral:#C97B33; --plexo:#C9A227; --cardiaco:#5C8A5C;
+  --laringeo:#3E7CA8; --frontal:#5B4E9C; --coronario:#8C5EA8;
+
+  --dark1:#1F0F2E; --dark2:#331B49;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden}
+img{max-width:100%;display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;position:relative}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:72px 52px 72px 68px;position:relative;z-index:2}
+.hero-portrait-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-portrait-bg img{width:100%;height:100%;object-fit:cover;object-position:70% top;opacity:.08;filter:sepia(40%) brightness(1.1)}
+.hero-portrait-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--warm) 0%,rgba(253,249,244,.8) 60%,var(--warm) 100%),linear-gradient(180deg,var(--warm) 0%,transparent 12%,transparent 88%,var(--warm) 100%)}
+
+.eyebrow{display:inline-block;width:fit-content;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:24px;padding:9px 24px;border-radius:40px;background:linear-gradient(135deg,var(--plum) 0%,var(--plum-b) 100%);box-shadow:0 4px 18px rgba(91,45,110,.35);opacity:0;animation:fadeUp .8s .3s forwards}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6.5vw,94px);font-weight:300;line-height:.98;color:var(--brown);margin-bottom:14px;opacity:0;animation:fadeUp .8s .4s forwards}
+.hero-title em{font-style:italic;color:var(--gold-b);text-shadow:0 0 28px rgba(232,176,32,.32)}
+.hero-tagline{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;opacity:0;animation:fadeUp .8s .5s forwards}
+
+.highlight-box{background:linear-gradient(135deg,rgba(91,45,110,.08) 0%,rgba(201,152,26,.1) 100%);border:1.5px solid rgba(91,45,110,.2);border-radius:8px;padding:22px 28px;margin-bottom:28px;max-width:460px;opacity:0;animation:fadeUp .8s .6s forwards}
+.highlight-box p{font-size:16.5px;font-weight:400;line-height:1.75;color:var(--brown)}
+.highlight-box strong{color:var(--plum-b);font-weight:600}
+
+.pillars{display:flex;gap:20px;margin-bottom:34px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .65s forwards}
+.pillar{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pillar-dot{width:6px;height:6px;border-radius:50%;background:var(--plum-b);flex-shrink:0}
+
+.form-wrapper{width:100%;max-width:420px;opacity:0;animation:fadeUp .8s .72s forwards}
+.form-headline{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--brown);margin-bottom:16px;line-height:1.4}
+.form-group{margin-bottom:10px}
+.form-input{width:100%;background:rgba(255,255,255,.95);border:1.5px solid rgba(201,152,26,.28);border-radius:6px;padding:15px 18px;font-family:'Jost',sans-serif;font-size:15.5px;font-weight:300;color:var(--text);outline:none;transition:border-color .3s,box-shadow .3s}
+.form-input::placeholder{color:#C4A97A;letter-spacing:.03em}
+.form-input:focus{border-color:var(--plum);box-shadow:0 0 0 3px rgba(91,45,110,.1);background:#fff}
+.btn-submit{width:100%;padding:17px 30px;background:linear-gradient(135deg,var(--plum-b) 0%,var(--plum) 100%);border:none;border-radius:6px;font-family:'Jost',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;cursor:pointer;margin-top:6px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 18px rgba(91,45,110,.3)}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(91,45,110,.4)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-note{margin-top:12px;font-size:12.5px;color:#B08A4A;line-height:1.6}
+
+.success-msg{display:none;padding:22px;border:1px solid rgba(107,142,110,.35);border-radius:6px;background:rgba(107,142,110,.08)}
+.success-msg.show{display:block}
+.success-msg h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--sage);margin-bottom:6px}
+.success-msg p{font-size:14.5px;color:var(--muted);line-height:1.6}
+
+/* hero right — foto real + coluna dos 7 centros sobreposta */
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:0}
+.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,15,46,.35) 0%,rgba(31,15,46,.75) 100%),linear-gradient(90deg,rgba(31,15,46,.5) 0%,transparent 30%);z-index:1}
+.chakra-col{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:0;position:absolute;inset:0;justify-content:center;z-index:2;padding:40px 0 40px 44px}
+.chakra-line{position:absolute;top:40px;bottom:40px;left:50px;width:1px;background:linear-gradient(180deg,var(--raiz),var(--sacral),var(--plexo),var(--cardiaco),var(--laringeo),var(--frontal),var(--coronario));opacity:.6}
+.chakra-dot{width:15px;height:15px;border-radius:50%;margin:22px 0;position:relative;box-shadow:0 0 22px currentColor}
+.chakra-row{display:flex;align-items:center;gap:14px;margin:9px 0;position:relative;background:rgba(31,15,46,.45);backdrop-filter:blur(2px);padding:7px 14px 7px 7px;border-radius:30px}
+.chakra-row .chakra-dot{margin:0;flex-shrink:0}
+.chakra-row .clabel{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#FAF6EF;white-space:nowrap}
+.chakra-row .cday{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,246,239,.65);margin-left:6px}
+
+/* ─── GALLERY ─── */
+.gallery-strip{display:grid;grid-template-columns:2fr 1fr 1fr;height:420px;gap:3px;overflow:hidden}
+.gallery-strip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.gallery-strip>div:hover img{transform:scale(1.04)}
+.gallery-strip>div{overflow:hidden;position:relative}
+.gallery-cap{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(0deg,rgba(31,15,46,.75) 0%,transparent 100%);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#FAF6EF;font-weight:500}
+
+/* ─── DELIVER (dark) ─── */
+.s-lbl{font-size:12px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,50px);font-weight:300;color:var(--brown);line-height:1.2}
+.s-title em{font-style:italic;color:var(--plum-b)}
+
+.deliver-section{padding:84px 40px;background:linear-gradient(135deg,var(--dark1) 0%,var(--dark2) 50%,var(--dark1) 100%);position:relative;overflow:hidden}
+.deliver-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(232,176,32,.1) 0%,transparent 70%);pointer-events:none}
+.deliver-inner{max-width:920px;margin:0 auto;position:relative;z-index:1}
+.deliver-header{text-align:center;margin-bottom:46px}
+.deliver-header .s-lbl{color:var(--gold-l)}
+.deliver-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,50px);font-weight:300;color:#FAF6EF;line-height:1.25}
+.deliver-header h2 em{font-style:italic;color:var(--gold-l)}
+.deliver-header p{color:rgba(250,246,239,.88);font-size:18px;font-weight:400;max-width:600px;margin:14px auto 0;line-height:1.75}
+.deliver-grid{display:flex;flex-direction:column;gap:12px}
+.deliver-item{display:flex;align-items:flex-start;gap:20px;padding:26px 28px;background:rgba(255,255,255,.06);border:1px solid rgba(245,208,96,.18);border-left-width:3px;border-radius:6px;transition:background .3s,border-color .3s}
+.deliver-item:hover{background:rgba(255,255,255,.1)}
+.deliver-check{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px;margin-top:2px;background:rgba(255,255,255,.08)}
+.deliver-text .dmeta{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-l);margin-bottom:6px;font-weight:600}
+.deliver-text h4{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:500;color:#FAF6EF;margin-bottom:10px;line-height:1.25}
+.deliver-text .dopen{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--gold-l);line-height:1.55;margin-bottom:10px}
+.deliver-text p{font-size:16px;font-weight:400;color:rgba(250,246,239,.9);line-height:1.8}
+.dtags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.dtag{font-size:12.5px;letter-spacing:.02em;color:rgba(250,246,239,.9);background:rgba(255,255,255,.1);border:1px solid rgba(245,208,96,.3);border-radius:20px;padding:6px 14px}
+.dtag strong{color:var(--gold-l);font-weight:600}
+.dtask{font-size:15px;font-weight:400;color:rgba(250,246,239,.85);line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(245,208,96,.25)}
+.dtask strong{color:var(--gold-l);font-weight:600}
+.dteaser{font-style:italic;color:var(--gold-l);margin-top:10px;font-size:15.5px;line-height:1.6}
+.dbadge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dark1);background:linear-gradient(135deg,var(--gold-l),var(--gold-b));border-radius:20px;padding:5px 14px;margin-bottom:8px}
+
+/* ─── FORWHO ─── */
+.forwho-section{padding:88px 40px;background:var(--warm)}
+.forwho-inner{max-width:960px;margin:0 auto;text-align:center}
+.fw-single{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(22px,3vw,32px);color:var(--brown);max-width:760px;margin:36px auto 0;line-height:1.6;text-align:center}
+.fw-single em{font-style:italic;color:var(--plum-b)}
+
+/* ─── PROMISE (quote) ─── */
+.promise-section{padding:130px 40px;text-align:center;position:relative;overflow:hidden}
+.promise-bg{position:absolute;inset:0;z-index:0}
+.promise-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.4) saturate(.7)}
+.promise-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,15,46,.72) 0%,rgba(51,27,73,.72) 100%);z-index:0}
+.p-quote{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.4vw,38px);font-weight:300;font-style:italic;line-height:1.6;max-width:760px;margin:0 auto 8px;color:#FAF6EF}
+.p-quote em{color:var(--gold-l);font-style:normal}
+.p-quote-final{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,4vw,44px);margin-top:20px;color:var(--gold-l)}
+
+/* ─── TESTIMONIALS ─── */
+.testi-section{padding:88px 40px;background:var(--bg2)}
+.testi-inner{max-width:1100px;margin:0 auto;text-align:center}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;text-align:left}
+.testi-card{border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(58,38,16,.12)}
+.testi-card img{width:100%;height:auto;display:block}
+
+/* ─── ABOUT ─── */
+.about-section{display:grid;grid-template-columns:.85fr 1.15fr;max-width:1080px;margin:96px auto;padding:0 40px;gap:64px;align-items:center}
+.about-img{border-radius:6px;overflow:hidden;box-shadow:8px 8px 48px rgba(58,38,16,.16)}
+.about-img img{width:100%;height:auto;display:block}
+.about-text .s-lbl{color:var(--gold)}
+.about-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:300;line-height:1.2;margin-bottom:22px;color:var(--brown)}
+.about-text h2 em{font-style:italic;color:var(--plum-b)}
+.about-text p{font-size:16.5px;font-weight:300;color:var(--muted);line-height:1.9;margin-bottom:16px}
+.about-text p strong{color:var(--brown);font-weight:500}
+
+/* ─── FAQ ─── */
+.faq-section{padding:88px 40px;background:var(--warm)}
+.faq-inner{max-width:740px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:20px}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:24px 0;font-family:'Jost',sans-serif;font-size:16.5px;font-weight:500;color:var(--brown);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q .arr{font-size:22px;color:var(--plum);transition:transform .3s;flex-shrink:0}
+.faq-q.open .arr{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+.faq-a.open{max-height:220px;padding-bottom:22px}
+.faq-a p{font-size:15.5px;font-weight:300;color:var(--muted);line-height:1.85}
+
+/* ─── BOTTOM CTA ─── */
+.bottom-cta{padding:88px 40px 108px;text-align:center;background:linear-gradient(180deg,var(--warm) 0%,var(--plum-light) 100%)}
+.bottom-cta-inner{max-width:480px;margin:0 auto}
+.bottom-cta .s-lbl{margin-bottom:10px}
+
+footer{padding:32px 40px;text-align:center;border-top:1px solid var(--border);font-size:13.5px;color:var(--muted);letter-spacing:.06em}
+footer a{color:var(--plum);text-decoration:none}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-left{padding:56px 28px 40px}
+  .hero-right{height:70vw;min-height:380px}
+  .gallery-strip{grid-template-columns:1fr 1fr;height:280px}
+  .gallery-strip>div:last-child{display:none}
+  .about-section{grid-template-columns:1fr;padding:0 24px;gap:36px;margin:64px auto}
+  .about-img{max-width:320px;margin:0 auto}
+  .forwho-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .deliver-section,.forwho-section,.promise-section,.faq-section,.testi-section{padding:64px 24px}
+  .bottom-cta{padding:64px 24px 88px}
+}
+@media(max-width:540px){
+  .gallery-strip{height:220px;grid-template-columns:1fr}
+  .gallery-strip>div:not(:first-child){display:none}
+  .testi-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-left">
+    <div class="hero-portrait-bg"><img src="images/da-raiz-a-coroa/hero-portrait-mariah.jpg" alt=""></div>
+    <span class="eyebrow">✦ Evento Gratuito Inluz · 21 de Julho ✦</span>
+    <h1 class="hero-title">Da Raiz<br>à <em>Coroa</em></h1>
+    <p class="hero-tagline">1 dia · Ao vivo · Gratuito</p>
+
+    <div class="highlight-box">
+      <p>Uma jornada ao vivo de <strong>limpeza e renovação</strong> para o seu corpo e as suas emoções — guiada pelos 7 centros energéticos, com meditação e medicinas tradicionais vitalistas, em um único encontro.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar"><span class="pillar-dot"></span>21/07 · às 21h</div>
+      <div class="pillar"><span class="pillar-dot"></span>100% Gratuito</div>
+    </div>
+
+    <div class="form-wrapper">
+      <p class="form-headline">Garanta sua vaga gratuita.</p>
+      <div id="form-hero">
+        <div class="form-group"><input class="form-input" type="text" id="nome-hero" placeholder="Seu nome" autocomplete="given-name"></div>
+        <div class="form-group"><input class="form-input" type="email" id="email-hero" placeholder="Seu melhor e-mail" autocomplete="email"></div>
+        <div class="form-group"><input class="form-input" type="tel" id="tel-hero" placeholder="WhatsApp (opcional)" autocomplete="tel"></div>
+        <button class="btn-submit" onclick="submitForm('hero')">Quero minha vaga gratuita →</button>
+        <p class="form-note">Sem spam. Você receberá acesso à live no grupo do WhatsApp.</p>
+      </div>
+      <div class="success-msg" id="success-hero">
+        <h3>Sua vaga está garantida ✦</h3>
+        <p>Te levando agora pro grupo do WhatsApp da Semana Inluz — é por lá que o aviso da live vai chegar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="images/da-raiz-a-coroa/hero-right-portal.jpg" alt="Mariah Caroline">
+    <div class="chakra-col">
+      <div class="chakra-line"></div>
+      <div class="chakra-row"><span class="chakra-dot" style="background:var(--raiz);color:var(--raiz)"></span><span class="clabel">Raiz — Eu Habito</span></div>
+      <div class="chakra-row"><span class="chakra-dot" style="background:var(--sacral);color:var(--sacral)"></span><span class="clabel">Sacral — Eu Sinto</span></div>
+      <div class="chakra-row"><span class="chakra-dot" style="background:var(--plexo);color:var(--plexo)"></span><span class="clabel">Plexo Solar — Eu Escolho</span></div>
+      <div class="chakra-row"><span class="chakra-dot" style="background:var(--cardiaco);color:var(--cardiaco)"></span><span class="clabel">Cardíaco — Eu Acolho</span></div>
+      <div class="chakra-row"><span class="chakra-dot" style="background:var(--laringeo);color:var(--laringeo)"></span><span class="clabel">Laríngeo — Eu Expresso</span></div>
+      <div class="chakra-row"><span class="chakra-dot" style="background:var(--frontal);color:var(--frontal)"></span><span class="clabel">Frontal — Eu Enxergo</span></div>
+      <div class="chakra-row"><span class="chakra-dot" style="background:var(--coronario);color:var(--coronario)"></span><span class="clabel">Coroa — Eu Integro</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery-strip">
+  <div><img src="images/da-raiz-a-coroa/gallery-meditacao.jpg" alt=""></div>
+  <div><img src="images/da-raiz-a-coroa/gallery-yoga.jpg" alt=""></div>
+  <div><img src="images/da-raiz-a-coroa/gallery-ritual.jpg" alt=""></div>
+</div>
+
+<!-- DELIVER: O QUE VOCÊ RECEBE -->
+<section class="deliver-section">
+  <div class="deliver-inner">
+    <div class="deliver-header">
+      <span class="s-lbl">O que você recebe</span>
+    </div>
+    <div class="deliver-grid">
+      <div class="deliver-item" style="border-left-color:var(--coronario)">
+        <div class="deliver-check" style="color:var(--coronario)">✨</div>
+        <div class="deliver-text">
+          <div class="dmeta">Evento ao vivo · 21/07 · 21h</div><h4>A jornada completa, da raiz à coroa</h4>
+          <div class="dtags"><span class="dtag"><strong>Formato:</strong> ao vivo via Zoom</span></div>
+          <p>Neste encontro faremos um estudo dos centros de energia do corpo, correlacionando com os órgãos e regiões do corpo, emoções, elementos e mantras de cada um. Faremos também uma limpeza energética através do Chakra Sadhana — prática de harmonização dos chakras — investigando também as origens desta prática e a integração dos koshas (corpos) e sua atuação na construção da saúde integral e felicidade plena.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORWHO -->
+<section class="forwho-section">
+  <div class="forwho-inner">
+    <span class="s-lbl">Feito para você?</span>
+    <h2 class="s-title">Esse encontro é <em>para você que…</em></h2>
+    <p class="fw-single">Quer sentir conexão com sua <em>essência divina</em>, fortalecer e limpar seus <em>corpos físico e sutis</em>, compreender a relação das suas emoções com seu corpo físico e aprender práticas eficazes para cultivar o equilíbrio, <em>a saúde integral e a felicidade plena</em>.</p>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="testi-inner">
+    <span class="s-lbl">Quem já viveu jornadas comigo</span>
+    <h2 class="s-title">Transformações <em>reais</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1EKCovNkJ1RqNVwvmhWS7mh7SoCZKKFYT&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1q4qjisjdW5JhN6uIUN-wLbgWkzOM85uT&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1uQ0uFD59BY1dafMWJg8zIcxSKFQEvhwr&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1JgSTHl-2QpI9HjNRt6dGwzBKnfjADuSy&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=16avL-yXxlt8zp2oS95VfXidx-8R5_Kz1&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1Prq--FgNILxDvo6LXSUNVMzFECPz-yZC&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=19Dk_UIpS7EX5B8cwneyMFG0DolSB2zFF&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1BOHI5H2QiFSMB0JgBrj8eOcUxypjkq_N&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="https://drive.google.com/thumbnail?id=1YQ-CwFp4KVQN3kx8qD3noie_uUjJuE3t&sz=w800" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/da-raiz-a-coroa/testi-relatos-encontros.jpg" alt="Depoimento"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-img"><img src="images/da-raiz-a-coroa/about-mariah.jpg" alt="Mariah Caroline"></div>
+  <div class="about-text">
+    <span class="s-lbl">Quem guia essa jornada</span>
+    <h2>Mariah Caroline,<br><em>naturóloga</em></h2>
+    <p><strong>Naturóloga especializada em saúde feminina integrativa</strong> — medicinas tradicionais, neurociências e ginecologia natural.</p>
+    <p>Atua no universo das terapias integrativas há mais de 8 anos. Aos 16 anos concluiu sua primeira formação em Yoga e, desde então, segue uma jornada de aprofundamento nos saberes ancestrais tradicionais para o bem-estar integral do Ser.</p>
+    <p>Integra a Naturologia — que traz o olhar ampliado das medicinas tradicionais vitalistas aliado à ciência moderna baseada em evidência — com diversas outras formações em saúde da mulher, neurociências, desenvolvimento mental, thetahealing, yoga, entre outras.</p>
+    <p>Hoje realiza atendimentos (online e presencial em Riviera de São Lourenço, SP) e retiros terapêuticos, conduz tratamentos de saúde imersivos e personalizados para quem deseja aprofundar em seus cuidados, e está desenvolvendo o <strong>Portal InLuz</strong> — plataforma de saúde e autoconhecimento feminino que integra cursos, jornadas terapêuticas e encontros online e presenciais.</p>
+  </div>
+</section>
+
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta" id="cta-final">
+  <div class="bottom-cta-inner">
+    <span class="s-lbl" style="display:block">Garanta sua vaga</span>
+    <h2 class="s-title" style="margin-bottom:18px">Da raiz <em>à coroa</em>, tudo em um só dia: 21/07.</h2>
+    <div id="form-bottom">
+      <div class="form-group"><input class="form-input" type="text" id="nome-bottom" placeholder="Seu nome" autocomplete="given-name"></div>
+      <div class="form-group"><input class="form-input" type="email" id="email-bottom" placeholder="Seu melhor e-mail" autocomplete="email"></div>
+      <div class="form-group"><input class="form-input" type="tel" id="tel-bottom" placeholder="WhatsApp (opcional)" autocomplete="tel"></div>
+      <button class="btn-submit" onclick="submitForm('bottom')">Reservar minha vaga gratuita</button>
+      <p class="form-note">Sem spam. Você receberá acesso à live no grupo do WhatsApp.</p>
+    </div>
+    <div class="success-msg" id="success-bottom">
+      <h3>Sua vaga está garantida ✦</h3>
+      <p>Te levando agora pro grupo do WhatsApp da Semana Inluz — é por lá que o aviso da live vai chegar.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© Mariah Caroline · <a href="https://mariahcaroline.com">mariahcaroline.com</a></p>
+</footer>
+
+<script>
+async function submitForm(id){
+  const nome=document.getElementById('nome-'+id).value.trim();
+  const email=document.getElementById('email-'+id).value.trim();
+  const tel=document.getElementById('tel-'+id).value.trim();
+  if(!nome){alert('Por favor, informe seu nome.');return;}
+  if(!email||!email.includes('@')){alert('Por favor, informe um e-mail válido.');return;}
+
+  const btn=document.querySelector('#form-'+id+' .btn-submit');
+  const originalText=btn.textContent;
+  btn.textContent='Enviando...';
+  btn.disabled=true;
+
+  const url='https://script.google.com/macros/s/AKfycbwqAahKsTCX2pSOeQwoGBGKsJmLI49kJn1rsGXBiXNLB3kuwgPotT4z1cVOz0F7rIcybg/exec'
+    +'?nome='+encodeURIComponent(nome)
+    +'&email='+encodeURIComponent(email)
+    +'&tel='+encodeURIComponent(tel||'—')
+    +'&origem='+encodeURIComponent('evento-inluz-da-raiz-a-coroa-21-07');
+
+  try{
+    const res=await fetch(url);
+    if(!res.ok) throw new Error('Falha no envio');
+
+    document.getElementById('form-'+id).style.display='none';
+    document.getElementById('success-'+id).classList.add('show');
+    document.getElementById('success-'+id).scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(()=>{ window.location.href='https://chat.whatsapp.com/Ki5pZBI27Xp8ttzgPQHPV2'; }, 1800);
+  }catch(err){
+    btn.textContent=originalText;
+    btn.disabled=false;
+    alert('Não conseguimos confirmar seu cadastro agora. Verifique sua internet e tente de novo — se persistir, chama a gente direto pelo WhatsApp.');
+  }
+}
+document.querySelectorAll('.form-input').forEach(inp=>{
+  inp.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){const f=inp.closest('[id^="form-"]');submitForm(f?f.id.replace('form-',''):'hero');}
+  });
+});
+function toggleFaq(btn){
+  const ans=btn.nextElementSibling;
+  const isOpen=ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){ans.classList.add('open');btn.classList.add('open');}
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      e.target.style.cssText+=`opacity:0;transform:translateY(18px);transition:opacity .5s ${i*.06}s,transform .5s ${i*.06}s`;
+      requestAnimationFrame(()=>{e.target.style.opacity='1';e.target.style.transform='translateY(0)';});
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.deliver-item,.testi-card').forEach(c=>obs.observe(c));
+</script>
+</body>
+</html>
