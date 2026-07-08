@@ -400,12 +400,6 @@ const obs=new IntersectionObserver(entries=>{
   });
 },{threshold:.1});
 document.querySelectorAll('.deliver-item,.testi-card').forEach(c=>obs.observe(c));
-
-(function(){
-  function sendHeight(){ try{ window.parent.postMessage({raizCoroaHeight: document.documentElement.scrollHeight}, '*'); }catch(e){} }
-  window.addEventListener('load', function(){ setTimeout(sendHeight, 300); });
-  setTimeout(sendHeight, 1000);
-})();
 </script>
 </body>
 </html>
