@@ -138,12 +138,11 @@
   .depoimentos { background: var(--cream-deep); }
   .depoimentos h2 { text-align: center; font-size: 36px; margin-bottom: 10px; }
   .depoimentos > .wrap > p.sub { text-align: center; max-width: 520px; margin: 0 auto 50px; font-size: 15px; }
-  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  .testi-card { background: #fff; border: 1px solid var(--border); padding: 28px 26px; border-radius: 4px; }
-  .testi-stars { color: var(--gold); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
-  .testi-card p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; font-style: italic; }
-  .testi-name { font-size: 13px; color: var(--ink); font-weight: 600; }
-  @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .testi-card { border-radius: 8px; overflow: hidden; box-shadow: 0 4px 24px rgba(28,24,18,0.12); }
+  .testi-card img { width: 100%; height: auto; display: block; }
+  @media (max-width: 900px) { .testi-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .testi-grid { grid-template-columns: 1fr; } }
 
   /* ═══ VOCÊ NÃO ESTÁ SOZINHA ═══ */
   .comunidade { background: var(--cream); }
@@ -589,25 +588,20 @@
 <!-- ══════════════════════════════════════════════════════════ -->
 <section class="depoimentos" id="depoimentos">
   <div class="wrap">
-    <span class="eyebrow">Vozes Reais</span>
-    <h2 class="center">O que dizem as mulheres que já trabalharam com Mariah</h2>
+    <span class="eyebrow">Quem já viveu jornadas comigo</span>
+    <h2 class="center">Transformações <em class="gold-text">reais</em></h2>
 
     <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Foi o encontro mais profundo que já tive comigo mesma. Voltei sendo uma versão mais inteira, mais suave e mais poderosa de mim."</p>
-        <div class="testi-name">Ana Paula M.</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"A Mariah tem um dom especial de criar um ambiente seguro onde você se permite soltar o que não serve mais. Cada prática foi transformadora."</p>
-        <div class="testi-name">Fernanda R.</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Mudou completamente a forma como eu cuido do meu corpo e da minha mente — com leveza, sem culpa, no meu tempo."</p>
-        <div class="testi-name">Camila T.</div>
-      </div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-01.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-02.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-03.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-04.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-05.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-06.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-07.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-08.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/depoimento-09.jpg" alt="Depoimento"></div>
+      <div class="testi-card"><img src="images/portal-inluz/depoimentos/testi-relatos-encontros.jpg" alt="Depoimento"></div>
     </div>
   </div>
 </section>
