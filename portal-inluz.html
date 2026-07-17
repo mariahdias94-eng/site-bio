@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inluz · Portal de Saúde Integrativa e Autoconhecimento Feminino</title>
+<meta name="description" content="Cursos, jornadas terapêuticas, encontros ao vivo e comunidade para a mulher que quer cuidar da saúde de forma natural e se reconectar consigo mesma. Conheça o Portal Inluz.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  :root {
+    --ink:        #1C1812;
+    --ink-soft:    #4A4236;
+    --cream:      #FBF7EF;
+    --cream-deep: #F1E8D8;
+    --gold:       #A9802E;
+    --gold-light: #D4AF6A;
+    --gold-deep:  #7C5A1E;
+    --border:     #E2D4B4;
+    --terracota:  #B5654A;
+    --sálvia:     #6F7A52;
+    --argila:     #9C7A4A;
+    --lavanda:    #8B7EB8;
+    --lavanda-deep: #6B5D96;
+  }
+
+  body { font-family: 'Jost', sans-serif; color: var(--ink-soft); background: var(--cream); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--ink); font-weight: 400; }
+  em { font-style: italic; }
+  .gold-text { background: linear-gradient(100deg, var(--gold-deep) 0%, var(--gold-light) 50%, var(--gold) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 100px 0; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 18px; display: block; text-align: center; }
+  .btn { display: inline-block; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.04em; padding: 16px 38px; border-radius: 2px; text-decoration: none; transition: all 0.25s ease; border: none; cursor: pointer; }
+  .btn-gold { background: linear-gradient(100deg, var(--gold-deep), var(--gold-light)); color: #fff; box-shadow: 0 8px 24px rgba(169,128,46,0.35); }
+  .btn-gold:hover { box-shadow: 0 10px 30px rgba(169,128,46,0.5); transform: translateY(-1px); }
+  .btn-outline { border: 1.5px solid var(--ink); color: var(--ink); background: transparent; }
+  .btn-outline:hover { background: var(--ink); color: #fff; }
+  .btn-ghost { border: 1.5px solid var(--border); color: var(--gold-deep); background: transparent; font-size: 13px; padding: 12px 26px; }
+  .btn-ghost:hover { border-color: var(--gold); background: rgba(169,128,46,0.06); }
+  .center { text-align: center; }
+
+  /* ═══ NAV ═══ */
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(251,247,239,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; }
+  nav .logo { display: flex; align-items: center; gap: 10px; }
+  nav .logo-mark { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+  nav .logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+  nav .logo span { font-family: 'Cormorant Garamond', serif; font-size: 24px; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 500; background: linear-gradient(100deg, var(--gold-deep) 0%, var(--gold-light) 55%, var(--gold) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  nav .links { display: flex; gap: 30px; list-style: none; }
+  nav .links a { color: var(--ink-soft); text-decoration: none; font-size: 14px; letter-spacing: 0.02em; }
+  nav .links a:hover { color: var(--gold-deep); }
+  nav .btn { padding: 10px 24px; font-size: 13px; }
+  @media (max-width: 860px) { nav .links { display: none; } }
+
+  /* ═══ HERO ═══ */
+  .hero { background: #fff; padding: 90px 0 64px; text-align: center; }
+  .hero .wrap { max-width: 800px; }
+  .hero .eyebrow { color: var(--gold-deep); }
+  .hero h1 { font-size: 56px; line-height: 1.14; margin-bottom: 22px; }
+  .hero p.lead { font-size: 17px; color: var(--ink-soft); max-width: 580px; margin: 0 auto 14px; }
+  .hero p.lead strong { color: var(--ink); }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin: 30px 0 18px; }
+  .hero-trust { font-size: 13.5px; color: var(--ink-soft); opacity: 0.85; margin-bottom: 56px; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 18px; }
+  @media (max-width: 700px) { .hero h1 { font-size: 38px; } }
+
+  /* ═══ VÍDEO ═══ */
+  .video-block { padding: 0 0 100px; background: #fff; }
+  .video-player { max-width: 880px; margin: 0 auto; border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 16/9; background: var(--ink); box-shadow: 0 30px 70px rgba(28,24,18,0.25); }
+  .video-player img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+  .video-player .play-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(180deg, rgba(20,16,10,0.25), rgba(20,16,10,0.55)); cursor: pointer; }
+  .play-btn { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .play-btn::after { content: ''; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent var(--ink); margin-left: 3px; }
+  .video-player .play-overlay p { color: #fff; font-size: 14px; letter-spacing: 0.02em; }
+
+  /* ═══ MANIFESTO ═══ */
+  .manifesto { background: var(--ink); color: var(--cream); text-align: center; position: relative; overflow: visible; z-index: 2; }
+  .manifesto-flower { position: absolute; top: 50%; left: 50%; width: 1100px; max-width: 140vw; height: 1100px; transform: translate(-50%, -50%); opacity: 0.04; pointer-events: none; z-index: 0; }
+  .manifesto .wrap { max-width: 720px; position: relative; z-index: 1; }
+  .manifesto h2 { color: #F3EAD4; font-size: 34px; font-style: italic; line-height: 1.4; margin-bottom: 18px; }
+  .manifesto p { font-size: 16px; color: rgba(255,255,255,0.78); margin-bottom: 30px; }
+
+  /* ═══ O PORTAL ═══ */
+  .programas { background: var(--cream-deep); position: relative; overflow: hidden; }
+  .programas-flower-top { position: absolute; top: -780px; left: 50%; width: 1100px; height: 1100px; transform: translateX(-50%); opacity: 0.07; pointer-events: none; z-index: 0; }
+  .programas > .wrap { position: relative; z-index: 1; }
+  .programas h2 { text-align: center; font-size: 40px; margin-bottom: 14px; }
+  .programas > .wrap > p.sub { text-align: center; max-width: 560px; margin: 0 auto 56px; font-size: 16px; }
+  .programa-row-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); font-weight: 600; margin: 0 0 18px; }
+  .programa-row-label:not(:first-of-type) { margin-top: 40px; }
+  .programa-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .programa-grid.row2 { grid-template-columns: repeat(3, 1fr); }
+  .programa-card { background: #fff; border-radius: 6px; overflow: hidden; border-top: 4px solid var(--gold); box-shadow: 0 10px 24px rgba(28,24,18,0.1); }
+  .programa-photo { position: relative; aspect-ratio: 4/5; overflow: hidden; }
+  .programa-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .programa-grid:not(.row2) .programa-card { border-top: none; box-shadow: none; background: none; border-radius: 4px; }
+  .programa-grid:not(.row2) .programa-photo { aspect-ratio: 1/1; border-radius: 4px; }
+  .programa-grid:not(.row2) .programa-photo img { object-fit: cover; }
+  .programa-card.no-photo .programa-photo { display: flex; align-items: center; justify-content: center; background: linear-gradient(150deg, var(--cream-deep) 0%, var(--border) 100%); }
+  .programa-card.no-photo .programa-photo span.ico { font-family: 'Cormorant Garamond', serif; font-size: 34px; color: var(--gold-deep); }
+  .programa-body { padding: 14px 16px 18px; }
+  .programa-eyebrow { font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); display: block; margin-bottom: 5px; }
+  .programa-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.2; color: var(--ink); }
+  .programa-grid.row2 .programa-card { border-top: none; box-shadow: 0 10px 24px rgba(28,24,18,0.14); background: none; position: relative; }
+  .programa-grid.row2 .programa-photo { aspect-ratio: 4/5; }
+  .programa-grid.row2 .programa-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 50px 16px 18px; background: linear-gradient(180deg, transparent 0%, rgba(10,8,4,0.55) 40%, rgba(10,8,4,0.92) 100%); }
+  .programa-grid.row2 .programa-eyebrow, .programa-grid.row2 .programa-title { text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  .programa-grid.row2 .programa-eyebrow { color: var(--gold-light); font-size: 10.5px; }
+  .programa-grid.row2 .programa-title { color: #fff; font-size: 24px; }
+  .programa-card.c1 { border-top-color: var(--terracota); }
+  .programa-card.c2 { border-top-color: var(--sálvia); }
+  .programa-card.c3 { border-top-color: var(--gold); }
+  .programa-card.c4 { border-top-color: var(--argila); }
+  .programa-card.c5 { border-top-color: var(--terracota); }
+  .programa-card.c6 { border-top-color: var(--sálvia); }
+  .programa-card.c7 { border-top-color: var(--argila); }
+  .programa-card.c8 { border-top-color: var(--lavanda); }
+  @media (max-width: 900px) { .programa-grid, .programa-grid.row2 { grid-template-columns: repeat(2, 1fr) !important; } }
+  @media (max-width: 560px) { .programa-grid, .programa-grid.row2 { grid-template-columns: 1fr !important; } }
+
+  /* ═══ O QUE VOCÊ PROCURA ═══ */
+  .procura { background: var(--cream); }
+  .procura-split { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; align-items: center; }
+  .procura-split img { width: 100%; border-radius: 6px; aspect-ratio: 3/4; object-fit: cover; box-shadow: 0 18px 44px rgba(28,24,18,0.16); }
+  .procura h2 { font-size: 34px; margin-bottom: 18px; }
+  .procura-list { list-style: none; margin-top: 8px; }
+  .procura-list li { padding: 13px 0 13px 32px; border-bottom: 1px solid var(--border); position: relative; font-size: 15.5px; }
+  .procura-list li:last-child { border-bottom: none; }
+  .procura-list li::before { content: '✓'; position: absolute; left: 0; top: 13px; color: var(--gold-deep); font-weight: 700; }
+  @media (max-width: 860px) { .procura-split { grid-template-columns: 1fr; } .procura-split img { max-width: 320px; margin: 0 auto; } }
+
+  /* ═══ DEPOIMENTOS ═══ */
+  .depoimentos { background: var(--cream-deep); }
+  .depoimentos h2 { text-align: center; font-size: 36px; margin-bottom: 10px; }
+  .depoimentos > .wrap > p.sub { text-align: center; max-width: 520px; margin: 0 auto 50px; font-size: 15px; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .testi-card { background: #fff; border: 1px solid var(--border); padding: 28px 26px; border-radius: 4px; }
+  .testi-stars { color: var(--gold); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+  .testi-card p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; font-style: italic; }
+  .testi-name { font-size: 13px; color: var(--ink); font-weight: 600; }
+  @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+
+  /* ═══ VOCÊ NÃO ESTÁ SOZINHA ═══ */
+  .comunidade { background: var(--cream); }
+  .com-split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+  .com-split img { width: 100%; border-radius: 6px; box-shadow: 0 18px 44px rgba(28,24,18,0.16); }
+  @media (max-width: 860px) { .com-split { grid-template-columns: 1fr; } .com-split .img-col { order: -1; } }
+
+  /* ═══ BIO ═══ */
+  .fundadora { background: var(--cream-deep); }
+  .fund-split { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: center; }
+  .fund-split img { width: 100%; border-radius: 6px; aspect-ratio: 3/4; object-fit: cover; box-shadow: 0 18px 44px rgba(28,24,18,0.16); }
+  .fundadora .eyebrow { text-align: left; }
+  .fundadora h2 { font-size: 34px; margin-bottom: 18px; }
+  .fundadora .creds { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .fundadora .creds span { border: 1px solid var(--border); border-radius: 20px; padding: 6px 16px; font-size: 12px; letter-spacing: 0.06em; color: var(--gold-deep); }
+  @media (max-width: 860px) { .fund-split { grid-template-columns: 1fr; } .fund-split img { max-width: 320px; margin: 0 auto; } }
+
+  /* ═══ PLANOS & ASSINATURAS ═══ */
+  .planos { background: linear-gradient(150deg, var(--ink) 0%, #2e2719 100%); text-align: center; }
+  .planos h2 { color: #fff; font-size: 38px; margin-bottom: 14px; }
+  .planos > .wrap > p.sub { color: rgba(255,255,255,0.72); max-width: 560px; margin: 0 auto 50px; font-size: 16px; }
+  .plano-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; align-items: stretch; max-width: 780px; margin: 0 auto; }
+  .plano-card { background: #fff; border: 1.5px solid transparent; border-radius: 10px; padding: 34px 30px; box-shadow: 0 24px 50px rgba(0,0,0,0.35); text-align: left; display: flex; flex-direction: column; }
+  .plano-card.destaque { border: 1.5px solid var(--gold-light); box-shadow: 0 28px 60px rgba(212,175,106,0.3); transform: translateY(-10px); }
+  .plano-selo { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: linear-gradient(100deg, var(--gold-light), var(--gold)); border-radius: 12px; padding: 4px 12px; display: inline-block; margin-bottom: 14px; align-self: flex-start; font-weight: 700; }
+  .plano-nome { font-family: 'Cormorant Garamond', serif; font-size: 27px; color: var(--gold-deep); margin-bottom: 4px; }
+  .plano-desc { font-size: 13px; color: var(--ink-soft); margin-bottom: 18px; min-height: 36px; }
+  .plano-mosaic { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 20px; }
+  .plano-mosaic img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; }
+  .plano-card ul { list-style: none; margin-bottom: 22px; flex: 1; }
+  .plano-card ul li { padding: 8px 0 8px 24px; position: relative; font-size: 13.5px; border-bottom: 1px solid var(--border); line-height: 1.4; }
+  .plano-card ul li:last-child { border-bottom: none; }
+  .plano-card ul li::before { content: '✓'; position: absolute; left: 0; top: 8px; color: var(--gold-deep); font-weight: 700; }
+  .plano-preco-unico { border: 1px solid var(--border); border-radius: 6px; padding: 14px 10px; text-align: center; margin-bottom: 16px; }
+  .plano-preco-unico .valor { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--ink); display: block; }
+  .plano-preco-unico .periodo { font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); }
+  .plano-card .btn { text-align: center; }
+  .plano-addon { margin-top: 14px; border: 1.5px dashed var(--border); border-radius: 6px; padding: 14px 16px; background: var(--cream); }
+  .plano-addon-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); font-weight: 700; margin-bottom: 6px; display: block; }
+  .plano-addon p { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 8px; }
+  .plano-addon .btn-ghost { display: inline-block; width: 100%; text-align: center; padding: 10px 16px; font-size: 12px; }
+  .planos-nota { color: rgba(255,255,255,0.55); font-size: 12.5px; max-width: 560px; margin: 34px auto 0; font-style: italic; }
+  @media (max-width: 700px) { .plano-grid { grid-template-columns: 1fr; max-width: 420px; } .plano-card.destaque { transform: none; } }
+
+  /* ═══ CALENDÁRIO DE CONTEÚDO ═══ */
+  .calendario { background: var(--cream-deep); }
+  .calendario h2 { font-size: 38px; text-align: center; margin-bottom: 14px; }
+  .calendario .sub { text-align: center; max-width: 560px; margin: 0 auto 22px; font-size: 15.5px; color: var(--ink-soft); }
+  .cal-always-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; }
+  .cal-always-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 20px; padding: 8px 20px; font-size: 13px; color: var(--gold-deep); letter-spacing: 0.02em; background: rgba(255,255,255,0.75); }
+  .cal-always-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terracota); flex-shrink: 0; }
+  .cal-months { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .cal-page { border-radius: 6px; overflow: hidden; box-shadow: 0 3px 12px rgba(28,24,18,0.09); display: flex; flex-direction: column; }
+  .cal-page-head { padding: 14px 16px 12px; background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold-light) 100%); }
+  .cal-page-head.gold { background: linear-gradient(135deg, var(--argila) 0%, var(--gold-deep) 100%); }
+  .cal-page-mname { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; display: block; font-weight: 400; line-height: 1; }
+  .cal-page-year { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); display: block; margin-top: 4px; }
+  .cal-page-body { padding: 16px 16px 18px; background: #fff; flex: 1; display: flex; flex-direction: column; }
+  .cal-event { font-family: 'Jost', sans-serif; font-size: 13.5px; font-weight: 400; color: var(--ink); line-height: 1.5; flex: 1; margin-bottom: 14px; }
+  .cal-live-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracota); }
+  .cal-live-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--terracota); flex-shrink: 0; }
+  .cal-page.cal-cta { background: linear-gradient(150deg, var(--ink) 0%, #2e2719 100%); box-shadow: 0 3px 12px rgba(28,24,18,0.2); justify-content: center; align-items: center; text-align: center; padding: 24px 18px; min-height: 140px; }
+  .cal-cta-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 10px; }
+  .cal-cta-text { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: #fff; font-style: italic; line-height: 1.3; }
+  .cal-disclaimer { text-align: center; margin-top: 28px; font-size: 11px; color: var(--ink-soft); opacity: 0.42; font-style: italic; }
+  @media (max-width: 900px) { .cal-months { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 620px) { .cal-months { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 380px) { .cal-months { grid-template-columns: 1fr; } }
+
+  /* ═══ FAQ ═══ */
+  .faq { background: var(--cream); }
+  .faq h2 { text-align: center; font-size: 38px; margin-bottom: 48px; }
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  details { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  details summary { font-weight: 500; font-size: 16.5px; color: var(--ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: '+'; font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--gold); margin-left: 12px; flex-shrink: 0; }
+  details[open] summary::after { content: '–'; }
+  details p { margin-top: 14px; font-size: 15px; color: var(--ink-soft); padding-right: 30px; }
+
+  /* ═══ FORM DE CAPTAÇÃO ═══ */
+  .captacao { background: var(--cream-deep); text-align: center; }
+  .captacao .wrap { max-width: 560px; }
+  .captacao h2 { font-size: 30px; margin-bottom: 12px; }
+  .captacao p { margin-bottom: 26px; font-size: 15.5px; }
+  .captacao-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .captacao-form input[type="email"] { flex: 1; min-width: 220px; padding: 14px 18px; border: 1.5px solid var(--border); border-radius: 2px; font-family: 'Jost', sans-serif; font-size: 14px; background: #fff; }
+  .captacao-form input[type="email"]:focus { outline: none; border-color: var(--gold); }
+  .captacao small { display: block; margin-top: 14px; font-size: 12px; color: var(--ink-soft); opacity: 0.7; }
+
+  /* ═══ SEÇÃO FINAL — LOGO ═══ */
+  .final { background: linear-gradient(150deg, var(--ink) 0%, #2e2719 100%); color: #fff; text-align: center; padding: 34px 0; }
+  .final-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; }
+  .final-mark-sm { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; }
+  .final p.tag { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 0; }
+
+  /* ═══ FOOTER ═══ */
+  footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 36px 0; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.08); }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer a { color: rgba(255,255,255,0.65); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- NAV -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="wrap">
+    <div class="logo">
+      <div class="logo-mark"><img src="images/portal-inluz/flor-da-vida-logo-crop.png" alt=""></div>
+      <span>Inluz</span>
+    </div>
+    <ul class="links">
+      <li><a href="#programas">Programas</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#comunidade">Comunidade</a></li>
+      <li><a href="#calendario">Calendário</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#faq">Dúvidas</a></li>
+    </ul>
+    <a href="loja-inluz.html" class="btn btn-outline" style="margin-right:10px;">Loja</a>
+    <a href="#entrar" class="btn btn-gold">Entrar no Inluz</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Portal Inluz</span>
+    <h1>Um lar para a mulher que quer <em class="gold-text">voltar pra si</em>.</h1>
+    <p class="lead">Cursos, jornadas terapêuticas, encontros ao vivo e uma comunidade real — tudo num só lugar, para você cuidar da sua <strong>saúde integrativa</strong> e do seu <strong>autoconhecimento</strong> no seu próprio tempo.</p>
+    <div class="hero-ctas">
+      <a href="#planos" class="btn btn-gold">Quero entrar no Inluz →</a>
+    </div>
+    <p class="hero-trust">Sem pressa. Sem fórmula pronta. Um espaço vivo que cresce junto com você.</p>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- VÍDEO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="video-block">
+  <div class="wrap">
+    <div class="video-player">
+      <!-- SUBSTITUIR pela tag <video> ou embed real assim que o vídeo de apresentação estiver pronto -->
+      <img src="images/portal-inluz/video-poster.jpg" alt="Apresentação do Inluz, por Mariah Caroline">
+      <div class="play-overlay">
+        <div class="play-btn"></div>
+        <p>Assista e conheça o Inluz por dentro</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- MANIFESTO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="manifesto">
+  <img class="manifesto-flower" src="images/portal-inluz/flor-da-vida-transparente.png" alt="">
+  <div class="wrap">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:30px; font-style:italic; line-height:1.6; color:#fff; margin-bottom:0;">A mulher moderna vive acelerada, desconectada do próprio corpo, dos seus ciclos e da sua essência mais profunda. <span class="gold-text">Sem ferramentas para o que sente. Sem um espaço que seja genuinamente seu.</span> O Inluz nasceu para preencher esse vazio — com <span class="gold-text">saúde integrativa</span> que respeita sua natureza, com <span class="gold-text">autoconhecimento</span> que te devolve a si mesma, e com <span class="gold-text">espiritualidade viva</span> que ancora e expande. Um lar para a mulher que quer florescer inteira.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- NOSSOS PROGRAMAS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="programas" id="programas">
+  <img class="programas-flower-top" src="images/portal-inluz/flor-da-vida-transparente.png" alt="">
+  <div class="wrap">
+    <span class="eyebrow">O Portal</span>
+    <h2 style="text-transform:uppercase; font-size:32px;">Um ecossistema completo de <em class="gold-text">saúde integrativa</em> e autoconhecimento feminino</h2>
+    <p class="sub">Tudo o que você vê aqui já está dentro do Inluz — pronto pra você acessar assim que entrar.</p>
+
+    <p class="programa-row-label">Cursos &amp; Jornadas Guiadas</p>
+    <div class="programa-grid" style="grid-template-columns: repeat(5, 1fr);">
+      <div class="programa-card c1">
+        <div class="programa-photo"><img src="images/portal-inluz/capa-abc-do-yoga.jpg" alt="ABC do Yoga"></div>
+      </div>
+      <div class="programa-card c2">
+        <div class="programa-photo"><img src="images/portal-inluz/capa-ayurveda-no-dia-a-dia.jpg" alt="Ayurveda no Dia a Dia"></div>
+      </div>
+      <div class="programa-card c3">
+        <div class="programa-photo"><img src="images/portal-inluz/capa-farmacia-natural-caseira.jpg" alt="Farmácia Natural Caseira"></div>
+      </div>
+      <div class="programa-card c4">
+        <div class="programa-photo"><img src="images/portal-inluz/capa-codigos-do-eu.jpg" alt="Códigos do Eu"></div>
+      </div>
+      <div class="programa-card c8">
+        <div class="programa-photo"><img src="images/portal-inluz/capa-detox-ayurvedico.jpg" alt="Detox Ayurvédico - 7 Dias"></div>
+      </div>
+    </div>
+
+    <p class="programa-row-label">Vivências e Comunidade</p>
+    <div class="programa-grid row2">
+      <div class="programa-card c5">
+        <div class="programa-photo"><img src="images/portal-inluz/card-meditacoes-oracoes.jpg" alt="Meditações & Orações"></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Para quem busca presença</span>
+          <div class="programa-title">Meditações &amp; Orações</div>
+        </div>
+      </div>
+      <div class="programa-card c6">
+        <div class="programa-photo"><img src="images/portal-inluz/card-encontro-ao-vivo.jpg" alt="Encontro ao Vivo Mensal"></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Para quem busca aprofundar</span>
+          <div class="programa-title">Encontro ao Vivo Mensal</div>
+        </div>
+      </div>
+      <div class="programa-card c7">
+        <div class="programa-photo"><img src="images/portal-inluz/card-comunidade.jpg" alt="Comunidade Inluz"></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Para quem busca caminhar junto</span>
+          <div class="programa-title">Comunidade</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="programa-row-label">Ferramentas &amp; Guias Bônus</p>
+    <div class="programa-grid">
+      <div class="programa-card no-photo">
+        <div class="programa-photo"><span class="ico">◐</span></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Quiz</span>
+          <div class="programa-title">Teste de Dosha</div>
+        </div>
+      </div>
+      <div class="programa-card no-photo">
+        <div class="programa-photo"><span class="ico">☾</span></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Quiz</span>
+          <div class="programa-title">Ciclo de Resgate da Saúde</div>
+        </div>
+      </div>
+      <div class="programa-card no-photo">
+        <div class="programa-photo"><span class="ico">❀</span></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Guia</span>
+          <div class="programa-title">Chás &amp; Shots Medicinais</div>
+        </div>
+      </div>
+      <div class="programa-card no-photo">
+        <div class="programa-photo"><span class="ico">✦</span></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Bônus</span>
+          <div class="programa-title">Receitas Detox</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="programa-row-label">Descontos Exclusivos</p>
+    <div class="programa-grid row2" style="grid-template-columns: repeat(2, 1fr); max-width: 820px; margin: 0 auto;">
+      <div class="programa-card c1">
+        <div class="programa-photo"><img src="images/portal-inluz/card-consultas.jpg" alt="Consultas & Tratamentos"></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Para quem busca cuidado individual</span>
+          <div class="programa-title">Consultas &amp; Tratamentos</div>
+        </div>
+      </div>
+      <div class="programa-card c2">
+        <div class="programa-photo"><img src="images/portal-inluz/retiro-natureza-divina.jpg" alt="Retiros & Eventos"></div>
+        <div class="programa-body">
+          <span class="programa-eyebrow">Para quem busca vivências presenciais</span>
+          <div class="programa-title">Retiros &amp; Eventos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CALENDÁRIO DE CONTEÚDO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="calendario" id="calendario">
+  <div class="wrap">
+    <span class="eyebrow">Conteúdo Novo Todo Mês</span>
+    <h2>O que chega <em class="gold-text">nos próximos meses</em></h2>
+    <p class="sub">Cursos, jornadas terapêuticas e aulas ao vivo — o portal cresce com conteúdo novo todos os meses para continuar te acompanhando.</p>
+
+    <div class="cal-always-row">
+      <div class="cal-always-badge"><span class="dot"></span>1 encontro ao vivo por mês</div>
+      <div class="cal-always-badge"><span class="dot"></span>Conteúdos novos gravados ou jornadas ao vivo todo mês</div>
+    </div>
+
+    <div class="cal-months">
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Setembro</span>
+          <span class="cal-page-year">2026</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Curso de Ginecologia Natural</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Outubro</span>
+          <span class="cal-page-year">2026</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Jornada de Limpeza Uterina</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Novembro</span>
+          <span class="cal-page-year">2026</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Aulas de Yoga e Meditação</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head gold">
+          <span class="cal-page-mname">Dezembro</span>
+          <span class="cal-page-year">2026</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Jornada de Preparo para 2027 — Revisão e Limpeza de 2026</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head gold">
+          <span class="cal-page-mname">Janeiro</span>
+          <span class="cal-page-year">2027</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Jornada de Preparo e Planejamento do Ano à Luz do Autoconhecimento</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Fevereiro</span>
+          <span class="cal-page-year">2027</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Curso de Mantras</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Março</span>
+          <span class="cal-page-year">2027</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Jornada de Autoestudo com Planta Medicinal</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Abril</span>
+          <span class="cal-page-year">2027</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Imersão de Meditação</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Maio</span>
+          <span class="cal-page-year">2027</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Roda de Medicina</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Junho</span>
+          <span class="cal-page-year">2027</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Plantas Medicinais</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Julho</span>
+          <span class="cal-page-year">2027</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Mini Curso Auto Abhyanga</div>
+          <div class="cal-live-tag">Encontro ao Vivo</div>
+        </div>
+      </div>
+
+      <div class="cal-page cal-cta">
+        <span class="cal-cta-label">E sempre mais</span>
+        <div class="cal-cta-text">Conteúdo novo<br>todo mês,<br>sem parar.</div>
+      </div>
+
+    </div>
+
+    <p class="cal-disclaimer">* Os conteúdos poderão ser alterados de acordo com o fluxo e as necessidades do grupo.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- O QUE VOCÊ PROCURA -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="procura">
+  <div class="wrap procura-split">
+    <div>
+      <img src="images/portal-inluz/mariah-retrato.jpg" alt="Mariah Caroline">
+    </div>
+    <div>
+      <span class="eyebrow" style="text-align:left;">O Inluz é para você</span>
+      <h2>O que você <em class="gold-text">procura</em>?</h2>
+      <ul class="procura-list">
+        <li>Ferramentas naturais e integrativas para cultivar sua saúde e seu autoconhecimento</li>
+        <li>Práticas corpo-mente para regular o seu sistema nervoso</li>
+        <li>Montar sua própria farmácia natural em casa, com segurança</li>
+        <li>Reprogramar pensamentos e padrões que já não servem</li>
+        <li>Ter um espaço de meditação e presença no seu dia a dia</li>
+        <li>Caminhar acompanhada, não sozinha, com encontros e comunidade</li>
+        <li>Se conectar com seus ciclos femininos e descobrir práticas de autocuidado naturais</li>
+        <li>Mergulhar no universo da ginecologia natural e das plantas medicinais</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- DEPOIMENTOS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="depoimentos" id="depoimentos">
+  <div class="wrap">
+    <span class="eyebrow">Vozes Reais</span>
+    <h2 class="center">O que dizem as mulheres que já trabalharam com Mariah</h2>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Foi o encontro mais profundo que já tive comigo mesma. Voltei sendo uma versão mais inteira, mais suave e mais poderosa de mim."</p>
+        <div class="testi-name">Ana Paula M.</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"A Mariah tem um dom especial de criar um ambiente seguro onde você se permite soltar o que não serve mais. Cada prática foi transformadora."</p>
+        <div class="testi-name">Fernanda R.</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Mudou completamente a forma como eu cuido do meu corpo e da minha mente — com leveza, sem culpa, no meu tempo."</p>
+        <div class="testi-name">Camila T.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- VOCÊ NÃO FAZ ESSE PROCESSO SOZINHA -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="comunidade" id="comunidade">
+  <div class="wrap com-split">
+    <div>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:20px; color:var(--gold-deep); margin-bottom:14px; line-height:1.3;">Um espaço para corpo, mente e espírito florescerem.</p>
+      <span class="eyebrow" style="text-align:left; font-size:15px;">AMBIÊNCIA</span>
+      <h2 style="font-size:42px;">O ambiente <em class="gold-text">te molda</em></h2>
+      <p style="margin-bottom:30px;">Nos encontramos 1x por mês ao vivo para direcionar nossa energia ao que queremos fazer crescer em nossas vidas, com práticas variadas e temas diversos em cada mês. Aprofundamos nas filosofias espiritualistas, técnicas de expansão e transformação da consciência, ritualística e meditação — momentos sagrados para pausar e reconectar ao essencial.</p>
+      <p>Aqui você tem outras mulheres ao seu lado: mulheres que também buscam o autoaprimoramento e um estilo de vida mais alinhado, o que dá força e torna a jornada mais leve. As pessoas e o ambiente em que estamos inseridas nos influenciam mais do que percebemos — e não há nada melhor do que caminhar em comunidade, com uma intenção em comum, para sustentar os próprios objetivos.</p>
+      <a href="#entrar" class="btn btn-gold" style="margin-top:8px;">Quero entrar na comunidade</a>
+    </div>
+    <div class="img-col">
+      <img src="images/portal-inluz/comunidade-encontro.jpg" alt="Encontro presencial da comunidade Inluz">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- BIO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="fundadora" id="fundadora">
+  <div class="wrap fund-split">
+    <div>
+      <img src="images/portal-inluz/mariah-retrato.jpg" alt="Mariah Caroline">
+    </div>
+    <div>
+      <h2>Mariah Caroline</h2>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; color:var(--ink); margin-bottom:6px;">Naturóloga especializada em saúde feminina integrativa</p>
+      <p style="font-size:13px; letter-spacing:0.04em; color:var(--gold-deep); margin-bottom:22px;">Medicinas tradicionais &bull; Neurociências &bull; Ginecologia natural</p>
+      <p>Atua no universo das terapias integrativas há mais de 8 anos. Aos 16 anos concluiu sua primeira formação em Yoga e, desde então, seguiu uma jornada de aprofundamento nos saberes ancestrais tradicionais para o bem-estar integral do Ser.</p>
+      <p>Integra a Naturologia — que traz o olhar ampliado das medicinas tradicionais vitalistas aliado à ciência moderna baseada em evidências — com formações em saúde da mulher, neurociências, desenvolvimento mental, thetahealing, yoga, entre outras.</p>
+      <p>Hoje realiza atendimentos (online e presencial, em Riviera de São Lourenço, SP) e retiros terapêuticos, conduz tratamentos de saúde imersivos e personalizados para quem deseja aprofundar seus cuidados, e se dedica ao Portal Inluz — plataforma de saúde e autoconhecimento feminino que integra cursos, jornadas terapêuticas e encontros online e presenciais.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- PLANOS & ASSINATURAS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="planos" id="planos">
+  <div class="wrap">
+    <span class="eyebrow">Planos &amp; Assinaturas</span>
+    <h2>Venha fazer parte <em class="gold-text">desta rede</em></h2>
+    <p class="sub">Duas formas de entrar no portal — a mesma experiência completa, no ritmo que fizer mais sentido pra você. Todos os cursos, jornadas, encontros mensais e a comunidade, sempre inclusos.</p>
+
+    <!-- AJUSTE OS VALORES ABAIXO CONFORME SUA DEFINIÇÃO FINAL DE PREÇO E INSIRA OS LINKS REAIS DE CHECKOUT DA HOTMART -->
+    <div class="plano-grid">
+      <div class="plano-card">
+        <div class="plano-nome">Plano Semestral 🪻</div>
+        <p class="plano-desc">Ideal pra quem quer experimentar o ritmo do Inluz com flexibilidade.</p>
+        <div class="plano-mosaic">
+          <img src="images/portal-inluz/capa-abc-do-yoga.jpg" alt="ABC do Yoga">
+          <img src="images/portal-inluz/capa-ayurveda-no-dia-a-dia.jpg" alt="Ayurveda no Dia a Dia">
+          <img src="images/portal-inluz/capa-farmacia-natural-caseira.jpg" alt="Farmácia Natural Caseira">
+          <img src="images/portal-inluz/capa-codigos-do-eu.jpg" alt="Códigos do Eu">
+          <img src="images/portal-inluz/capa-detox-ayurvedico.jpg" alt="Detox Ayurvédico">
+        </div>
+        <ul>
+          <li>Todos os cursos e jornadas do Inluz (incluindo o Detox Ayurvédico)</li>
+          <li>Encontro mensal ao vivo</li>
+          <li>Acesso à comunidade</li>
+          <li>Ferramentas e guias bônus</li>
+          <li>Descontos em consultas, retiros e eventos</li>
+        </ul>
+        <div class="plano-preco-unico">
+          <span class="valor">R$ 77,00/mês</span>
+          <span class="periodo">Cobrança a cada 6 meses</span>
+        </div>
+        <a href="#" class="btn btn-gold">Assinar o Plano Semestral</a>
+        <div class="plano-addon">
+          <span class="plano-addon-label">Add-on opcional</span>
+          <p>Quer viver o <strong>Retiro Natureza Feminina</strong> (Novembro, Barra do Una) presencialmente? Some essa vivência ao seu plano quando quiser.</p>
+          <a href="#comunidade" class="btn btn-ghost">Saber mais sobre o retiro</a>
+        </div>
+      </div>
+
+      <div class="plano-card destaque">
+        <div class="plano-selo">Melhor custo-benefício</div>
+        <div class="plano-nome">Plano Anual 🌹</div>
+        <p class="plano-desc">Pra quem já sabe que quer construir esse hábito com a gente.</p>
+        <div class="plano-mosaic">
+          <img src="images/portal-inluz/capa-abc-do-yoga.jpg" alt="ABC do Yoga">
+          <img src="images/portal-inluz/capa-ayurveda-no-dia-a-dia.jpg" alt="Ayurveda no Dia a Dia">
+          <img src="images/portal-inluz/capa-farmacia-natural-caseira.jpg" alt="Farmácia Natural Caseira">
+          <img src="images/portal-inluz/capa-codigos-do-eu.jpg" alt="Códigos do Eu">
+          <img src="images/portal-inluz/capa-detox-ayurvedico.jpg" alt="Detox Ayurvédico">
+        </div>
+        <ul>
+          <li>Todos os cursos e jornadas do Inluz (incluindo o Detox Ayurvédico)</li>
+          <li>Encontro mensal ao vivo</li>
+          <li>Acesso à comunidade</li>
+          <li>Ferramentas e guias bônus</li>
+          <li>Descontos em consultas, retiros e eventos</li>
+        </ul>
+        <div class="plano-preco-unico">
+          <span class="valor">R$ 57,00/mês</span>
+          <span class="periodo">Cobrança anual</span>
+        </div>
+        <a href="#" class="btn btn-gold">Assinar o Plano Anual</a>
+        <div class="plano-addon">
+          <span class="plano-addon-label">Add-on opcional</span>
+          <p>Quer viver o <strong>Retiro Natureza Feminina</strong> (Novembro, Barra do Una) presencialmente? Some essa vivência ao seu plano quando quiser.</p>
+          <a href="#comunidade" class="btn btn-ghost">Saber mais sobre o retiro</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="planos-nota">O Retiro Natureza Feminina pode ser incluído em qualquer um dos planos, a qualquer momento — direto pela sua área de assinante ou falando com a gente. Valores e condições do retiro são informados na hora da inclusão.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- DÚVIDAS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Dúvidas Frequentes</span>
+    <h2>Antes de <em class="gold-text">começar</em></h2>
+
+    <div class="faq-list">
+      <details>
+        <summary>Como funciona o acesso ao Inluz?</summary>
+        <p>Assim que sua assinatura é confirmada, você recebe acesso imediato à plataforma, com todos os cursos liberados para assistir no seu ritmo.</p>
+      </details>
+      <details>
+        <summary>Qual a diferença entre o Plano Semestral e o Plano Anual?</summary>
+        <p>O conteúdo é exatamente o mesmo nos dois — todos os cursos, jornadas, encontros mensais e a comunidade. A diferença é só o ciclo de cobrança: no Anual, o valor por mês sai mais em conta.</p>
+      </details>
+      <details>
+        <summary>Posso incluir o Retiro Natureza Feminina depois de já ser assinante?</summary>
+        <p>Sim! O retiro pode ser adicionado a qualquer momento da sua assinatura, direto pela plataforma ou falando com a gente.</p>
+      </details>
+      <details>
+        <summary>Por quanto tempo tenho acesso aos cursos?</summary>
+        <p>Enquanto sua assinatura estiver ativa, você tem acesso completo a todos os cursos, encontros e materiais do portal.</p>
+      </details>
+      <details>
+        <summary>Os encontros ao vivo são obrigatórios?</summary>
+        <p>Não. Eles acontecem mensalmente para quem quiser aprofundar e praticar em grupo — e ficam gravados para quem não puder participar no horário.</p>
+      </details>
+      <details>
+        <summary>Como funciona o desconto em atendimentos e retiros?</summary>
+        <p>Assinantes do Inluz têm condições exclusivas para consultas individuais com Mariah, além de retiros e eventos presenciais ao longo do ano.</p>
+      </details>
+      <details>
+        <summary>Preciso ter experiência prévia com yoga, ayurveda ou terapias naturais?</summary>
+        <p>Não. Os cursos foram criados tanto para quem está começando do zero quanto para quem já pratica e quer se aprofundar.</p>
+      </details>
+      <details>
+        <summary>Posso cancelar quando quiser?</summary>
+        <p>Sim. Você pode cancelar a renovação a qualquer momento, sem burocracia — seu acesso permanece ativo até o fim do ciclo vigente (6 ou 12 meses, conforme seu plano).</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- FORM DE CAPTAÇÃO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="captacao">
+  <div class="wrap">
+    <span class="eyebrow">Ainda não tem certeza?</span>
+    <h2>Receba mais sobre o <em class="gold-text">Inluz</em> antes de decidir</h2>
+    <p>Deixe seu e-mail e te enviamos mais conteúdo sobre os cursos, a comunidade e como funciona o portal — sem compromisso.</p>
+    <!-- INTEGRAR COM FERRAMENTA DE E-MAIL (Mailchimp / ConvertKit / RD Station) -->
+    <form class="captacao-form" action="#" method="post">
+      <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+      <button type="submit" class="btn btn-gold">Quero saber mais</button>
+    </form>
+    <small>Sem spam. Você pode cancelar a qualquer momento.</small>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO FINAL — LOGO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="final" id="entrar">
+  <div class="wrap">
+    <div class="final-row">
+      <img class="final-mark-sm" src="images/portal-inluz/flor-da-vida-transparente.png" alt="">
+      <p class="tag">Inluz · Saúde Integrativa e Autoconhecimento Feminino</p>
+    </div>
+    <!-- SUBSTITUIR href="#" PELO LINK REAL DE CHECKOUT (Hotmart) -->
+    <a href="#" class="btn btn-gold">Quero fazer parte do Inluz</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <span>© Inluz · Mariah Caroline — Naturóloga</span>
+    <span><a href="mailto:mariahdias94@gmail.com">mariahdias94@gmail.com</a> · <a href="https://instagram.com/mariahcarolined" target="_blank">@mariahcarolined</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

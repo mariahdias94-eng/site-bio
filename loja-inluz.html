@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loja Inluz · Produtos para Saúde Integrativa e Ritual</title>
+<meta name="description" content="Raspadores de língua, óleos essenciais e vegetais, argilas, produtos ayurvédicos, farmácia natural caseira, ginecologia natural e resinas & defumações — tudo num só lugar.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  :root {
+    --ink:        #1C1812;
+    --ink-soft:    #4A4236;
+    --cream:      #FBF7EF;
+    --cream-deep: #F1E8D8;
+    --gold:       #A9802E;
+    --gold-light: #D4AF6A;
+    --gold-deep:  #7C5A1E;
+    --border:     #E2D4B4;
+    --terracota:  #B5654A;
+    --sálvia:     #6F7A52;
+    --argila:     #9C7A4A;
+    --lavanda:    #8B7EB8;
+  }
+
+  body { font-family: 'Jost', sans-serif; color: var(--ink-soft); background: var(--cream); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--ink); font-weight: 400; }
+  em { font-style: italic; }
+  .gold-text { background: linear-gradient(100deg, var(--gold-deep) 0%, var(--gold-light) 50%, var(--gold) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 90px 0; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 18px; display: block; text-align: center; }
+  .btn { display: inline-block; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.04em; padding: 16px 38px; border-radius: 2px; text-decoration: none; transition: all 0.25s ease; border: none; cursor: pointer; }
+  .btn-gold { background: linear-gradient(100deg, var(--gold-deep), var(--gold-light)); color: #fff; box-shadow: 0 8px 24px rgba(169,128,46,0.35); }
+  .btn-gold:hover { box-shadow: 0 10px 30px rgba(169,128,46,0.5); transform: translateY(-1px); }
+  .btn-outline { border: 1.5px solid var(--ink); color: var(--ink); background: transparent; }
+  .btn-outline:hover { background: var(--ink); color: #fff; }
+  .center { text-align: center; }
+
+  /* ═══ NAV ═══ */
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(251,247,239,0.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 32px; }
+  .nav-left { display: flex; align-items: center; gap: 16px; }
+  .hamburger { width: 26px; height: 18px; display: flex; flex-direction: column; justify-content: space-between; background: none; border: none; padding: 0; cursor: pointer; flex-shrink: 0; }
+  .hamburger span { display: block; height: 2px; width: 100%; background: var(--ink); border-radius: 2px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-mark { width: 34px; height: 34px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+  .logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+  .logo span { font-family: 'Cormorant Garamond', serif; font-size: 23px; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 500; background: linear-gradient(100deg, var(--gold-deep) 0%, var(--gold-light) 55%, var(--gold) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .nav-search { display: flex; align-items: center; gap: 8px; border: 1.5px solid var(--border); border-radius: 24px; padding: 8px 16px; background: #fff; flex: 1; max-width: 360px; }
+  .nav-search input { border: none; outline: none; font-family: 'Jost', sans-serif; font-size: 13.5px; color: var(--ink); background: transparent; width: 100%; }
+  .nav-search input::placeholder { color: var(--ink-soft); opacity: 0.6; }
+  .nav-search .ico-search { color: var(--gold-deep); font-size: 15px; flex-shrink: 0; }
+
+  .nav-right { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+  .nav-cart { position: relative; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-size: 13px; }
+  .nav-cart .ico-cart { font-size: 20px; position: relative; }
+  .nav-cart .cart-count { position: absolute; top: -8px; right: -10px; background: var(--gold-deep); color: #fff; font-size: 10px; font-weight: 700; width: 17px; height: 17px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .nav-cart .cart-label { line-height: 1.2; }
+  .nav-cart .cart-label strong { display: block; color: var(--ink); font-size: 12.5px; }
+  .nav .btn { padding: 10px 22px; font-size: 13px; white-space: nowrap; }
+
+  @media (max-width: 900px) { .nav-search { display: none; } }
+  @media (max-width: 640px) { .nav-cart .cart-label { display: none; } .nav .btn { padding: 9px 16px; font-size: 12px; } }
+
+  /* ═══ SIDEBAR (menu lateral) ═══ */
+  .overlay { position: fixed; inset: 0; background: rgba(28,24,18,0.45); opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 150; }
+  .overlay.open { opacity: 1; pointer-events: auto; }
+  .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 300px; max-width: 84vw; background: var(--cream); box-shadow: 10px 0 50px rgba(0,0,0,0.2); transform: translateX(-100%); transition: transform 0.3s ease; z-index: 200; display: flex; flex-direction: column; padding: 28px 26px 30px; overflow-y: auto; }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; }
+  .sidebar-close { background: none; border: none; font-size: 24px; color: var(--ink); cursor: pointer; line-height: 1; }
+  .sidebar-links { list-style: none; display: flex; flex-direction: column; }
+  .sidebar-links a { display: block; padding: 13px 2px; border-bottom: 1px solid var(--border); color: var(--ink-soft); text-decoration: none; font-size: 15px; letter-spacing: 0.01em; }
+  .sidebar-links a:hover { color: var(--gold-deep); }
+  .sidebar-actions { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .sidebar-actions .btn { text-align: center; }
+
+  /* ═══ HERO ═══ */
+  .hero { background: #fff; padding: 76px 0 56px; text-align: center; }
+  .hero .wrap { max-width: 800px; }
+  .hero .eyebrow { color: var(--gold-deep); }
+  .hero h1 { font-size: 50px; line-height: 1.16; margin-bottom: 20px; }
+  .hero p.lead { font-size: 17px; color: var(--ink-soft); max-width: 580px; margin: 0 auto 30px; }
+  .hero p.lead strong { color: var(--ink); }
+  @media (max-width: 700px) { .hero h1 { font-size: 34px; } }
+
+  /* ═══ CATEGORIAS ═══ */
+  .categorias { background: var(--cream-deep); }
+  .cat-row-label-wrap { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 22px; flex-wrap: wrap; gap: 8px; }
+  .cat-row-label { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--ink); }
+  .cat-row-desc { font-size: 13.5px; color: var(--ink-soft); max-width: 460px; }
+  .cat-block { margin-bottom: 56px; }
+  .cat-block:last-child { margin-bottom: 0; }
+  .produto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .produto-card { background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 24px rgba(28,24,18,0.1); display: flex; flex-direction: column; border-top: 4px solid var(--gold); }
+  .produto-card.c1 { border-top-color: var(--terracota); }
+  .produto-card.c2 { border-top-color: var(--sálvia); }
+  .produto-card.c3 { border-top-color: var(--gold); }
+  .produto-card.c4 { border-top-color: var(--argila); }
+  .produto-card.c5 { border-top-color: var(--lavanda); }
+  .produto-photo { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: linear-gradient(150deg, var(--cream-deep) 0%, var(--border) 100%); }
+  .produto-photo span.ico { font-family: 'Cormorant Garamond', serif; font-size: 42px; color: var(--gold-deep); }
+  .produto-body { padding: 16px 18px 20px; flex: 1; display: flex; flex-direction: column; }
+  .produto-title { font-size: 19px; color: var(--ink); margin-bottom: 6px; }
+  .produto-desc { font-size: 13px; color: var(--ink-soft); margin-bottom: 14px; flex: 1; }
+  .produto-preco { font-size: 13px; color: var(--ink-soft); border-top: 1px solid var(--border); padding-top: 12px; }
+  .produto-preco strong { color: var(--ink); font-family: 'Cormorant Garamond', serif; font-size: 17px; }
+  @media (max-width: 900px) { .produto-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .produto-grid { grid-template-columns: 1fr; } }
+
+  /* ═══ POR QUE COMPRAR NA LOJA ═══ */
+  .porque { background: var(--cream); }
+  .porque h2 { text-align: center; font-size: 36px; margin-bottom: 50px; }
+  .porque-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .porque-item { text-align: center; padding: 0 12px; }
+  .porque-item .ico { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--gold-deep); margin-bottom: 14px; display: block; }
+  .porque-item h3 { font-size: 20px; margin-bottom: 8px; }
+  .porque-item p { font-size: 14px; }
+  @media (max-width: 860px) { .porque-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* ═══ FORM DE CAPTAÇÃO ═══ */
+  .captacao { background: linear-gradient(150deg, var(--ink) 0%, #2e2719 100%); text-align: center; color: #fff; }
+  .captacao .wrap { max-width: 560px; }
+  .captacao .eyebrow { color: var(--gold-light); }
+  .captacao h2 { font-size: 32px; margin-bottom: 12px; color: #fff; }
+  .captacao p { margin-bottom: 26px; font-size: 15.5px; color: rgba(255,255,255,0.78); }
+  .captacao-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .captacao-form input[type="email"] { flex: 1; min-width: 220px; padding: 14px 18px; border: 1.5px solid var(--border); border-radius: 2px; font-family: 'Jost', sans-serif; font-size: 14px; background: #fff; }
+  .captacao-form input[type="email"]:focus { outline: none; border-color: var(--gold); }
+  .captacao small { display: block; margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.6); }
+
+  /* ═══ FOOTER ═══ */
+  footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 36px 0; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.08); }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer a { color: rgba(255,255,255,0.65); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <a class="logo" href="portal-inluz.html">
+      <div class="logo-mark"><img src="images/portal-inluz/flor-da-vida-logo-crop.png" alt=""></div>
+      <span>Inluz</span>
+    </a>
+    <button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">×</button>
+  </div>
+  <ul class="sidebar-links">
+    <li><a href="#raspadores">Raspadores de Língua</a></li>
+    <li><a href="#oleos-essenciais">Óleos Essenciais</a></li>
+    <li><a href="#oleos-vegetais">Óleos Vegetais</a></li>
+    <li><a href="#argilas">Argilas</a></li>
+    <li><a href="#ayurvedicos">Produtos Ayurvédicos</a></li>
+    <li><a href="#farmacia">Farmácia Natural Caseira</a></li>
+    <li><a href="#ginecologia">Ginecologia Natural</a></li>
+    <li><a href="#defumacoes">Resinas &amp; Defumações</a></li>
+  </ul>
+  <div class="sidebar-actions">
+    <a href="portal-inluz.html" class="btn btn-outline">← Voltar ao Portal</a>
+    <a href="portal-inluz.html#entrar" class="btn btn-gold">Entrar no Inluz</a>
+  </div>
+</aside>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-left">
+      <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="logo" href="portal-inluz.html">
+        <div class="logo-mark"><img src="images/portal-inluz/flor-da-vida-logo-crop.png" alt=""></div>
+        <span>Inluz</span>
+      </a>
+    </div>
+
+    <div class="nav-search">
+      <span class="ico-search">⚲</span>
+      <input type="text" id="searchInput" placeholder="Buscar produtos...">
+    </div>
+
+    <div class="nav-right">
+      <a href="#" class="nav-cart" onclick="return false;">
+        <span class="ico-cart">🛍<span class="cart-count">0</span></span>
+        <span class="cart-label">Minha<br><strong>Sacola</strong></span>
+      </a>
+      <a href="portal-inluz.html#entrar" class="btn btn-gold">Entrar no Inluz</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Loja Inluz</span>
+    <h1>Sua <em class="gold-text">farmácia natural</em>, num só lugar.</h1>
+    <p class="lead">Raspadores de língua, óleos essenciais e vegetais, argilas, produtos ayurvédicos, itens para farmácia natural caseira, ginecologia natural e resinas &amp; defumações — pra você montar seu próprio ritual de cuidado em casa.</p>
+  </div>
+</header>
+
+<!-- SUBSTITUIR os produtos-exemplo abaixo pelos produtos, fotos e preços reais de cada categoria -->
+<section class="categorias">
+  <div class="wrap">
+
+    <div class="cat-block" id="raspadores">
+      <div class="cat-row-label-wrap">
+        <div class="cat-row-label">Raspadores de Língua</div>
+        <p class="cat-row-desc">O primeiro passo da rotina ayurvédica matinal — remove toxinas (ama) acumuladas durante a noite.</p>
+      </div>
+      <div class="produto-grid">
+        <div class="produto-card c1">
+          <div class="produto-photo"><span class="ico">◡</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Raspador de Língua em Cobre</div>
+            <p class="produto-desc">Material antimicrobiano natural, uso diário, dura anos.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c1">
+          <div class="produto-photo"><span class="ico">◡</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Raspador de Língua em Aço Inox</div>
+            <p class="produto-desc">Durável, fácil de higienizar, formato ergonômico.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c1">
+          <div class="produto-photo"><span class="ico">◡</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Kit Rotina Matinal Ayurvédica</div>
+            <p class="produto-desc">Raspador + óleo de bochecho (oil pulling) + guia de uso.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block" id="oleos-essenciais">
+      <div class="cat-row-label-wrap">
+        <div class="cat-row-label">Óleos Essenciais</div>
+        <p class="cat-row-desc">Aromaterapia para o dia a dia — difusão, ritual e autocuidado.</p>
+      </div>
+      <div class="produto-grid">
+        <div class="produto-card c2">
+          <div class="produto-photo"><span class="ico">❋</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Óleo Essencial de Lavanda</div>
+            <p class="produto-desc">Relaxamento, sono e regulação do sistema nervoso.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c2">
+          <div class="produto-photo"><span class="ico">❋</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Óleo Essencial de Copaíba</div>
+            <p class="produto-desc">Uso tradicional em massagens e cuidados da pele.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c2">
+          <div class="produto-photo"><span class="ico">❋</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Kit Óleos Essenciais para Meditação</div>
+            <p class="produto-desc">Seleção para presença, ritual e respiração consciente.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block" id="oleos-vegetais">
+      <div class="cat-row-label-wrap">
+        <div class="cat-row-label">Óleos Vegetais</div>
+        <p class="cat-row-desc">Base para automassagem, diluição de essenciais e cuidados com pele e cabelo.</p>
+      </div>
+      <div class="produto-grid">
+        <div class="produto-card c3">
+          <div class="produto-photo"><span class="ico">❦</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Óleo de Gergelim (Ayurvédico)</div>
+            <p class="produto-desc">O óleo clássico do Abhyanga, a automassagem ayurvédica.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c3">
+          <div class="produto-photo"><span class="ico">❦</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Óleo de Coco Extra Virgem</div>
+            <p class="produto-desc">Multiuso — pele, cabelo e preparo de óleos medicados.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c3">
+          <div class="produto-photo"><span class="ico">❦</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Óleo de Rícino (Castor Oil)</div>
+            <p class="produto-desc">Uso tradicional em compressas e cuidados naturais.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block" id="argilas">
+      <div class="cat-row-label-wrap">
+        <div class="cat-row-label">Argilas</div>
+        <p class="cat-row-desc">Para máscaras, banhos e preparos terapêuticos naturais.</p>
+      </div>
+      <div class="produto-grid">
+        <div class="produto-card c4">
+          <div class="produto-photo"><span class="ico">◍</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Argila Verde</div>
+            <p class="produto-desc">Purificante, indicada para peles oleosas e máscaras faciais.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c4">
+          <div class="produto-photo"><span class="ico">◍</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Argila Branca</div>
+            <p class="produto-desc">Suave, indicada para peles sensíveis.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c4">
+          <div class="produto-photo"><span class="ico">◍</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Argila Rosa</div>
+            <p class="produto-desc">Equilibrada, para uso facial e corporal no dia a dia.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block" id="ayurvedicos">
+      <div class="cat-row-label-wrap">
+        <div class="cat-row-label">Produtos Ayurvédicos</div>
+        <p class="cat-row-desc">Ghee e ervas para os três doshas — o essencial pra praticar o que você aprende nos cursos.</p>
+      </div>
+      <div class="produto-grid">
+        <div class="produto-card c5">
+          <div class="produto-photo"><span class="ico">✦</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Ghee Artesanal</div>
+            <p class="produto-desc">Manteiga clarificada, base de diversas receitas ayurvédicas.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c5">
+          <div class="produto-photo"><span class="ico">✦</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Kit Ervas para o Seu Dosha</div>
+            <p class="produto-desc">Seleção de ervas conforme Vata, Pitta ou Kapha.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c5">
+          <div class="produto-photo"><span class="ico">✦</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Trikatu em Pó</div>
+            <p class="produto-desc">Mistura clássica para o fogo digestivo (agni).</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block" id="farmacia">
+      <div class="cat-row-label-wrap">
+        <div class="cat-row-label">Farmácia Natural Caseira</div>
+        <p class="cat-row-desc">Tudo pra você preparar seus próprios remédios naturais em casa, com segurança.</p>
+      </div>
+      <div class="produto-grid">
+        <div class="produto-card c1">
+          <div class="produto-photo"><span class="ico">❀</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Kit de Frascos e Vidros Âmbar</div>
+            <p class="produto-desc">Para tinturas, óleos medicados e preparados caseiros.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c1">
+          <div class="produto-photo"><span class="ico">❀</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Álcool de Cereais para Tinturas</div>
+            <p class="produto-desc">Base para extração de plantas medicinais em casa.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c1">
+          <div class="produto-photo"><span class="ico">❀</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Ervário Básico da Farmácia Caseira</div>
+            <p class="produto-desc">Seleção de ervas secas mais usadas no curso Farmácia Natural Caseira.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block" id="ginecologia">
+      <div class="cat-row-label-wrap">
+        <div class="cat-row-label">Ginecologia Natural</div>
+        <p class="cat-row-desc">Ferramentas para o autocuidado íntimo e a conexão com os ciclos femininos.</p>
+      </div>
+      <div class="produto-grid">
+        <div class="produto-card c2">
+          <div class="produto-photo"><span class="ico">☾</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Ervas para Banho de Assento</div>
+            <p class="produto-desc">Mistura de ervas para vaporização e banho de assento íntimo.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c2">
+          <div class="produto-photo"><span class="ico">☾</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Kit Vaporização Íntima (V-Steam)</div>
+            <p class="produto-desc">Ervas + banquinho de vaporização + guia de uso seguro.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c2">
+          <div class="produto-photo"><span class="ico">☾</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Óleo de Massagem para o Ventre</div>
+            <p class="produto-desc">Para práticas de automassagem e conexão com o ciclo.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block" id="defumacoes">
+      <div class="cat-row-label-wrap">
+        <div class="cat-row-label">Resinas &amp; Defumações</div>
+        <p class="cat-row-desc">Para limpar energias e criar ambiência nos seus rituais e meditações.</p>
+      </div>
+      <div class="produto-grid">
+        <div class="produto-card c3">
+          <div class="produto-photo"><span class="ico">◐</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Resina de Copal</div>
+            <p class="produto-desc">Defumação tradicional para rituais e meditação.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c3">
+          <div class="produto-photo"><span class="ico">◐</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Palo Santo</div>
+            <p class="produto-desc">Madeira sagrada para limpeza energética de ambientes.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+        <div class="produto-card c3">
+          <div class="produto-photo"><span class="ico">◐</span></div>
+          <div class="produto-body">
+            <div class="produto-title">Kit Defumação Completo</div>
+            <p class="produto-desc">Carvão, incensário e seleção de resinas e ervas.</p>
+            <div class="produto-preco">A partir de <strong>R$ --,00</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="porque">
+  <div class="wrap">
+    <h2 class="center">Por que comprar <em class="gold-text">na Loja Inluz</em></h2>
+    <div class="porque-grid">
+      <div class="porque-item">
+        <span class="ico">✓</span>
+        <h3>Ingredientes de verdade</h3>
+        <p>Produtos naturais, sem enrolação, pensados pra sustentar sua rotina de autocuidado.</p>
+      </div>
+      <div class="porque-item">
+        <span class="ico">✓</span>
+        <h3>Feito pra combinar</h3>
+        <p>Os produtos conversam direto com o que você aprende no Portal — farmácia natural, ayurveda, ginecologia natural.</p>
+      </div>
+      <div class="porque-item">
+        <span class="ico">✓</span>
+        <h3>Condições para assinantes</h3>
+        <p>Quem assina o Inluz tem descontos exclusivos na loja, além dos cursos e encontros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="captacao">
+  <div class="wrap">
+    <span class="eyebrow">Fique por dentro</span>
+    <h2>Receba as novidades da <em class="gold-text">Loja Inluz</em></h2>
+    <p>Deixe seu e-mail para saber em primeira mão sobre novos produtos e condições exclusivas para assinantes.</p>
+    <!-- INTEGRAR COM FERRAMENTA DE E-MAIL (Mailchimp / ConvertKit / RD Station) -->
+    <form class="captacao-form" action="#" method="post">
+      <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+      <button type="submit" class="btn btn-gold">Quero receber novidades</button>
+    </form>
+    <small>Sem spam. Você pode cancelar a qualquer momento.</small>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Inluz · Mariah Caroline — Naturóloga</span>
+    <span><a href="mailto:mariahdias94@gmail.com">mariahdias94@gmail.com</a> · <a href="https://instagram.com/mariahcarolined" target="_blank">@mariahcarolined</a></span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('overlay');
+    var menuToggle = document.getElementById('menuToggle');
+    var sidebarClose = document.getElementById('sidebarClose');
+
+    function openMenu() { sidebar.classList.add('open'); overlay.classList.add('open'); }
+    function closeMenu() { sidebar.classList.remove('open'); overlay.classList.remove('open'); }
+
+    menuToggle.addEventListener('click', openMenu);
+    sidebarClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    sidebar.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+
+    var searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function () {
+      var q = searchInput.value.trim().toLowerCase();
+      document.querySelectorAll('.cat-block').forEach(function (block) {
+        var anyVisible = false;
+        block.querySelectorAll('.produto-card').forEach(function (card) {
+          var match = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+          card.style.display = match ? '' : 'none';
+          if (match) anyVisible = true;
+        });
+        block.style.display = anyVisible ? '' : 'none';
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
