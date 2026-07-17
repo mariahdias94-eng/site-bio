@@ -202,12 +202,19 @@
   .cal-page-mname { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; display: block; font-weight: 400; line-height: 1; }
   .cal-page-year { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); display: block; margin-top: 4px; }
   .cal-page-body { padding: 16px 16px 18px; background: #fff; flex: 1; display: flex; flex-direction: column; }
-  .cal-event { font-family: 'Jost', sans-serif; font-size: 13.5px; font-weight: 400; color: var(--ink); line-height: 1.5; flex: 1; margin-bottom: 14px; }
-  .cal-live-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracota); }
-  .cal-live-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--terracota); flex-shrink: 0; }
-  .cal-page.cal-cta { background: linear-gradient(150deg, var(--ink) 0%, #2e2719 100%); box-shadow: 0 3px 12px rgba(28,24,18,0.2); justify-content: center; align-items: center; text-align: center; padding: 24px 18px; min-height: 140px; }
-  .cal-cta-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 10px; }
-  .cal-cta-text { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: #fff; font-style: italic; line-height: 1.3; }
+  .cal-event { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 500; color: var(--ink); line-height: 1.25; margin-bottom: 8px; }
+  .cal-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.55; flex: 1; margin-bottom: 14px; }
+  .cal-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .cal-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .cal-tag.live { color: var(--terracota); }
+  .cal-tag.live::before { background: var(--terracota); }
+  .cal-tag.course { color: var(--gold-deep); }
+  .cal-tag.course::before { background: var(--gold-deep); }
+  .cal-tag.portal { color: var(--sálvia); }
+  .cal-tag.portal::before { background: var(--sálvia); }
+  .cal-semester-divider { display: flex; align-items: center; gap: 16px; margin: 34px 0; }
+  .cal-semester-divider::before, .cal-semester-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .cal-semester-divider span { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--gold-deep); white-space: nowrap; }
   .cal-disclaimer { text-align: center; margin-top: 28px; font-size: 11px; color: var(--ink-soft); opacity: 0.42; font-style: italic; }
   @media (max-width: 900px) { .cal-months { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 620px) { .cal-months { grid-template-columns: repeat(2, 1fr); } }
@@ -422,16 +429,28 @@
 <!-- ══════════════════════════════════════════════════════════ -->
 <section class="calendario" id="calendario">
   <div class="wrap">
-    <span class="eyebrow">Conteúdo Novo Todo Mês</span>
-    <h2>O que chega <em class="gold-text">nos próximos meses</em></h2>
-    <p class="sub">Cursos, jornadas terapêuticas e aulas ao vivo — o portal cresce com conteúdo novo todos os meses para continuar te acompanhando.</p>
+    <span class="eyebrow">Cronograma de Conteúdos</span>
+    <h2>O que chega <em class="gold-text">de agosto de 2026 a julho de 2027</em></h2>
+    <p class="sub">Cursos, jornadas terapêuticas e imersões ao vivo — o portal cresce com conteúdo novo todos os meses para continuar te acompanhando.</p>
 
     <div class="cal-always-row">
-      <div class="cal-always-badge"><span class="dot"></span>1 encontro ao vivo por mês</div>
-      <div class="cal-always-badge"><span class="dot"></span>Conteúdos novos gravados ou jornadas ao vivo todo mês</div>
+      <div class="cal-always-badge"><span class="dot"></span>Jornadas e imersões: ao vivo, ficam gravadas para sempre</div>
+      <div class="cal-always-badge"><span class="dot"></span>Cursos e aulas: conteúdo gravado, no seu tempo</div>
     </div>
 
     <div class="cal-months">
+
+      <div class="cal-page">
+        <div class="cal-page-head">
+          <span class="cal-page-mname">Agosto</span>
+          <span class="cal-page-year">2026</span>
+        </div>
+        <div class="cal-page-body">
+          <div class="cal-event">Mês de Estudo e Prática</div>
+          <div class="cal-desc">Tempo de aprofundar e praticar o que já está disponível no portal.</div>
+          <div class="cal-tag portal">Já no Portal</div>
+        </div>
+      </div>
 
       <div class="cal-page">
         <div class="cal-page-head">
@@ -439,8 +458,9 @@
           <span class="cal-page-year">2026</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Curso de Ginecologia Natural</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Jornada de Meditação ao Vivo</div>
+          <div class="cal-desc">Encontros ao vivo para acalmar a mente e reencontrar o corpo.</div>
+          <div class="cal-tag live">Ao Vivo · Fica Gravada</div>
         </div>
       </div>
 
@@ -450,8 +470,9 @@
           <span class="cal-page-year">2026</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Jornada de Limpeza Uterina</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Curso de Ginecologia Natural</div>
+          <div class="cal-desc">Corpo feminino, hormônios e ciclos com a sabedoria da naturologia.</div>
+          <div class="cal-tag course">Curso Gravado</div>
         </div>
       </div>
 
@@ -461,8 +482,9 @@
           <span class="cal-page-year">2026</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Aulas de Yoga e Meditação</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Jornada de Limpeza Uterina</div>
+          <div class="cal-desc">Rituais de limpeza e renovação, unindo fitoterapia e respiração.</div>
+          <div class="cal-tag live">Ao Vivo · Fica Gravada</div>
         </div>
       </div>
 
@@ -472,8 +494,9 @@
           <span class="cal-page-year">2026</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Jornada de Preparo para 2027 — Revisão e Limpeza de 2026</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Jornada de Preparo para 2027: Revisão e Limpeza de 2026</div>
+          <div class="cal-desc">Encerrar ciclos com gentileza e abrir espaço para o que vem.</div>
+          <div class="cal-tag live">Ao Vivo · Fica Gravada</div>
         </div>
       </div>
 
@@ -483,10 +506,17 @@
           <span class="cal-page-year">2027</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Jornada de Preparo e Planejamento do Ano à Luz do Autoconhecimento</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Planejamento 2027</div>
+          <div class="cal-desc">Semear intenções claras e desenhar o caminho do novo ano.</div>
+          <div class="cal-tag live">Ao Vivo · Fica Gravada</div>
         </div>
       </div>
+
+    </div>
+
+    <div class="cal-semester-divider"><span>Segundo semestre 2027 · À luz do autoconhecimento</span></div>
+
+    <div class="cal-months">
 
       <div class="cal-page">
         <div class="cal-page-head">
@@ -494,8 +524,9 @@
           <span class="cal-page-year">2027</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Curso de Mantras</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Mini Curso de Autoabhyanga</div>
+          <div class="cal-desc">A arte ayurvédica da automassagem com óleos, um ritual diário.</div>
+          <div class="cal-tag course">Curso Gravado</div>
         </div>
       </div>
 
@@ -505,8 +536,9 @@
           <span class="cal-page-year">2027</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Jornada de Autoestudo com Planta Medicinal</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Jornada de Autoestudo com Plantas Medicinais</div>
+          <div class="cal-desc">Fitoterapia como caminho de autoconhecimento e escuta.</div>
+          <div class="cal-tag live">Ao Vivo · Fica Gravada</div>
         </div>
       </div>
 
@@ -516,8 +548,9 @@
           <span class="cal-page-year">2027</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Imersão de Meditação</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Imersão em Mantras</div>
+          <div class="cal-desc">O som sagrado como ferramenta de cura e expansão.</div>
+          <div class="cal-tag live">Ao Vivo · Fica Gravada</div>
         </div>
       </div>
 
@@ -527,8 +560,9 @@
           <span class="cal-page-year">2027</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Roda de Medicina</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Novas Aulas de Pranayama</div>
+          <div class="cal-desc">Técnicas respiratórias para equilibrar o sistema nervoso.</div>
+          <div class="cal-tag course">Curso Gravado</div>
         </div>
       </div>
 
@@ -538,8 +572,9 @@
           <span class="cal-page-year">2027</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Plantas Medicinais</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Imersão de Yoga</div>
+          <div class="cal-desc">Escuta interna, força e equilíbrio entre corpo e mente.</div>
+          <div class="cal-tag live">Ao Vivo · Fica Gravada</div>
         </div>
       </div>
 
@@ -549,14 +584,10 @@
           <span class="cal-page-year">2027</span>
         </div>
         <div class="cal-page-body">
-          <div class="cal-event">Mini Curso Auto Abhyanga</div>
-          <div class="cal-live-tag">Encontro ao Vivo</div>
+          <div class="cal-event">Imersão em Farmácia Natural Caseira</div>
+          <div class="cal-desc">Preparo de remédios naturais em casa, autonomia ao alcance das mãos.</div>
+          <div class="cal-tag live">Ao Vivo · Fica Gravada</div>
         </div>
-      </div>
-
-      <div class="cal-page cal-cta">
-        <span class="cal-cta-label">E sempre mais</span>
-        <div class="cal-cta-text">Conteúdo novo<br>todo mês,<br>sem parar.</div>
       </div>
 
     </div>
