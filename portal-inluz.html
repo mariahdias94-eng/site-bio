@@ -119,7 +119,6 @@
   .programa-card.c5 { border-top-color: var(--terracota); }
   .programa-card.c6 { border-top-color: var(--sálvia); }
   .programa-card.c7 { border-top-color: var(--argila); }
-  .programa-card.c8 { border-top-color: var(--lavanda); }
   @media (max-width: 900px) { .programa-grid, .programa-grid.row2 { grid-template-columns: repeat(2, 1fr) !important; } }
   @media (max-width: 560px) { .programa-grid, .programa-grid.row2 { grid-template-columns: 1fr !important; } }
 
@@ -163,29 +162,42 @@
   /* ═══ PLANOS & ASSINATURAS ═══ */
   .planos { background: linear-gradient(150deg, var(--ink) 0%, #2e2719 100%); text-align: center; }
   .planos h2 { color: #fff; font-size: 38px; margin-bottom: 14px; }
-  .planos > .wrap > p.sub { color: rgba(255,255,255,0.72); max-width: 560px; margin: 0 auto 50px; font-size: 16px; }
-  .plano-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; align-items: stretch; max-width: 780px; margin: 0 auto; }
+  .planos > .wrap > p.sub { color: rgba(255,255,255,0.72); max-width: 520px; margin: 0 auto 50px; font-size: 16px; }
+  .plano-grid { display: grid; grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; align-items: stretch; }
   .plano-card { background: #fff; border: 1.5px solid transparent; border-radius: 10px; padding: 34px 30px; box-shadow: 0 24px 50px rgba(0,0,0,0.35); text-align: left; display: flex; flex-direction: column; }
-  .plano-card.destaque { border: 1.5px solid var(--gold-light); box-shadow: 0 28px 60px rgba(212,175,106,0.3); transform: translateY(-10px); }
+  .plano-card.destaque { border: 1.5px solid var(--gold-light); box-shadow: 0 28px 60px rgba(212,175,106,0.3); }
   .plano-selo { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: linear-gradient(100deg, var(--gold-light), var(--gold)); border-radius: 12px; padding: 4px 12px; display: inline-block; margin-bottom: 14px; align-self: flex-start; font-weight: 700; }
   .plano-nome { font-family: 'Cormorant Garamond', serif; font-size: 27px; color: var(--gold-deep); margin-bottom: 4px; }
   .plano-desc { font-size: 13px; color: var(--ink-soft); margin-bottom: 18px; min-height: 36px; }
-  .plano-mosaic { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 20px; }
+  .plano-mosaic { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 20px; }
   .plano-mosaic img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; }
   .plano-card ul { list-style: none; margin-bottom: 22px; flex: 1; }
   .plano-card ul li { padding: 8px 0 8px 24px; position: relative; font-size: 13.5px; border-bottom: 1px solid var(--border); line-height: 1.4; }
   .plano-card ul li:last-child { border-bottom: none; }
   .plano-card ul li::before { content: '✓'; position: absolute; left: 0; top: 8px; color: var(--gold-deep); font-weight: 700; }
+  /* toggle Trimestral / Anual */
+  .plano-ciclo-toggle { display: flex; gap: 4px; background: var(--cream-deep); border-radius: 30px; padding: 4px; margin-bottom: 18px; }
+  .plano-ciclo-toggle input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+  .plano-ciclo-toggle label { flex: 1; text-align: center; padding: 10px 12px; border-radius: 26px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink-soft); cursor: pointer; transition: all 0.2s ease; }
+  .plano-ciclo-toggle input:checked + label { background: var(--ink); color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.18); }
+  .plano-preco-bloco { display: none; }
+  .plano-card:has(#ciclo-trimestral:checked) #preco-trimestral { display: block; }
+  .plano-card:has(#ciclo-anual:checked) #preco-anual { display: block; }
   .plano-preco-unico { border: 1px solid var(--border); border-radius: 6px; padding: 14px 10px; text-align: center; margin-bottom: 16px; }
   .plano-preco-unico .valor { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--ink); display: block; }
   .plano-preco-unico .periodo { font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); }
   .plano-card .btn { text-align: center; }
-  .plano-addon { margin-top: 14px; border: 1.5px dashed var(--border); border-radius: 6px; padding: 14px 16px; background: var(--cream); }
-  .plano-addon-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); font-weight: 700; margin-bottom: 6px; display: block; }
-  .plano-addon p { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 8px; }
-  .plano-addon .btn-ghost { display: inline-block; width: 100%; text-align: center; padding: 10px 16px; font-size: 12px; }
-  .planos-nota { color: rgba(255,255,255,0.55); font-size: 12.5px; max-width: 560px; margin: 34px auto 0; font-style: italic; }
-  @media (max-width: 700px) { .plano-grid { grid-template-columns: 1fr; max-width: 420px; } .plano-card.destaque { transform: none; } }
+  /* order bump do retiro (só aparece no ciclo Anual) */
+  .plano-bump { margin-top: 16px; border: 1.5px dashed var(--gold); border-radius: 8px; padding: 16px 18px; background: linear-gradient(135deg, rgba(169,128,46,0.07), rgba(212,175,106,0.1)); }
+  .plano-bump-check { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 13.5px; color: var(--ink); margin-bottom: 6px; }
+  .plano-bump-check input[type="checkbox"] { width: 17px; height: 17px; margin-top: 1px; accent-color: var(--gold-deep); cursor: pointer; flex-shrink: 0; }
+  .plano-bump-desc { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 10px 27px; }
+  .plano-bump-preco { margin-left: 27px; font-size: 14px; }
+  .plano-bump-preco s { color: var(--ink-soft); opacity: 0.6; margin-right: 8px; }
+  .plano-bump-preco strong { color: var(--gold-deep); font-size: 17px; font-family: 'Cormorant Garamond', serif; }
+  .plano-bump-economia { display: block; margin-left: 27px; margin-top: 3px; font-size: 11px; color: var(--sálvia); font-style: italic; }
+  .planos-nota { color: rgba(255,255,255,0.55); font-size: 12.5px; max-width: 520px; margin: 34px auto 0; font-style: italic; }
+  @media (max-width: 700px) { .plano-grid { max-width: 420px; } }
 
   /* ═══ CALENDÁRIO DE CONTEÚDO ═══ */
   .calendario { background: var(--cream-deep); }
@@ -323,7 +335,7 @@
     <p class="sub">Tudo o que você vê aqui já está dentro do Inluz — pronto pra você acessar assim que entrar.</p>
 
     <p class="programa-row-label">Cursos &amp; Jornadas Guiadas</p>
-    <div class="programa-grid" style="grid-template-columns: repeat(5, 1fr);">
+    <div class="programa-grid" style="grid-template-columns: repeat(4, 1fr);">
       <div class="programa-card c1">
         <div class="programa-photo"><img src="images/portal-inluz/capa-abc-do-yoga.jpg" alt="ABC do Yoga"></div>
       </div>
@@ -335,9 +347,6 @@
       </div>
       <div class="programa-card c4">
         <div class="programa-photo"><img src="images/portal-inluz/capa-codigos-do-eu.jpg" alt="Códigos do Eu"></div>
-      </div>
-      <div class="programa-card c8">
-        <div class="programa-photo"><img src="images/portal-inluz/capa-detox-ayurvedico.jpg" alt="Detox Ayurvédico - 7 Dias"></div>
       </div>
     </div>
 
@@ -651,71 +660,66 @@
   <div class="wrap">
     <span class="eyebrow">Planos &amp; Assinaturas</span>
     <h2>Venha fazer parte <em class="gold-text">desta rede</em></h2>
-    <p class="sub">Duas formas de entrar no portal — a mesma experiência completa, no ritmo que fizer mais sentido pra você. Todos os cursos, jornadas, encontros mensais e a comunidade, sempre inclusos.</p>
+    <p class="sub">Um único plano pra entrar no portal, com acesso completo aos cursos, jornadas, encontros mensais e comunidade — você só escolhe o ritmo de cobrança que faz mais sentido pra você.</p>
 
     <!-- AJUSTE OS VALORES ABAIXO CONFORME SUA DEFINIÇÃO FINAL DE PREÇO E INSIRA OS LINKS REAIS DE CHECKOUT DA HOTMART -->
     <div class="plano-grid">
-      <div class="plano-card">
-        <div class="plano-nome">Plano Semestral 🪻</div>
-        <p class="plano-desc">Ideal pra quem quer experimentar o ritmo do Inluz com flexibilidade.</p>
-        <div class="plano-mosaic">
-          <img src="images/portal-inluz/capa-abc-do-yoga.jpg" alt="ABC do Yoga">
-          <img src="images/portal-inluz/capa-ayurveda-no-dia-a-dia.jpg" alt="Ayurveda no Dia a Dia">
-          <img src="images/portal-inluz/capa-farmacia-natural-caseira.jpg" alt="Farmácia Natural Caseira">
-          <img src="images/portal-inluz/capa-codigos-do-eu.jpg" alt="Códigos do Eu">
-          <img src="images/portal-inluz/capa-detox-ayurvedico.jpg" alt="Detox Ayurvédico">
-        </div>
-        <ul>
-          <li>Todos os cursos e jornadas do Inluz (incluindo o Detox Ayurvédico)</li>
-          <li>Encontro mensal ao vivo</li>
-          <li>Acesso à comunidade</li>
-          <li>Ferramentas e guias bônus</li>
-          <li>Descontos em consultas, retiros e eventos</li>
-        </ul>
-        <div class="plano-preco-unico">
-          <span class="valor">R$ 77,00/mês</span>
-          <span class="periodo">Cobrança a cada 6 meses</span>
-        </div>
-        <a href="#" class="btn btn-gold">Assinar o Plano Semestral</a>
-        <div class="plano-addon">
-          <span class="plano-addon-label">Add-on opcional</span>
-          <p>Quer viver o <strong>Retiro Natureza Feminina</strong> (Novembro, Barra do Una) presencialmente? Some essa vivência ao seu plano quando quiser.</p>
-          <a href="#comunidade" class="btn btn-ghost">Saber mais sobre o retiro</a>
-        </div>
-      </div>
-
       <div class="plano-card destaque">
-        <div class="plano-selo">Melhor custo-benefício</div>
-        <div class="plano-nome">Plano Anual 🌹</div>
-        <p class="plano-desc">Pra quem já sabe que quer construir esse hábito com a gente.</p>
+        <div class="plano-selo">Acesso completo ao Inluz</div>
+        <div class="plano-nome">Assinatura Inluz 🌸</div>
+        <p class="plano-desc">Todos os cursos, jornadas, encontros ao vivo e a comunidade — no ritmo de cobrança que você escolher.</p>
         <div class="plano-mosaic">
           <img src="images/portal-inluz/capa-abc-do-yoga.jpg" alt="ABC do Yoga">
           <img src="images/portal-inluz/capa-ayurveda-no-dia-a-dia.jpg" alt="Ayurveda no Dia a Dia">
           <img src="images/portal-inluz/capa-farmacia-natural-caseira.jpg" alt="Farmácia Natural Caseira">
           <img src="images/portal-inluz/capa-codigos-do-eu.jpg" alt="Códigos do Eu">
-          <img src="images/portal-inluz/capa-detox-ayurvedico.jpg" alt="Detox Ayurvédico">
         </div>
         <ul>
-          <li>Todos os cursos e jornadas do Inluz (incluindo o Detox Ayurvédico)</li>
+          <li>Todos os cursos e jornadas do Inluz</li>
           <li>Encontro mensal ao vivo</li>
           <li>Acesso à comunidade</li>
           <li>Ferramentas e guias bônus</li>
           <li>Descontos em consultas, retiros e eventos</li>
         </ul>
-        <div class="plano-preco-unico">
-          <span class="valor">R$ 57,00/mês</span>
-          <span class="periodo">Cobrança anual</span>
+
+        <div class="plano-ciclo-toggle">
+          <input type="radio" name="plano-ciclo" id="ciclo-trimestral" checked>
+          <label for="ciclo-trimestral">Trimestral</label>
+          <input type="radio" name="plano-ciclo" id="ciclo-anual">
+          <label for="ciclo-anual">Anual</label>
         </div>
-        <a href="#" class="btn btn-gold">Assinar o Plano Anual</a>
-        <div class="plano-addon">
-          <span class="plano-addon-label">Add-on opcional</span>
-          <p>Quer viver o <strong>Retiro Natureza Feminina</strong> (Novembro, Barra do Una) presencialmente? Some essa vivência ao seu plano quando quiser.</p>
-          <a href="#comunidade" class="btn btn-ghost">Saber mais sobre o retiro</a>
+
+        <div class="plano-preco-bloco" id="preco-trimestral">
+          <div class="plano-preco-unico">
+            <span class="valor">R$ 87,00/mês</span>
+            <span class="periodo">Cobrança a cada 3 meses</span>
+          </div>
+          <!-- SUBSTITUIR href="#" PELO LINK REAL DE CHECKOUT (Hotmart) — ciclo Trimestral -->
+          <a href="#" class="btn btn-gold">Assinar o ciclo Trimestral</a>
+        </div>
+
+        <div class="plano-preco-bloco" id="preco-anual">
+          <div class="plano-preco-unico">
+            <span class="valor">R$ 67,00/mês</span>
+            <span class="periodo">Cobrança anual</span>
+          </div>
+          <!-- SUBSTITUIR href="#" PELO LINK REAL DE CHECKOUT (Hotmart) — ciclo Anual -->
+          <a href="#" class="btn btn-gold">Assinar o ciclo Anual</a>
+
+          <div class="plano-bump">
+            <label class="plano-bump-check">
+              <input type="checkbox" id="bump-retiro">
+              <span>+ Retiro Natureza Feminina — Barra do Una, Novembro</span>
+            </label>
+            <p class="plano-bump-desc">Vivência presencial exclusiva pra quem assina o plano anual.</p>
+            <div class="plano-bump-preco"><s>R$ 3.200</s> <strong>R$ 3.000</strong></div>
+            <span class="plano-bump-economia">Economia de R$200 exclusiva pra quem assina o plano anual</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <p class="planos-nota">O Retiro Natureza Feminina pode ser incluído em qualquer um dos planos, a qualquer momento — direto pela sua área de assinante ou falando com a gente. Valores e condições do retiro são informados na hora da inclusão.</p>
+    <p class="planos-nota">O desconto exclusivo no Retiro Natureza Feminina vale para quem assina o ciclo Anual. Já é assinante do ciclo Trimestral e quer incluir o retiro? É só falar com a gente — valores e condições são informados na hora da inclusão.</p>
   </div>
 </section>
 
@@ -733,12 +737,12 @@
         <p>Assim que sua assinatura é confirmada, você recebe acesso imediato à plataforma, com todos os cursos liberados para assistir no seu ritmo.</p>
       </details>
       <details>
-        <summary>Qual a diferença entre o Plano Semestral e o Plano Anual?</summary>
-        <p>O conteúdo é exatamente o mesmo nos dois — todos os cursos, jornadas, encontros mensais e a comunidade. A diferença é só o ciclo de cobrança: no Anual, o valor por mês sai mais em conta.</p>
+        <summary>Qual a diferença entre o ciclo Trimestral e o Anual?</summary>
+        <p>O conteúdo é exatamente o mesmo nos dois — todos os cursos, jornadas, encontros mensais e a comunidade. A diferença é o ciclo de cobrança: no Anual, o valor por mês sai mais em conta, e você ainda pode incluir o Retiro Natureza Feminina com desconto exclusivo.</p>
       </details>
       <details>
         <summary>Posso incluir o Retiro Natureza Feminina depois de já ser assinante?</summary>
-        <p>Sim! O retiro pode ser adicionado a qualquer momento da sua assinatura, direto pela plataforma ou falando com a gente.</p>
+        <p>Sim! Se você é assinante do ciclo Anual, o desconto exclusivo no retiro pode ser adicionado a qualquer momento, direto pela plataforma ou falando com a gente. Se você é do ciclo Trimestral, o retiro também pode ser incluído, com os valores normais informados na hora.</p>
       </details>
       <details>
         <summary>Por quanto tempo tenho acesso aos cursos?</summary>
@@ -758,7 +762,7 @@
       </details>
       <details>
         <summary>Posso cancelar quando quiser?</summary>
-        <p>Sim. Você pode cancelar a renovação a qualquer momento, sem burocracia — seu acesso permanece ativo até o fim do ciclo vigente (6 ou 12 meses, conforme seu plano).</p>
+        <p>Sim. Você pode cancelar a renovação a qualquer momento, sem burocracia — seu acesso permanece ativo até o fim do ciclo vigente (3 ou 12 meses, conforme o ciclo escolhido).</p>
       </details>
     </div>
   </div>
