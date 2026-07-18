@@ -242,16 +242,6 @@
   details[open] summary::after { content: '–'; }
   details p { margin-top: 14px; font-size: 15px; color: var(--ink-soft); padding-right: 30px; }
 
-  /* ═══ FORM DE CAPTAÇÃO ═══ */
-  .captacao { background: var(--cream-deep); text-align: center; }
-  .captacao .wrap { max-width: 560px; }
-  .captacao h2 { font-size: 30px; margin-bottom: 12px; }
-  .captacao p { margin-bottom: 26px; font-size: 15.5px; }
-  .captacao-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-  .captacao-form input[type="email"] { flex: 1; min-width: 220px; padding: 14px 18px; border: 1.5px solid var(--border); border-radius: 2px; font-family: 'Jost', sans-serif; font-size: 14px; background: #fff; }
-  .captacao-form input[type="email"]:focus { outline: none; border-color: var(--gold); }
-  .captacao small { display: block; margin-top: 14px; font-size: 12px; color: var(--ink-soft); opacity: 0.7; }
-
   /* ═══ SEÇÃO FINAL — LOGO ═══ */
   .final { background: linear-gradient(150deg, var(--ink) 0%, #2e2719 100%); color: #fff; text-align: center; padding: 34px 0; }
   .final-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; }
@@ -691,7 +681,7 @@
 
         <div class="plano-preco-bloco" id="preco-trimestral">
           <div class="plano-preco-unico">
-            <span class="valor">R$ 87,00/mês</span>
+            <span class="valor">R$ 97,00/mês</span>
             <span class="periodo">Cobrança a cada 3 meses</span>
           </div>
           <!-- SUBSTITUIR href="#" PELO LINK REAL DE CHECKOUT (Hotmart) — ciclo Trimestral -->
@@ -711,7 +701,6 @@
               <input type="checkbox" id="bump-retiro">
               <span>+ Retiro Natureza Feminina — Barra do Una, Novembro</span>
             </label>
-            <p class="plano-bump-desc">Vivência presencial exclusiva pra quem assina o plano anual.</p>
             <div class="plano-bump-preco"><s>R$ 3.200</s> <strong>R$ 3.000</strong></div>
             <span class="plano-bump-economia">Economia de R$200 exclusiva pra quem assina o plano anual</span>
           </div>
@@ -765,23 +754,6 @@
         <p>Sim. Você pode cancelar a renovação a qualquer momento, sem burocracia — seu acesso permanece ativo até o fim do ciclo vigente (3 ou 12 meses, conforme o ciclo escolhido).</p>
       </details>
     </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════ -->
-<!-- FORM DE CAPTAÇÃO -->
-<!-- ══════════════════════════════════════════════════════════ -->
-<section class="captacao">
-  <div class="wrap">
-    <span class="eyebrow">Ainda não tem certeza?</span>
-    <h2>Receba mais sobre o <em class="gold-text">Inluz</em> antes de decidir</h2>
-    <p>Deixe seu e-mail e te enviamos mais conteúdo sobre os cursos, a comunidade e como funciona o portal — sem compromisso.</p>
-    <!-- INTEGRAR COM FERRAMENTA DE E-MAIL (Mailchimp / ConvertKit / RD Station) -->
-    <form class="captacao-form" action="#" method="post">
-      <input type="email" name="email" placeholder="Seu melhor e-mail" required>
-      <button type="submit" class="btn btn-gold">Quero saber mais</button>
-    </form>
-    <small>Sem spam. Você pode cancelar a qualquer momento.</small>
   </div>
 </section>
 
