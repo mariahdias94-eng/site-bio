@@ -28,7 +28,9 @@ nav{display:flex;align-items:center;justify-content:space-between;max-width:1180
 
 /* HERO — foto grande no estilo Portal InLuz */
 .hero{padding:0;max-width:none;display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;min-height:86vh;}
-.hero-text{display:flex;flex-direction:column;justify-content:center;padding:56px 8vw 56px 7vw;}
+.hero-text{position:relative;display:flex;flex-direction:column;justify-content:center;padding:56px 8vw 56px 7vw;overflow:hidden;}
+.hero-text>*{position:relative;z-index:1;}
+.hero-flower{position:absolute;top:50%;right:-8%;width:640px;max-width:80vw;height:640px;transform:translateY(-50%);opacity:.06;pointer-events:none;z-index:0;}
 .hero-photo{position:relative;overflow:hidden;min-height:380px;}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;}
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 0%,rgba(251,246,238,0) 14%);pointer-events:none;}
@@ -76,8 +78,9 @@ h1 em{font-style:italic;color:var(--gold);}
 .spec-name{font-size:.91rem;font-weight:500;color:var(--text-dark);line-height:1.4;}
 
 /* SOBRE MIM */
-.sec-about{background:var(--cream);}
-.about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;}
+.sec-about{background:var(--cream);position:relative;overflow:hidden;}
+.about-flower{position:absolute;top:50%;left:50%;width:1000px;max-width:150vw;height:1000px;transform:translate(-50%,-50%);opacity:.045;pointer-events:none;z-index:0;}
+.about-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;}
 .about-photo{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--card-bg);}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .about-content .slead{margin-bottom:20px;}
@@ -85,6 +88,35 @@ h1 em{font-style:italic;color:var(--gold);}
 .cred-list li{display:flex;align-items:flex-start;gap:11px;font-size:.95rem;color:var(--text-dark);line-height:1.5;}
 .cred-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px;}
 @media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:28px;}.about-photo{aspect-ratio:4/3;}}
+
+/* DEPOIMENTOS */
+.sec-testi{background:var(--card-bg);}
+.testi-head{text-align:center;margin-bottom:44px;}
+.testi-head .stitle{font-size:2.1rem;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.testi-card{background:var(--cream);border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--border);}
+.testi-stars{color:var(--gold);letter-spacing:2px;font-size:.9rem;}
+.testi-text{font-size:.9rem;line-height:1.65;color:var(--text-mid);font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:12px;margin-top:auto;}
+.testi-av{width:36px;height:36px;border-radius:50%;background:var(--card-bg);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.testi-name{font-size:.86rem;font-weight:500;color:var(--text-dark);}
+.testi-det{font-size:.74rem;color:var(--text-light);}
+@media(max-width:880px){.testi-grid{grid-template-columns:1fr;}}
+
+/* ME ACOMPANHE */
+.sec-social{background:var(--cream);text-align:center;}
+.sec-social .stag,.sec-social .stitle,.sec-social .slead{margin-left:auto;margin-right:auto;}
+.social-icons{display:flex;justify-content:center;gap:16px;margin-top:32px;}
+.social-icons a{width:54px;height:54px;border-radius:50%;background:var(--card-bg);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
+.social-icons a:hover{background:var(--gold);transform:translateY(-3px);}
+.social-icons a:hover svg{fill:#fff;}
+.social-icons svg{width:23px;height:23px;fill:var(--dark-green);transition:fill .2s;}
+
+/* WHATSAPP FLUTUANTE */
+.wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(44,74,62,.3);z-index:999;transition:transform .2s;}
+.wa-float:hover{transform:scale(1.08);}
+.wa-float svg{width:28px;height:28px;fill:#fff;}
+@media(max-width:600px){.wa-float{right:16px;bottom:16px;width:52px;height:52px;}}
 
 footer{text-align:center;padding:40px 24px 60px;font-size:.82rem;color:var(--text-light);border-top:1px solid var(--border);max-width:1080px;margin:0 auto;}
 footer .foot-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
@@ -107,6 +139,7 @@ footer a:hover{color:var(--gold);}
 
 <section class="hero">
   <div class="hero-text">
+    <img class="hero-flower" src="images/portal-inluz/flor-da-vida-transparente.png" alt="">
     <div class="section-label">Naturóloga · Saúde Integral Feminina</div>
     <h1>Trate a <em>causa raiz</em> da sua saúde, não apenas os sintomas</h1>
     <p>Consultas, retiros femininos e programas terapêuticos que unem fitoterapia, plantas medicinais, ginecologia natural, mentalidade e neurociência — para mulheres com menopausa, endometriose, SOP, ansiedade e dores crônicas que querem um cuidado que realmente dura.</p>
@@ -176,8 +209,54 @@ footer a:hover{color:var(--gold);}
   </div>
 </section>
 
+<!-- DEPOIMENTOS -->
+<section class="sec-testi">
+  <div class="inner">
+    <div class="testi-head">
+      <span class="stag">Depoimentos</span>
+      <h2 class="stitle">O que as <em>pacientes dizem</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"GRATIDÃO, é a palavra! Após 3 meses de acompanhamento na alimentação e no meu emocional com Mariah, confesso o quanto estou vivendo melhor. Mais confiante e muito mais consciente do meu corpo, meu metabolismo... A impressão que estou mais leve de corpo, mente e espírito!"</p>
+        <div class="testi-author">
+          <div class="testi-av">🌿</div>
+          <div>
+            <div class="testi-name">Nelia Covatti Bressan</div>
+            <div class="testi-det">Acompanhamento terapêutico · Toledo, PR</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"A consulta foi bem bom pra eu entender os ciclos do meu corpo e lidar melhor — não me desesperar no período pré-menstrual. Comecei a me controlar mais nos excessos. Aprendi muito sobre mim mesma."</p>
+        <div class="testi-author">
+          <div class="testi-av">🌊</div>
+          <div>
+            <div class="testi-name">Paciente — Ciclo Menstrual</div>
+            <div class="testi-det">Ginecologia Natural · Naturologia</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Só pra dividir: parece que meu corpo começou a se adaptar. Não estou sentindo aquelas dores de cabeça fortes logo de manhã que tinha antes. É incrível perceber o quanto o corpo responde quando você dá as condições certas."</p>
+        <div class="testi-author">
+          <div class="testi-av">🌸</div>
+          <div>
+            <div class="testi-name">Aline Elianne</div>
+            <div class="testi-det">Tratamento · Acompanhamento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SOBRE MIM -->
 <section class="sec-about">
+  <img class="about-flower" src="images/portal-inluz/flor-da-vida-transparente.png" alt="">
   <div class="inner">
     <div class="about-grid">
       <div class="about-photo">
@@ -200,6 +279,27 @@ footer a:hover{color:var(--gold);}
     </div>
   </div>
 </section>
+
+<!-- ME ACOMPANHE -->
+<section class="sec-social">
+  <div class="inner">
+    <span class="stag">Vamos continuar em contato</span>
+    <h2 class="stitle">Me acompanhe <em>nas redes</em></h2>
+    <p class="slead">Conteúdo gratuito sobre saúde feminina natural, plantas medicinais e autoconhecimento — toda semana.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/mariahcarolined" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@mariahcarolined/videos" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<a class="wa-float" href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.124 1.531 5.858L.037 23.7l5.987-1.571A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.503-5.183-1.381l-.371-.219-3.83 1.004 1.02-3.724-.24-.383A9.954 9.954 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
 
 <footer>
   <div class="foot-links">
