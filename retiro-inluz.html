@@ -263,7 +263,7 @@
   .final-cta p{color:var(--cream-2); margin:20px auto 34px; max-width:480px; font-weight:300;}
 
   footer{background:var(--wine-3); color:var(--cream-2); text-align:center; padding:50px 24px 110px; font-size:13.5px;}
-  footer .flower{font-size:26px; margin-bottom:14px; color:var(--gold-light);}
+  footer .flower{display:inline-block; margin-bottom:14px;}
   footer .brand{color:var(--gold-light); font-family:'Playfair Display',serif; font-size:20px; margin-bottom:16px;}
   footer a{color:var(--white); text-decoration:none; border-bottom:1px solid var(--gold);}
 
@@ -555,7 +555,35 @@
 </section>
 
 <footer>
-  <div class="flower">✿</div>
+  <svg class="flower" viewBox="0 0 100 100" width="40" height="40" fill="none" stroke="url(#folGrad)" stroke-width="0.6">
+    <defs>
+      <linearGradient id="folGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#E8CE9B"/>
+        <stop offset="100%" stop-color="#C89A54"/>
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="38"/>
+    <circle cx="50" cy="50" r="41"/>
+    <circle cx="50.00" cy="50.00" r="12"/>
+    <circle cx="62.00" cy="50.00" r="12"/>
+    <circle cx="56.00" cy="60.39" r="12"/>
+    <circle cx="44.00" cy="60.39" r="12"/>
+    <circle cx="38.00" cy="50.00" r="12"/>
+    <circle cx="44.00" cy="39.61" r="12"/>
+    <circle cx="56.00" cy="39.61" r="12"/>
+    <circle cx="68.00" cy="60.39" r="12"/>
+    <circle cx="50.00" cy="70.78" r="12"/>
+    <circle cx="32.00" cy="60.39" r="12"/>
+    <circle cx="32.00" cy="39.61" r="12"/>
+    <circle cx="50.00" cy="29.22" r="12"/>
+    <circle cx="68.00" cy="39.61" r="12"/>
+    <circle cx="74.00" cy="50.00" r="12"/>
+    <circle cx="62.00" cy="70.78" r="12"/>
+    <circle cx="38.00" cy="70.78" r="12"/>
+    <circle cx="26.00" cy="50.00" r="12"/>
+    <circle cx="38.00" cy="29.22" r="12"/>
+    <circle cx="62.00" cy="29.22" r="12"/>
+  </svg>
   <div class="brand">Portal InLuz</div>
   <p>Retiro Natureza Feminina · Sama Una, Barra do Una, SP</p>
   <p style="margin-top:8px;"><a href="https://wa.me/5511960010586?text=Ol%C3%A1!" target="_blank" rel="noopener">Falar no WhatsApp</a></p>
