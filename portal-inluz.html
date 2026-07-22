@@ -59,15 +59,18 @@
   @media (max-width: 860px) { nav .links { display: none; } }
 
   /* ═══ HERO ═══ */
-  .hero { background: #fff; padding: 90px 0 64px; text-align: center; }
-  .hero .wrap { max-width: 800px; }
-  .hero .eyebrow { color: var(--gold-deep); }
-  .hero h1 { font-size: 56px; line-height: 1.14; margin-bottom: 22px; }
-  .hero p.lead { font-size: 17px; color: var(--ink-soft); max-width: 580px; margin: 0 auto 14px; }
-  .hero p.lead strong { color: var(--ink); }
+  .hero { position: relative; overflow: hidden; min-height: 88vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+  .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,24,18,0.55) 0%, rgba(28,24,18,0.6) 60%, rgba(28,24,18,0.78) 100%); }
+  .hero .wrap { max-width: 800px; position: relative; z-index: 1; }
+  .hero .eyebrow { color: var(--gold-light); }
+  .hero h1 { font-size: 60px; line-height: 1.14; margin-bottom: 22px; color: #FBF7EF; text-shadow: 0 4px 20px rgba(0,0,0,0.35); }
+  .hero p.lead { font-size: 17px; color: rgba(255,255,255,0.86); max-width: 580px; margin: 0 auto 14px; }
+  .hero p.lead strong { color: #fff; }
   .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin: 30px 0 18px; }
-  .hero-trust { font-size: 13.5px; color: var(--ink-soft); opacity: 0.85; margin-bottom: 56px; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 18px; }
-  @media (max-width: 700px) { .hero h1 { font-size: 38px; } }
+  .hero-trust { font-size: 13.5px; color: rgba(255,255,255,0.78); opacity: 0.85; margin-bottom: 56px; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 18px; }
+  @media (max-width: 700px) { .hero h1 { font-size: 38px; } .hero { min-height: 72vh; } }
 
   /* ═══ VÍDEO ═══ */
   .video-block { padding: 0 0 100px; background: #fff; }
@@ -282,6 +285,7 @@
 <!-- HERO -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <header class="hero">
+  <div class="hero-bg"><img src="images/portal-inluz/promise-bg.jpg" alt=""></div>
   <div class="wrap">
     <span class="eyebrow">Portal Inluz</span>
     <h1>Plataforma de <em class="gold-text">saúde integrativa e autoconhecimento feminino</em></h1>
