@@ -41,18 +41,17 @@ img { max-width: 100%; display: block; }
   position: fixed;
   inset: 0;
   z-index: -3;
-  background: #0a0f0a url("../images/hero-forest.jpg") center / cover no-repeat;
+  background: #0a0f0a url("../images/forest-bg.jpg") center / cover no-repeat;
 }
 
-/* vinheta escura sobre a foto, igual ao tratamento do site de referência */
+/* vinheta leve — a própria foto já traz as folhas de canto e o escurecimento */
 .vignette {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(15, 22, 16, 0.55) 0%, rgba(15, 22, 16, 0.25) 32%, rgba(15, 22, 16, 0.55) 68%, rgba(11, 17, 12, 0.92) 100%),
-    radial-gradient(ellipse at 50% 62%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(8, 13, 9, 0.35) 100%);
+    linear-gradient(180deg, rgba(6, 10, 6, 0.35) 0%, rgba(6, 10, 6, 0.1) 25%, rgba(6, 10, 6, 0.15) 70%, rgba(4, 7, 4, 0.55) 100%);
 }
 
 /* ---------- navegação ---------- */
