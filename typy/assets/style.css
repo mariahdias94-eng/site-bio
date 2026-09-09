@@ -177,7 +177,6 @@ img { max-width: 100%; display: block; }
   height: auto;
   margin-bottom: 28px;
   object-fit: contain;
-  filter: drop-shadow(0 0 18px rgba(244, 240, 228, 0.35));
 }
 
 .hero-word {
